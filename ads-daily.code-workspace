@@ -1,0 +1,38 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.autoSave": "afterDelay",
+		"editor.formatOnSave": true,
+		"[php]": {
+			"editor.defaultFormatter": "kokororin.vscode-phpfmt",
+		},
+		"bladeFormatter.format.wrapLineLength": 12000,
+		"bladeFormatter.format.wrapAttributes": "auto",
+		"css.format.preserveNewLines": true,
+		"php.suggest.basic": false,
+		"editor.tabSize": 4,
+		"emmet.includeLanguages": {
+			"blade": "html",
+		},
+		"tailwindCSS.includeLanguages": {
+			"plaintext": "blade",
+		},
+		"tailwindCSS.colorDecorators": false,
+		"laravelGotoView.showCodeLens": false,
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Xdebug",
+				"type": "php",
+				"request": "launch",
+				"port": 9004
+			},
+		]
+	}
+}
