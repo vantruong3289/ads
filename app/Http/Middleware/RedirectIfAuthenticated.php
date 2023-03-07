@@ -26,6 +26,9 @@ class RedirectIfAuthenticated
                 if ($guard == 'consumer') {
                     return redirect(RouteServiceProvider::HOME_CONSUMER);
                 }
+                if( $guard == 'advertiser') {
+                    return redirect(RouteServiceProvider::HOME_ADVERTISER);
+                }
                 return redirect(RouteServiceProvider::HOME);
             }
         }

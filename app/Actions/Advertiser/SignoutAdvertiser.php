@@ -2,14 +2,16 @@
 
 namespace App\Actions\Advertiser;
 
+use Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class SignUpFormAdvertiser
+class SignoutAdvertiser
 {
     use AsAction;
 
     public function handle()
     {
-        return view('advertisers.sign-up');
+        Auth::guard('advertiser')->logout();
+        return redirect('advertisers\sign-in');
     }
 }

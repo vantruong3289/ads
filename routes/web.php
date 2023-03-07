@@ -1,8 +1,10 @@
 <?php
 
 use App\Actions\Ads\WelcomeAction;
+use App\Actions\Advertiser\HomeAdvertiser;
 use App\Actions\Advertiser\SignInFormAdvertiser;
 use App\Actions\Advertiser\SignInPostAdvertiser;
+use App\Actions\Advertiser\SignoutAdvertiser;
 use App\Actions\Advertiser\SignUpFormAdvertiser;
 use App\Actions\Advertiser\SignUpPostAdvertiser;
 use App\Actions\Brand\HomeBrand;
@@ -20,13 +22,15 @@ Route::get('brands/{brand}', HomeBrand::class);
 
 Route::get('/consumers/sign-in', SignInFormConsumer::class)->middleware('guest:consumer');
 Route::post('/consumers/sign-in', SignInPostConsumer::class);
-Route::post('/consumers/sign-out', SignoutConsumer::class);
-Route::get('/consumers/home', HomeConsumer::class)->middleware('auth:consumer');
 Route::get('/consumers/sign-up', SignUpFormConsumer::class)->middleware('guest:consumer');
 Route::post('/consumers/sign-up', SignUpPostConsumer::class);
+Route::get('/consumers/home', HomeConsumer::class)->middleware('auth:consumer');
 Route::get('/consumers/assets', AssetConsumer::class)->middleware('auth:consumer');
+Route::post('/consumers/sign-out', SignoutConsumer::class);
 
 Route::get('/advertisers/sign-in', SignInFormAdvertiser::class)->middleware('guest:advertiser');
 Route::post('/advertisers/sign-in', SignInPostAdvertiser::class);
 Route::get('/advertisers/sign-up', SignUpFormAdvertiser::class)->middleware('guest:advertiser');
 Route::post('/advertisers/sign-up', SignUpPostAdvertiser::class);
+Route::get('/advertisers/home', HomeAdvertiser::class)->middleware('auth:advertiser');
+Route::post('/consumers/sign-out', SignoutAdvertiser::class);
