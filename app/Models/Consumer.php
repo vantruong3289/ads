@@ -33,6 +33,6 @@ class Consumer extends Authenticatable implements HasMedia
 
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('avatar')->singleFile();
+        $this->addMediaCollection('avatar')->useFallbackUrl('https://cdn-icons-png.flaticon.com/512/3177/3177440.png')->singleFile();
     }
 }

@@ -6,7 +6,11 @@
     <div class="fixed inset-0">
         @include('ads.designs.banner')
         <div class="absolute bottom-4 right-4 text-white grid grid-cols-1 gap-4 items-center">
-            <livewire:count-down :ads="$ads" />
+            @auth
+                <livewire:count-down :ads="$ads" />
+            @else
+                <a href="/consumers/signin">Sign In</a>
+            @endauth
             @if ($next->nextPageUrl())
                 <a href="{{ $next->nextPageUrl() }}" class="text-center">
                     <x-icons.arrow-right class="inline-block"></x-icons.arrow-right>

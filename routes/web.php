@@ -5,16 +5,20 @@ use App\Actions\Advertiser\CreateAdvertiser;
 use App\Actions\Advertiser\UpdateAdvertiser;
 use App\Actions\Advertiser\UpdatePasswordAdvertiser;
 use App\Actions\Brand\Profile;
-use App\Actions\Consumer\SignInConsumer;
-use App\Actions\Consumer\StoreConsumer;
+use App\Actions\Consumer\HomeConsumer;
+use App\Actions\Consumer\SignInFormConsumer;
+use App\Actions\Consumer\SignInPostConsumer;
+use App\Actions\Consumer\SignoutConsumer;
 use App\Actions\Consumer\UpdateConsumer;
 use App\Actions\Consumer\UpdatePasswordConsumer;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', WelcomeAction::class);
 
-Route::get('/consumer-login', SignInConsumer::class);
-Route::post('/consumer-create', StoreConsumer::class);
+Route::get('/consumers/signin', SignInFormConsumer::class)->middleware('guest:consumer');
+Route::post('/consumers/signin', SignInPostConsumer::class);
+Route::post('/consumers/signout', SignoutConsumer::class);
+Route::get('/consumers/home', HomeConsumer::class);
 Route::put('/consumer-update', UpdateConsumer::class);
 Route::put('/consumer-update-password', UpdatePasswordConsumer::class);
 
