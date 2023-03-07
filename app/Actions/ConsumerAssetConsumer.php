@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Actions\Consumer;
+namespace App\Actions;
 
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class SignInFormConsumer
+class ConsumerAssetConsumer
 {
     use AsAction;
 
     public function handle()
     {
-        return view('consumers.sign-in');
+        // ...
     }
 }

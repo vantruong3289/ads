@@ -27,7 +27,8 @@ class ClickAds
                 'status' => WatchEnum::WAITING,
             ]);
 
-            $asset = Asset::query()->firstOrCreate(['consumer_id' => $consumer->id, 'brand_id' => $ads->brand_id]);
+            $attributes = ['consumer_id' => $consumer->id, 'brand_id' => $ads->brand_id, 'currency' => $ads->currency];
+            $asset = Asset::firstOrCreate($attributes);
             if ($watch->money) {
                 $asset->money += $watch->money;
             }

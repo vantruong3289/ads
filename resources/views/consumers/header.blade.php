@@ -1,7 +1,10 @@
 <nav class="bg-white sticky-top border-b">
     <div class="mx-auto max-w-7xl px-2 lg:px-0">
-        <div class="flex h-12 lg:h-14 items-center justify-between">
-            <a href="/" class="font-semibold">Ads</a>
+        <div class="flex items-center justify-between">
+            <div class="space-x-5 flex items-center">
+                <a href="/" class="font-semibold">Ads</a>
+                <a href="/consumers/assets" class="px-2 py-4 text-blue-600">Asset</a>
+            </div>
             @auth
                 <div class="flex items-center space-x-3">
                     <a href="/consumers/home">

@@ -14,9 +14,9 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Consumer::class)->nullable()->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignIdFor(Brand::class)->nullable()->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->string('currency')->default('VND');
-            $table->float('money')->default(0);
-            $table->float('voucher')->default(0);
+            $table->string('currency')->nullable();
+            $table->float('money')->nullable();
+            $table->float('voucher')->nullable();
             $table->timestamps();
         });
     }

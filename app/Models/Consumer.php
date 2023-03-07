@@ -31,6 +31,11 @@ class Consumer extends Authenticatable implements HasMedia
         return $this->hasMany(Watch::class);
     }
 
+    public function assets()
+    {
+        return $this->hasMany(Asset::class);
+    }
+
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('avatar')->useFallbackUrl('https://cdn-icons-png.flaticon.com/512/3177/3177440.png')->singleFile();

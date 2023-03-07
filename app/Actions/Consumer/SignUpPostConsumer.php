@@ -8,16 +8,18 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class UpdatePasswordConsumer
+class SignUpPostConsumer
 {
     use AsAction;
 
     public function handle(Request $request)
     {
-        /** @var Consumer $consumer */
-        $consumer = Auth::guard('consumer')->user();
-        $consumer->password = Hash::make($request->password);
-        
-        return $consumer;
+        $input = $request->only('name', 'email', 'password');
+        $input['password'] = Hash::make($input['password']);
+
+        $consumer = Consumer::create($input);
+        Auth::login($consumer);
+
+        return redirect('/consumers/home');
     }
 }

@@ -15,11 +15,11 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->text('content')->nullable();
             $table->boolean('active')->default(true);
-            $table->string('design');
+            $table->string('design')->nullable();
             $table->unsignedInteger('seconds')->default(10);
-            $table->string('currency')->default('VND');
-            $table->float('money')->default(0);
-            $table->float('voucher')->default(0);
+            $table->string('currency')->nullable();
+            $table->float('money')->nullable();
+            $table->float('voucher')->nullable();
             $table->timestamps();
             $table->softDeletes();
 

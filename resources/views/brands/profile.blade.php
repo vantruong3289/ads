@@ -4,10 +4,10 @@
 @endsection
 @section('content')
     @include('header')
-    <div class="fixed inset-0 z-0">
+    <div class="fixed inset-0 z-0 hidden">
         <img src="{{ $brand->getFirstMediaUrl('cover') }}" class="object-cover w-full h-full">
     </div>
-    <div class="relative z-1 max-w-7xl mx-auto bg-white pb-8">
+    <div class="relative z-1 max-w-7xl mx-auto bg-white pb-8 my-10">
         <!-- profile -->
         <div class="relative">
             <div class="overflow-hidden">
@@ -64,7 +64,7 @@
                 </ul>
             </div>
         </div>
-        <section class="px-2 md:px-4 pb-4">
+        <section class="px-2 md:px-5 mt-10">
             <div class="grid gap-2 md:gap-4 grid-cols-1 md:grid-cols-2">
                 @foreach ($brand->adss as $ads)
                     @include('ads.designs.banner')
