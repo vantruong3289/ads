@@ -1,10 +1,11 @@
 <?php
 
 use App\Actions\Ads\WelcomeAction;
-use App\Actions\Advertiser\CreateAdvertiser;
-use App\Actions\Advertiser\UpdateAdvertiser;
-use App\Actions\Advertiser\UpdatePasswordAdvertiser;
-use App\Actions\Brand\Profile;
+use App\Actions\Advertiser\SignInFormAdvertiser;
+use App\Actions\Advertiser\SignInPostAdvertiser;
+use App\Actions\Advertiser\SignUpFormAdvertiser;
+use App\Actions\Advertiser\SignUpPostAdvertiser;
+use App\Actions\Brand\HomeBrand;
 use App\Actions\Consumer\AssetConsumer;
 use App\Actions\Consumer\HomeConsumer;
 use App\Actions\Consumer\SignInFormConsumer;
@@ -15,17 +16,17 @@ use App\Actions\Consumer\SignUpPostConsumer;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', WelcomeAction::class);
+Route::get('brands/{brand}', HomeBrand::class);
 
 Route::get('/consumers/sign-in', SignInFormConsumer::class)->middleware('guest:consumer');
 Route::post('/consumers/sign-in', SignInPostConsumer::class);
 Route::post('/consumers/sign-out', SignoutConsumer::class);
-Route::get('/consumers/home', HomeConsumer::class);
-Route::get('/consumers/sign-up', SignUpFormConsumer::class);
+Route::get('/consumers/home', HomeConsumer::class)->middleware('auth:consumer');
+Route::get('/consumers/sign-up', SignUpFormConsumer::class)->middleware('guest:consumer');
 Route::post('/consumers/sign-up', SignUpPostConsumer::class);
-Route::get('/consumers/assets', AssetConsumer::class);
+Route::get('/consumers/assets', AssetConsumer::class)->middleware('auth:consumer');
 
-Route::post('/advertiser-create', CreateAdvertiser::class);
-Route::put('/advertiser-update', UpdateAdvertiser::class);
-Route::put('/advertiser-update-password', UpdatePasswordAdvertiser::class);
-
-Route::get('brands/{brand}', Profile::class)->name('profile');
+Route::get('/advertisers/sign-in', SignInFormAdvertiser::class)->middleware('guest:advertiser');
+Route::post('/advertisers/sign-in', SignInPostAdvertiser::class);
+Route::get('/advertisers/sign-up', SignUpFormAdvertiser::class)->middleware('guest:advertiser');
+Route::post('/advertisers/sign-up', SignUpPostAdvertiser::class);

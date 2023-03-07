@@ -4,12 +4,12 @@ namespace App\Actions\Advertiser;
 
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class FormRegisterAdvertiser
+class SignUpFormAdvertiser
 {
     use AsAction;
 
     public function handle()
     {
-        return view('advertiser.create');
+        return view('advertiser.sign-up');
     }
 }

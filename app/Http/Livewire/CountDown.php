@@ -16,7 +16,7 @@ class CountDown extends Component
 
     public function watch()
     {
-        ClickAds::run($this->ads);
+        ClickAds::dispatch($this->ads);
     }
 
     public function render()

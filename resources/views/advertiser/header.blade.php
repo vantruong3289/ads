@@ -3,17 +3,17 @@
         <div class="flex items-center justify-between">
             <div class="space-x-5 flex items-center">
                 <a href="/" class="font-semibold">Ads</a>
-                <a href="/consumers/assets" class="px-2 py-4 text-blue-600">Asset</a>
+                <a href="/advertisers/bills" class="px-2 py-4 text-blue-600">Bill</a>
             </div>
             @auth
                 <div class="flex items-center space-x-3">
-                    <a href="/consumers/home">
+                    <a href="/advertisers/home">
                         <div class="flex space-x-3 items-center">
-                            <span>{{ auth('consumer')->user()->name }}</span>
+                            <span>{{ auth('advertiser')->user()->name }}</span>
                             <img class="h-8 w-8 rounded-full" src="{{ auth()->user()->getFirstMediaUrl('avatar') }}" alt="">
                         </div>
                     </a>
-                    <form action="/consumers/sign-out" method="post">
+                    <form action="/advertisers/sign-out" method="post">
                         @csrf
                         <button type="submit" class="border-l pl-3">
                             Sign out
@@ -22,10 +22,10 @@
                 </div>
             @else
                 <div class="flex items-center space-x-3">
-                    <a href="/consumers/sign-in">
+                    <a href="/advertisers/sign-in">
                         Sign In
                     </a>
-                    <a href="/consumers/sign-up" class="border-l pl-3">
+                    <a href="/advertisers/sign-up" class="border-l pl-3">
                         Sign up
                     </a>
                 </div>

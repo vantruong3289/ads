@@ -12,6 +12,6 @@ class SignoutConsumer
     public function handle()
     {
         Auth::guard('consumer')->logout();
-        return redirect('consumers\signin');
+        return redirect('consumers\sign-in');
     }
 }
