@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Consumers;
+namespace App\Actions\Consumer;
 
 use App\Models\Consumer;
 use Auth;
@@ -17,7 +17,9 @@ class UpdateConsumer
         $input = $request->only('name', 'email');
         /** @var Consumer $consumer  */
         $consumer->update($input);
-
+        if ($request->hasFile('avatar')) {
+            $consumer->addMedia($request->file('avatar'))->toMediaCollection('avatar');
+        }
         return back();
     }
 }

@@ -3,7 +3,8 @@
         <div class="flex items-center justify-between">
             <div class="space-x-5 flex items-center">
                 <a href="/" class="font-semibold">Ads</a>
-                <a href="/advertisers/brands" class="px-2 py-4 text-blue-600">Brand</a>
+                <a href="/brands" class="px-2 py-4 text-blue-600">Brand</a>
+                <a href="/adss" class="px-2 py-4 text-blue-600">Ads</a>
                 <a href="/advertisers/bills" class="px-2 py-4">Bill</a>
             </div>
             @auth

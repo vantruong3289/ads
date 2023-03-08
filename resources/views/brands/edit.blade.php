@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="mt-5 md:col-span-2 md:mt-0">
-                    <form action="/brands/{{ $brand->id }}" method="POST">
+                    <form action="/brands/{{ $brand->id }}" method="POST" enctype="multipart/form-data">
                         @csrf @method('put')
                         <div class="shadow sm:overflow-hidden sm:rounded-md">
                             <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
@@ -81,7 +81,10 @@
                                         <span class="inline-block h-12 w-12 overflow-hidden rounded-full bg-gray-100">
                                             <img class="rounded-full" src="{{ $brand->getFirstMediaUrl('logo') }}" alt="">
                                         </span>
-                                        <button type="button" class="ml-5 rounded-md border border-gray-300 bg-white py-1.5 px-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50">Change</button>
+                                        <label for="logo" class="ml-5 rounded-md border border-gray-300 bg-white py-1.5 px-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50"">
+                                            <span>Change</span>
+                                            <input id="logo" name="logo" type="file" class="sr-only">
+                                        </label>
                                     </div>
                                 </div>
                             </div>

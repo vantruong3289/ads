@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Actions\Advertiser;
+namespace App\Actions\Brand;
 
 use Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class BrandAdvertiser
+class ListBrand
 {
     use AsAction;
 
@@ -14,6 +14,6 @@ class BrandAdvertiser
         $advertiser = Auth::guard('advertiser')->user();
         $brands = $advertiser->brands;
 
-        return view('advertisers.brand', compact('brands'));
+        return view('brands.list', compact('brands'));
     }
 }
