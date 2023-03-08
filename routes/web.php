@@ -1,13 +1,17 @@
 <?php
 
 use App\Actions\Ads\WelcomeAction;
+use App\Actions\Advertiser\BillAdvertiser;
+use App\Actions\Advertiser\BrandAdvertiser;
 use App\Actions\Advertiser\HomeAdvertiser;
 use App\Actions\Advertiser\SignInFormAdvertiser;
 use App\Actions\Advertiser\SignInPostAdvertiser;
 use App\Actions\Advertiser\SignoutAdvertiser;
 use App\Actions\Advertiser\SignUpFormAdvertiser;
 use App\Actions\Advertiser\SignUpPostAdvertiser;
+use App\Actions\Brand\EditFormBrand;
 use App\Actions\Brand\HomeBrand;
+use App\Actions\Consumers\UpdateConsumer;
 use App\Actions\Consumer\AssetConsumer;
 use App\Actions\Consumer\HomeConsumer;
 use App\Actions\Consumer\SignInFormConsumer;
@@ -18,12 +22,15 @@ use App\Actions\Consumer\SignUpPostConsumer;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', WelcomeAction::class);
-Route::get('brands/{brand}', HomeBrand::class);
+Route::get('/brands/{brand}', HomeBrand::class);
+Route::get('/brands/{brand}/edit', EditFormBrand::class);
+Route::put('/brands/{brand}', EditFormBrand::class);
 
 Route::get('/consumers/sign-in', SignInFormConsumer::class)->middleware('guest:consumer');
 Route::post('/consumers/sign-in', SignInPostConsumer::class);
 Route::get('/consumers/sign-up', SignUpFormConsumer::class)->middleware('guest:consumer');
 Route::post('/consumers/sign-up', SignUpPostConsumer::class);
+Route::put('/consumers/update', UpdateConsumer::class);
 Route::get('/consumers/home', HomeConsumer::class)->middleware('auth:consumer');
 Route::get('/consumers/assets', AssetConsumer::class)->middleware('auth:consumer');
 Route::post('/consumers/sign-out', SignoutConsumer::class);
@@ -33,4 +40,6 @@ Route::post('/advertisers/sign-in', SignInPostAdvertiser::class);
 Route::get('/advertisers/sign-up', SignUpFormAdvertiser::class)->middleware('guest:advertiser');
 Route::post('/advertisers/sign-up', SignUpPostAdvertiser::class);
 Route::get('/advertisers/home', HomeAdvertiser::class)->middleware('auth:advertiser');
-Route::post('/consumers/sign-out', SignoutAdvertiser::class);
+Route::get('/advertisers/bills', BillAdvertiser::class)->middleware('auth:advertiser');
+Route::get('/advertisers/brands', BrandAdvertiser::class)->middleware('auth:advertiser');
+Route::post('/advertisers/sign-out', SignoutAdvertiser::class);

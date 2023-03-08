@@ -23,8 +23,8 @@ return new class extends Migration
             $table->foreignIdFor(Brand::class)->nullable()->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignIdFor(Ads::class)->nullable()->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('currency')->nullable();
-            $table->float('money')->nullable();
-            $table->float('voucher')->nullable();
+            $table->float('money', 16)->nullable();
+            $table->float('voucher', 16)->nullable();
             $table->unsignedTinyInteger('status')->default(WatchEnum::WAITING->value);
 
             $table->timestamps();

@@ -17,8 +17,11 @@ return new class extends Migration
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Advertiser::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->string('code')->nullable();
             $table->string('currency')->default('VND');
-            $table->float('money')->nullable();
+            $table->float('money', 16)->nullable();
+            $table->dateTime('time')->nullable();
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

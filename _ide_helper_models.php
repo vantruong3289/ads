@@ -63,6 +63,10 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Bill[] $bills
+ * @property-read int|null $bills_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Brand[] $brands
+ * @property-read int|null $brands_count
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
  * @property-read int|null $media_count
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
@@ -113,6 +117,35 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereVoucher($value)
  */
 	class Asset extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Bill
+ *
+ * @property int $id
+ * @property int $advertiser_id
+ * @property string|null $code
+ * @property string $currency
+ * @property float|null $money
+ * @property \Illuminate\Support\Carbon|null $time
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Advertiser $advertiser
+ * @method static \Database\Factories\BillFactory factory(...$parameters)
+ * @method static \Illuminate\Database\Eloquent\Builder|Bill newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Bill newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Bill query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Bill whereAdvertiserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Bill whereCode($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Bill whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Bill whereCurrency($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Bill whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Bill whereMoney($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Bill whereTime($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Bill whereUpdatedAt($value)
+ */
+	class Bill extends \Eloquent {}
 }
 
 namespace App\Models{
@@ -168,6 +201,8 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Asset[] $assets
+ * @property-read int|null $assets_count
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
  * @property-read int|null $media_count
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
@@ -239,6 +274,7 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Ads|null $ads
+ * @property-read \App\Models\Brand|null $brand
  * @property-read \App\Models\Consumer|null $consumer
  * @method static \Database\Factories\WatchFactory factory(...$parameters)
  * @method static \Illuminate\Database\Eloquent\Builder|Watch newModelQuery()

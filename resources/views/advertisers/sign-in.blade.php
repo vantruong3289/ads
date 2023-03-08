@@ -31,6 +31,10 @@
                     </form>
                 </div>
             </div>
+            <p class="text-sm font-light text-gray-500 dark:text-gray-400 mt-5">
+                Switch to
+                <a href="/consumers/sign-in" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Consumer</a>
+            </p>
         </div>
     </section>
 @endsection

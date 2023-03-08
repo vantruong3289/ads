@@ -5,15 +5,15 @@ namespace App\Actions\Advertiser;
 use Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class BillAdvertiser
+class BrandAdvertiser
 {
     use AsAction;
 
     public function handle()
     {
         $advertiser = Auth::guard('advertiser')->user();
-        $bills = $advertiser->bills;
+        $brands = $advertiser->brands;
 
-        return view('advertisers.bill', compact('bills'));
+        return view('advertisers.brand', compact('brands'));
     }
 }

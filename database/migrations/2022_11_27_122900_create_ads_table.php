@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('design')->nullable();
             $table->unsignedInteger('seconds')->default(10);
             $table->string('currency')->nullable();
-            $table->float('money')->nullable();
-            $table->float('voucher')->nullable();
+            $table->float('money', 16)->nullable();
+            $table->float('voucher', 16)->nullable();
             $table->timestamps();
             $table->softDeletes();
 

@@ -9,7 +9,7 @@
             @auth
                 <livewire:count-down :ads="$ads" />
             @else
-                <a href="/consumers/signin">Sign In</a>
+                <a href="/consumers/sign-in">Sign In</a>
             @endauth
             @if ($next->nextPageUrl())
                 <a href="{{ $next->nextPageUrl() }}" class="text-center">
