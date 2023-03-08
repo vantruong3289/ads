@@ -1,5 +1,7 @@
 <?php
 
+use App\Actions\Ads\EditFormAds;
+use App\Actions\Ads\EditPostAds;
 use App\Actions\Ads\ListAds;
 use App\Actions\Ads\WelcomeAction;
 use App\Actions\Advertiser\BillAdvertiser;
@@ -32,6 +34,8 @@ Route::put('/brands/{brand}', EditPostBrand::class)->middleware('auth:advertiser
 Route::get('/brands', ListBrand::class)->middleware('auth:advertiser');
 
 Route::get('/adss', ListAds::class)->middleware('auth:advertiser');
+Route::get('/adss/{ads}/edit', EditFormAds::class)->middleware('auth:advertiser');
+Route::put('/adss/{ads}', EditPostAds::class)->middleware('auth:advertiser');
 
 Route::get('/consumers/sign-in', SignInFormConsumer::class)->middleware('guest:consumer');
 Route::post('/consumers/sign-in', SignInPostConsumer::class);
