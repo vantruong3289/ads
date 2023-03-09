@@ -1,5 +1,6 @@
 <?php
 
+use App\Actions\Ads\CreatePostAds;
 use App\Actions\Ads\EditFormAds;
 use App\Actions\Ads\EditPostAds;
 use App\Actions\Ads\ListAds;
@@ -13,6 +14,7 @@ use App\Actions\Advertiser\SignUpPostAdvertiser;
 use App\Actions\Advertiser\UpdateAdvertiser;
 use App\Actions\Bill\CreatePostBill;
 use App\Actions\Bill\ListBill;
+use App\Actions\Brand\CreatePostBrand;
 use App\Actions\Brand\EditFormBrand;
 use App\Actions\Brand\EditPostBrand;
 use App\Actions\Brand\HomeBrand;
@@ -33,10 +35,12 @@ Route::get('/brands/{brand}', HomeBrand::class);
 Route::get('/brands/{brand}/edit', EditFormBrand::class)->middleware('auth:advertiser');
 Route::put('/brands/{brand}', EditPostBrand::class)->middleware('auth:advertiser');
 Route::get('/brands', ListBrand::class)->middleware('auth:advertiser');
+Route::post('/brands', CreatePostBrand::class)->middleware('auth:advertiser');
 
 Route::get('/adss', ListAds::class)->middleware('auth:advertiser');
 Route::get('/adss/{ads}/edit', EditFormAds::class)->middleware('auth:advertiser');
 Route::put('/adss/{ads}', EditPostAds::class)->middleware('auth:advertiser');
+Route::post('/adss', CreatePostAds::class)->middleware('auth:advertiser');
 
 Route::get('/bills', ListBill::class)->middleware('auth:advertiser');
 Route::post('/bills', CreatePostBill::class)->middleware('auth:advertiser');

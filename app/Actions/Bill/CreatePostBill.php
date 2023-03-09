@@ -15,6 +15,11 @@ class CreatePostBill
     public function handle(Request $request)
     {
         $advertiser = Auth::guard('advertiser')->user();
+        $hasPending = Bill::whereAdvertiserId($advertiser->id)->whereStatus(Bill::PEDING)->exists();
+        if ($hasPending) {
+            return back();
+        }
+
         $input = $request->only('money', 'currency');
         $input['time'] = Carbon::now();
         $input['advertiser_id'] = $advertiser->id;

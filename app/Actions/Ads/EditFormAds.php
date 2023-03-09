@@ -3,6 +3,8 @@
 namespace App\Actions\Ads;
 
 use App\Models\Ads;
+use App\Models\Brand;
+use Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 
 class EditFormAds
@@ -11,6 +13,9 @@ class EditFormAds
 
     public function handle(Ads $ads)
     {
-        return view('ads.edit', compact('ads'));
+        $advertiser = Auth::guard('advertiser')->user();
+        $brands = Brand::whereAdvertiserId($advertiser->id)->get();
+
+        return view('ads.edit', compact('ads', 'brands'));
     }
 }

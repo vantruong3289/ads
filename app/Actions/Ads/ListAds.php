@@ -2,6 +2,7 @@
 
 namespace App\Actions\Ads;
 
+use App\Models\Brand;
 use Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 
@@ -13,7 +14,8 @@ class ListAds
     {
         $advertiser = Auth::guard('advertiser')->user();
         $adss = $advertiser->adss;
+        $brands = Brand::whereAdvertiserId($advertiser->id)->get();
 
-        return view('ads.list', compact('adss'));
+        return view('ads.list', compact('adss', 'brands'));
     }
 }

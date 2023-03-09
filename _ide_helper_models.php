@@ -17,7 +17,7 @@ namespace App\Models{
  * @property int $id
  * @property string|null $title
  * @property string|null $content
- * @property int $active
+ * @property bool $active
  * @property string $design
  * @property int $seconds
  * @property string $currency
@@ -63,6 +63,8 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Ads[] $adss
+ * @property-read int|null $adss_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Bill[] $bills
  * @property-read int|null $bills_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Brand[] $brands
@@ -129,6 +131,7 @@ namespace App\Models{
  * @property string $currency
  * @property float|null $money
  * @property \Illuminate\Support\Carbon|null $time
+ * @property mixed $status
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Advertiser $advertiser
@@ -142,6 +145,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Bill whereCurrency($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Bill whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Bill whereMoney($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Bill whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Bill whereTime($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Bill whereUpdatedAt($value)
  */

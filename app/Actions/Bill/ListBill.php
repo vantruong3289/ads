@@ -2,6 +2,7 @@
 
 namespace App\Actions\Bill;
 
+use App\Models\Bill;
 use Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 
@@ -13,7 +14,7 @@ class ListBill
     {
         $advertiser = Auth::guard('advertiser')->user();
         $bills = $advertiser->bills;
-
-        return view('bills.list', compact('bills'));
+        $hasPending = Bill::whereAdvertiserId($advertiser->id)->whereStatus(Bill::PEDING)->exists();
+        return view('bills.list', compact('bills', 'hasPending'));
     }
 }
