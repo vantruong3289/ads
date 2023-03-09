@@ -63,15 +63,14 @@
                                 <p class="mt-1 max-w-2xl text-sm text-gray-500">Personal details and application.</p>
                             </div>
                             <div class="border-t border-gray-200">
-                                <dl>
-                                    @foreach ($bills as $bill)
-                                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                            <dt class="text-sm font-medium text-gray-500">{{ $bill->time->format('Y-m-d H:i:s') }}</dt>
-                                            <dt class="mt-1 text-sm font-medium text-gray-500 sm:mt-0">{{ $bill->code }}</dt>
-                                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0">@money($bill->money, $bill->currency)</dd>
-                                        </div>
-                                    @endforeach
-                                </dl>
+                                @foreach ($bills as $bill)
+                                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-6">
+                                        <div class="text-sm font-medium text-gray-500">{{ $bill->time->format('Y-m-d H:i:s') }}</div>
+                                        <div class="mt-1 text-sm font-medium text-gray-500 sm:mt-0">{{ $bill->code }}</div>
+                                        <div class="mt-1 text-sm text-gray-900 sm:mt-0">@money($bill->money, $bill->currency)</div>
+                                        <div class="mt-1 text-sm text-gray-900 sm:mt-0">{{ $bill->status }}</div>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>

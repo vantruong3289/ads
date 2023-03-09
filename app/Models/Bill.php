@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use App\Casts\StatusBillCast;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Bill extends Model
 {
     use HasFactory;
+    const PEDING = 0;
+    const PAID = 1;
 
     protected $fillable = [
         'advertiser_id',
@@ -20,6 +23,7 @@ class Bill extends Model
 
     protected $casts = [
         'time' => 'datetime',
+        'status' => StatusBillCast::class,
     ];
 
     public function advertiser()
