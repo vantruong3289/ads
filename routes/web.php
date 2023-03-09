@@ -4,7 +4,6 @@ use App\Actions\Ads\EditFormAds;
 use App\Actions\Ads\EditPostAds;
 use App\Actions\Ads\ListAds;
 use App\Actions\Ads\WelcomeAction;
-use App\Actions\Advertiser\BillAdvertiser;
 use App\Actions\Advertiser\HomeAdvertiser;
 use App\Actions\Advertiser\SignInFormAdvertiser;
 use App\Actions\Advertiser\SignInPostAdvertiser;
@@ -12,6 +11,8 @@ use App\Actions\Advertiser\SignoutAdvertiser;
 use App\Actions\Advertiser\SignUpFormAdvertiser;
 use App\Actions\Advertiser\SignUpPostAdvertiser;
 use App\Actions\Advertiser\UpdateAdvertiser;
+use App\Actions\Bill\CreatePostBill;
+use App\Actions\Bill\ListBill;
 use App\Actions\Brand\EditFormBrand;
 use App\Actions\Brand\EditPostBrand;
 use App\Actions\Brand\HomeBrand;
@@ -37,6 +38,9 @@ Route::get('/adss', ListAds::class)->middleware('auth:advertiser');
 Route::get('/adss/{ads}/edit', EditFormAds::class)->middleware('auth:advertiser');
 Route::put('/adss/{ads}', EditPostAds::class)->middleware('auth:advertiser');
 
+Route::get('/bills', ListBill::class)->middleware('auth:advertiser');
+Route::post('/bills', CreatePostBill::class)->middleware('auth:advertiser');
+
 Route::get('/consumers/sign-in', SignInFormConsumer::class)->middleware('guest:consumer');
 Route::post('/consumers/sign-in', SignInPostConsumer::class);
 Route::get('/consumers/sign-up', SignUpFormConsumer::class)->middleware('guest:consumer');
@@ -52,5 +56,4 @@ Route::get('/advertisers/sign-up', SignUpFormAdvertiser::class)->middleware('gue
 Route::post('/advertisers/sign-up', SignUpPostAdvertiser::class);
 Route::put('/advertisers/update', UpdateAdvertiser::class);
 Route::get('/advertisers/home', HomeAdvertiser::class)->middleware('auth:advertiser');
-Route::get('/advertisers/bills', BillAdvertiser::class)->middleware('auth:advertiser');
 Route::post('/advertisers/sign-out', SignoutAdvertiser::class);

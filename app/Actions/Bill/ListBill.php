@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Actions\Advertiser;
+namespace App\Actions\Bill;
 
 use Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class BillAdvertiser
+class ListBill
 {
     use AsAction;
 
@@ -14,6 +14,6 @@ class BillAdvertiser
         $advertiser = Auth::guard('advertiser')->user();
         $bills = $advertiser->bills;
 
-        return view('advertisers.bill', compact('bills'));
+        return view('bills.list', compact('bills'));
     }
 }

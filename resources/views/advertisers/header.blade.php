@@ -5,7 +5,7 @@
                 <a href="/" class="font-semibold">Ads</a>
                 <a href="/brands" class="px-2 py-4">Brand</a>
                 <a href="/adss" class="px-2 py-4">Ads</a>
-                <a href="/advertisers/bills" class="px-2 py-4">Bill</a>
+                <a href="/bills" class="px-2 py-4">Bill</a>
             </div>
             @auth
                 <div class="flex items-center space-x-3">

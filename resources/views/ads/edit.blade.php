@@ -86,7 +86,6 @@
                             @csrf @method('put')
                             <div class="shadow sm:overflow-hidden sm:rounded-md">
                                 <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
-
                                     <div class="grid grid-cols-3 gap-6">
                                         <div class="col-span-3 sm:col-span-2">
                                             <label class="block text-sm font-medium leading-6 text-gray-900">Money</label>

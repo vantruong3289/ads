@@ -28,17 +28,17 @@ class Advertiser extends Authenticatable implements HasMedia
 
     public function brands()
     {
-        return $this->hasMany(Brand::class);
+        return $this->hasMany(Brand::class)->latest();
     }
 
     public function adss()
     {
-        return $this->hasManyThrough(Ads::class, Brand::class);
+        return $this->hasManyThrough(Ads::class, Brand::class)->latest();
     }
 
     public function bills()
     {
-        return $this->hasMany(Bill::class);
+        return $this->hasMany(Bill::class)->latest();
     }
 
     public function registerMediaCollections(): void
