@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Enums\SexEnum;
+use App\Casts\SexCast;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -23,7 +23,7 @@ class Advertiser extends Authenticatable implements HasMedia
     ];
 
     protected $casts = [
-        'sex' => SexEnum::class,
+        'sex' => SexCast::class,
     ];
 
     public function brands()

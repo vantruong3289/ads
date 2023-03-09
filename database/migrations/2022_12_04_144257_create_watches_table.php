@@ -1,6 +1,5 @@
 <?php
 
-use App\Enums\WatchEnum;
 use App\Models\Ads;
 use App\Models\Brand;
 use App\Models\Consumer;
@@ -25,7 +24,7 @@ return new class extends Migration
             $table->string('currency')->nullable();
             $table->float('money', 16)->nullable();
             $table->float('voucher', 16)->nullable();
-            $table->unsignedTinyInteger('status')->default(WatchEnum::WAITING->value);
+            $table->unsignedTinyInteger('status')->default(0);
 
             $table->timestamps();
         });

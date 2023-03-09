@@ -16,7 +16,7 @@ return new class extends Migration
             $table->text('content')->nullable();
             $table->boolean('active')->default(true);
             $table->string('design')->nullable();
-            $table->unsignedInteger('seconds')->default(10);
+            $table->unsignedInteger('seconds')->nullable();
             $table->string('currency')->nullable();
             $table->float('money', 16)->nullable();
             $table->float('voucher', 16)->nullable();
