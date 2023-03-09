@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Brand;
+use App\Models\Design;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,6 +13,7 @@ return new class extends Migration
         Schema::create('ads', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Brand::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignIdFor(Design::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('title')->nullable();
             $table->text('content')->nullable();
             $table->boolean('active')->default(true);

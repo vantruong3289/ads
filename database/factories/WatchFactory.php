@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Enums\WatchEnum;
 use App\Models\Ads;
 use App\Models\Brand;
 use App\Models\Consumer;
@@ -19,7 +18,7 @@ class WatchFactory extends Factory
             'ads_id' => Ads::inRandomOrder()->first()->id,
             'money' => $this->faker->numberBetween(1000, 10000),
             'voucher' => $this->faker->numberBetween(1, 10),
-            'status' => WatchEnum::WAITING,
+            'status' => 0,
         ];
     }
 }

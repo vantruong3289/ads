@@ -23,6 +23,7 @@ class Ads extends Model implements HasMedia
         'voucher',
 
         'brand_id',
+        'design_id',
     ];
 
     protected $casts = [
@@ -34,9 +35,14 @@ class Ads extends Model implements HasMedia
         return $this->belongsTo(Brand::class);
     }
 
+    public function design()
+    {
+        return $this->belongsTo(Design::class);
+    }
+
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('ads-mobile')->singleFile();
-        $this->addMediaCollection('ads-desktop')->singleFile();
+        $this->addMediaCollection('photo')->singleFile();
+        $this->addMediaCollection('video')->singleFile();
     }
 }

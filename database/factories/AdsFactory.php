@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Brand;
+use App\Models\Design;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AdsFactory extends Factory
@@ -17,7 +18,8 @@ class AdsFactory extends Factory
             'seconds' => $this->faker->numberBetween(10, 20),
             'money' => $this->faker->numberBetween(10, 20),
             'voucher' => $this->faker->numberBetween(0, 9) / 100,
-            'brand_id' => Brand::inRandomOrder()->first()->id,
+            'brand_id' => Brand::inRandomOrder()->first()?->id,
+            'brand_id' => Design::inRandomOrder()->first()?->id,
         ];
     }
 }
