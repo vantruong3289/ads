@@ -15,18 +15,19 @@ namespace App\Models{
  * App\Models\Ads
  *
  * @property int $id
+ * @property int|null $brand_id
+ * @property int|null $design_id
  * @property string|null $title
  * @property string|null $content
  * @property bool $active
- * @property string $design
- * @property int $seconds
- * @property string $currency
- * @property float $money
- * @property float $voucher
+ * @property \App\Models\Design|null $design
+ * @property int|null $seconds
+ * @property string|null $currency
+ * @property float|null $money
+ * @property float|null $voucher
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $deleted_at
- * @property int|null $brand_id
  * @property-read \App\Models\Brand|null $brand
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
  * @property-read int|null $media_count
@@ -41,6 +42,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereCurrency($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereDesign($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Ads whereDesignId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereMoney($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereSeconds($value)
@@ -59,7 +61,7 @@ namespace App\Models{
  * @property string $name
  * @property string $email
  * @property string $password
- * @property \App\Enums\SexEnum $sex
+ * @property mixed $sex
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $deleted_at
@@ -98,9 +100,9 @@ namespace App\Models{
  * @property int $id
  * @property int|null $consumer_id
  * @property int|null $brand_id
- * @property string $currency
- * @property float $money
- * @property float $voucher
+ * @property string|null $currency
+ * @property float|null $money
+ * @property float|null $voucher
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Brand|null $brand
@@ -157,6 +159,7 @@ namespace App\Models{
  * App\Models\Brand
  *
  * @property int $id
+ * @property int $advertiser_id
  * @property string $name
  * @property string|null $address
  * @property string|null $email
@@ -167,7 +170,6 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $deleted_at
- * @property int $advertiser_id
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Ads[] $adss
  * @property-read int|null $adss_count
  * @property-read \App\Models\Advertiser $advertiser
@@ -201,7 +203,7 @@ namespace App\Models{
  * @property string $name
  * @property string $email
  * @property string $password
- * @property \App\Enums\SexEnum $sex
+ * @property mixed $sex
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $deleted_at
@@ -229,6 +231,27 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Consumer whereUpdatedAt($value)
  */
 	class Consumer extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Design
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $code
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Design newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Design newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Design query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Design whereCode($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Design whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Design whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Design whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Design whereUpdatedAt($value)
+ */
+	class Design extends \Eloquent {}
 }
 
 namespace App\Models{
@@ -271,10 +294,10 @@ namespace App\Models{
  * @property int|null $consumer_id
  * @property int|null $brand_id
  * @property int|null $ads_id
- * @property string $currency
- * @property float $money
- * @property float $voucher
- * @property int $status
+ * @property string|null $currency
+ * @property float|null $money
+ * @property float|null $voucher
+ * @property mixed $status
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Ads|null $ads

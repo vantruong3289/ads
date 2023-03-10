@@ -2,10 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\WatchResource\Pages;
-use App\Filament\Resources\WatchResource\RelationManagers;
-use App\Models\Watch;
-use Auth;
+use App\Filament\Resources\AssetResource\Pages;
+use App\Filament\Resources\AssetResource\RelationManagers;
+use App\Models\Asset;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -14,11 +13,11 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class WatchResource extends Resource
+class AssetResource extends Resource
 {
-    protected static ?string $model = Watch::class;
+    protected static ?string $model = Asset::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-gift';
+    protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form
     {
@@ -26,16 +25,10 @@ class WatchResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('consumer_id'),
                 Forms\Components\TextInput::make('brand_id'),
-                Forms\Components\TextInput::make('ads_id'),
                 Forms\Components\TextInput::make('currency')
-                    ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('money')
-                    ->required(),
-                Forms\Components\TextInput::make('voucher')
-                    ->required(),
-                Forms\Components\Toggle::make('status')
-                    ->required(),
+                Forms\Components\TextInput::make('money'),
+                Forms\Components\TextInput::make('voucher'),
             ]);
     }
 
@@ -43,16 +36,14 @@ class WatchResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('consumer.name'),
-                Tables\Columns\TextColumn::make('brand.name'),
-                Tables\Columns\TextColumn::make('ads.title'),
+                Tables\Columns\TextColumn::make('consumer_id'),
+                Tables\Columns\TextColumn::make('brand_id'),
                 Tables\Columns\TextColumn::make('currency'),
                 Tables\Columns\TextColumn::make('money'),
                 Tables\Columns\TextColumn::make('voucher'),
-                Tables\Columns\IconColumn::make('status')
-                    ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label('Time')
+                    ->dateTime(),
+                Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime(),
             ])
             ->filters([
@@ -76,9 +67,9 @@ class WatchResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListWatches::route('/'),
-            'create' => Pages\CreateWatch::route('/create'),
-            'edit' => Pages\EditWatch::route('/{record}/edit'),
+            'index' => Pages\ListAssets::route('/'),
+            'create' => Pages\CreateAsset::route('/create'),
+            'edit' => Pages\EditAsset::route('/{record}/edit'),
         ];
     }    
 }

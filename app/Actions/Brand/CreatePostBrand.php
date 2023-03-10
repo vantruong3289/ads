@@ -14,6 +14,11 @@ class CreatePostBrand
     public function handle(Request $request)
     {
         $advertiser = Auth::guard('advertiser')->user();
+        $hasNoAds = Brand::whereAdvertiserId($advertiser->id)->doesntHave('adss')->exists();
+        if ($hasNoAds) {
+            return back();
+        }
+
         $input = $request->only('name');
         $input['advertiser_id'] = $advertiser->id;
         $brand = Brand::create($input);

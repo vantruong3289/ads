@@ -17,31 +17,31 @@ class AdsPolicy
 
     public function view(Advertiser $advertiser, Ads $ads)
     {
-        return $advertiser->id == $ads->brand->advertiser_id;
+        return true;
     }
 
     public function create(Advertiser $advertiser)
     {
-        return true;
+        return false;
     }
 
     public function update(Advertiser $advertiser, Ads $ads)
     {
-        return $advertiser->id == $ads->brand->advertiser_id;
+        return false;
     }
 
     public function delete(Advertiser $advertiser, Ads $ads)
     {
-        return $advertiser->id == $ads->brand->advertiser_id;
+        return false;
     }
 
     public function restore(Advertiser $advertiser, Ads $ads)
     {
-        return $advertiser->id == $ads->brand->advertiser_id;
+        return false;
     }
 
     public function forceDelete(Advertiser $advertiser, Ads $ads)
     {
-        return $advertiser->id == $ads->brand->advertiser_id;
+        return false;
     }
 }

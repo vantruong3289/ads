@@ -2,10 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\WatchResource\Pages;
-use App\Filament\Resources\WatchResource\RelationManagers;
-use App\Models\Watch;
-use Auth;
+use App\Filament\Resources\BillResource\Pages;
+use App\Filament\Resources\BillResource\RelationManagers;
+use App\Models\Bill;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -14,27 +13,30 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class WatchResource extends Resource
+class BillResource extends Resource
 {
-    protected static ?string $model = Watch::class;
+    protected static ?string $model = Bill::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-gift';
+    protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('consumer_id'),
-                Forms\Components\TextInput::make('brand_id'),
-                Forms\Components\TextInput::make('ads_id'),
+                Forms\Components\TextInput::make('advertiser_id')
+                    ->required(),
+                Forms\Components\TextInput::make('code')
+                    ->maxLength(255),
                 Forms\Components\TextInput::make('currency')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('money')
-                    ->required(),
-                Forms\Components\TextInput::make('voucher')
-                    ->required(),
-                Forms\Components\Toggle::make('status')
+                Forms\Components\TextInput::make('money'),
+                Forms\Components\DateTimePicker::make('time'),
+                Forms\Components\Select::make('status')
+                ->options([
+                    Bill::PEDING => 'PEDING',
+                    Bill::PAID => 'PAID',
+                ])
                     ->required(),
             ]);
     }
@@ -43,16 +45,16 @@ class WatchResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('consumer.name'),
-                Tables\Columns\TextColumn::make('brand.name'),
-                Tables\Columns\TextColumn::make('ads.title'),
+                Tables\Columns\TextColumn::make('advertiser_id'),
+                Tables\Columns\TextColumn::make('code'),
                 Tables\Columns\TextColumn::make('currency'),
                 Tables\Columns\TextColumn::make('money'),
-                Tables\Columns\TextColumn::make('voucher'),
-                Tables\Columns\IconColumn::make('status')
-                    ->boolean(),
+                Tables\Columns\TextColumn::make('time')
+                    ->dateTime(),
+                Tables\Columns\TextColumn::make('status'),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label('Time')
+                    ->dateTime(),
+                Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime(),
             ])
             ->filters([
@@ -76,9 +78,9 @@ class WatchResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListWatches::route('/'),
-            'create' => Pages\CreateWatch::route('/create'),
-            'edit' => Pages\EditWatch::route('/{record}/edit'),
+            'index' => Pages\ListBills::route('/'),
+            'create' => Pages\CreateBill::route('/create'),
+            'edit' => Pages\EditBill::route('/{record}/edit'),
         ];
     }    
 }

@@ -92,9 +92,5 @@ class AdvertiserResource extends Resource
             'edit' => Pages\EditAdvertiser::route('/{record}/edit'),
         ];
     }   
-    
-    public static function getEloquentQuery(): Builder
-    {
-        return parent::getEloquentQuery()->where('id', Auth::guard('advertiser')->id());
-    }
+
 }

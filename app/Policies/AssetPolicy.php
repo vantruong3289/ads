@@ -13,13 +13,13 @@ class AssetPolicy
     
     public function viewAny(Advertiser $user)
     {
-        //
+        return true;
     }
 
     
     public function view(Advertiser $user, Asset $asset)
     {
-        //
+        return true;
     }
 
     

@@ -17,36 +17,36 @@ class AdvertiserPolicy
     
     public function view(Advertiser $user, Advertiser $advertiser)
     {
-        return $user->id == $advertiser->id;
+        return true;
     }
 
     
     public function create(Advertiser $user)
     {
-        return true;
+        return false;
     }
 
     
     public function update(Advertiser $user, Advertiser $advertiser)
     {
-        return $user->id == $advertiser->id;
+        return false;
     }
 
     
     public function delete(Advertiser $user, Advertiser $advertiser)
     {
-        return $user->id == $advertiser->id;
+        return false;
     }
 
     
     public function restore(Advertiser $user, Advertiser $advertiser)
     {
-        return $user->id == $advertiser->id;
+        return false;
     }
 
     
     public function forceDelete(Advertiser $user, Advertiser $advertiser)
     {
-        return $user->id == $advertiser->id;
+        return false;
     }
 }

@@ -107,9 +107,4 @@ class BrandResource extends Resource
             'edit' => Pages\EditBrand::route('/{record}/edit'),
         ];
     }    
-
-    public static function getEloquentQuery(): Builder
-    {
-        return parent::getEloquentQuery()->where('advertiser_id', Auth::guard('advertiser')->id());
-    }
 }
