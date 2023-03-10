@@ -31,7 +31,7 @@ class Brand extends Model implements HasMedia
 
     public function adss()
     {
-        return $this->hasMany(Ads::class)->latest('design');
+        return $this->hasMany(Ads::class);
     }
 
     public function registerMediaCollections(): void

@@ -23,7 +23,7 @@ class ClickAds
         $attributes = ['consumer_id' => $consumer->id, 'brand_id' => $ads->brand_id, 'currency' => $ads->currency];
         $asset = Asset::firstOrCreate($attributes);
 
-        $bill = Bill::whereAdvertiserId($ads->advertiser_id)
+        $bill = Bill::whereAdvertiserId($ads->brand->advertiser_id)
             ->whereCurrency($ads->currency)
             ->where('money', '>=', $ads->money)
             ->first();

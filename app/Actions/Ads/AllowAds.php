@@ -14,12 +14,9 @@ class AllowAds
     public function handle(Bill $bill)
     {
         $advertiser = $bill->advertiser;
-        Ads::whereAdvertiserId($advertiser->id)->whereCurrency($bill->currency)
+        Ads::whereIn('brand_id', $advertiser->brands->pluck('id'))
+            ->whereCurrency($bill->currency)
             ->where('money', '<=', $bill->money)
-            ->update(['allow', true]);
-
-        Ads::whereAdvertiserId($advertiser->id)->whereCurrency($bill->currency)
-            ->where('money', '>', $bill->money)
-            ->update(['allow', false]);
+            ->update(['allow' => true]);
     }
 }

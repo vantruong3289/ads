@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Actions\Ads\AllowAds;
 use App\Casts\StatusBillCast;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -29,5 +30,14 @@ class Bill extends Model
     public function advertiser()
     {
         return $this->belongsTo(Advertiser::class);
+    }
+
+    protected static function booted(): void
+    {
+        static::updated(function (Bill $bill) {
+            if ($bill->status == 'PAID') {
+                AllowAds::dispatch($bill);
+            }
+        });
     }
 }
