@@ -17,7 +17,7 @@ class AdsFactory extends Factory
             'currency' => 'VND',
             'seconds' => $this->faker->numberBetween(10, 20),
             'money' => $this->faker->numberBetween(10, 20),
-            'voucher' => $this->faker->numberBetween(0, 9) / 100,
+            // 'voucher' => $this->faker->numberBetween(0, 9) / 100,
             'brand_id' => Brand::inRandomOrder()->first()?->id,
             'design_id' => Design::inRandomOrder()->first()?->id,
         ];

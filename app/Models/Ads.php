@@ -19,7 +19,7 @@ class Ads extends Model implements HasMedia
         'seconds',
         'currency',
         'money',
-        'voucher',
+        // 'voucher',
         'allow',
 
         'brand_id',
