@@ -11,7 +11,11 @@ class WelcomeAction
 
     public function handle()
     {
-        $next = Ads::orderBy('money')->orderBy('voucher')->paginate(1);
+        $next = Ads::orderBy('money')
+            ->where('active', true)
+            ->where('allow', true)
+            ->orderBy('voucher')
+            ->paginate(1);
         $ads = $next->first();
 
         return view('ads.welcome', compact('ads', 'next'));

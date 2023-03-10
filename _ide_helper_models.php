@@ -16,19 +16,22 @@ namespace App\Models{
  *
  * @property int $id
  * @property int|null $brand_id
+ * @property int|null $advertiser_id
  * @property int|null $design_id
  * @property string|null $title
  * @property string|null $content
  * @property bool $active
- * @property \App\Models\Design|null $design
  * @property int|null $seconds
  * @property string|null $currency
  * @property float|null $money
  * @property float|null $voucher
+ * @property bool $allow
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $deleted_at
+ * @property-read \App\Models\Advertiser|null $advertiser
  * @property-read \App\Models\Brand|null $brand
+ * @property-read \App\Models\Design|null $design
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
  * @property-read int|null $media_count
  * @method static \Database\Factories\AdsFactory factory(...$parameters)
@@ -36,12 +39,13 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Ads newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Ads query()
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Ads whereAdvertiserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Ads whereAllow($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereBrandId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereContent($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereCurrency($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Ads whereDesign($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereDesignId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereMoney($value)

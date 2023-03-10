@@ -16,23 +16,30 @@ class Ads extends Model implements HasMedia
         'title',
         'content',
         'active',
-        'design',
         'seconds',
         'currency',
         'money',
         'voucher',
+        'allow',
 
+        'advertiser_id',
         'brand_id',
         'design_id',
     ];
 
     protected $casts = [
         'active' => 'boolean',
+        'allow' => 'boolean',
     ];
 
     public function brand()
     {
         return $this->belongsTo(Brand::class);
+    }
+
+    public function advertiser()
+    {
+        return $this->belongsTo(Advertiser::class);
     }
 
     public function design()

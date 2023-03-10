@@ -2,6 +2,7 @@
 
 namespace App\Actions\Bill;
 
+use App\Actions\Ads\AllowAds;
 use App\Models\Bill;
 use Auth;
 use Carbon\Carbon;
@@ -26,6 +27,8 @@ class CreatePostBill
         $input['code'] = date('Ymd') . '-' . sprintf("%'.05d", Bill::count() + 1);
 
         $bill = Bill::create($input);
+
+        AllowAds::dispatch($bill);
 
         return back();
     }
