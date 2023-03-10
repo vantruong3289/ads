@@ -22,7 +22,6 @@ class Ads extends Model implements HasMedia
         'voucher',
         'allow',
 
-        'advertiser_id',
         'brand_id',
         'design_id',
     ];
@@ -35,11 +34,6 @@ class Ads extends Model implements HasMedia
     public function brand()
     {
         return $this->belongsTo(Brand::class);
-    }
-
-    public function advertiser()
-    {
-        return $this->belongsTo(Advertiser::class);
     }
 
     public function design()

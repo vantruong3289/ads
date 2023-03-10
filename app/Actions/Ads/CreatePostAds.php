@@ -14,7 +14,6 @@ class CreatePostAds
     public function handle(Request $request)
     {
         $input = $request->only('title', 'brand_id');
-        $input['advertiser_id'] = Auth::guard('advertiser')->user()->id;
         $ads = Ads::create($input);
 
         return redirect("adss/{$ads->id}/edit");
