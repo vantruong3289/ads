@@ -17,6 +17,12 @@ class EditPostBrand
         if ($request->hasFile('logo')) {
             $brand->addMedia($request->file('logo'))->toMediaCollection('logo');
         }
+        if ($request->hasFile('banner')) {
+            $brand->addMedia($request->file('banner'))->toMediaCollection('banner');
+        }
+        if ($request->hasFile('cover')) {
+            $brand->addMedia($request->file('cover'))->toMediaCollection('cover');
+        }
         return back();
     }
 }

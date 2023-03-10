@@ -14,6 +14,12 @@ class EditPostAds
     {
         $input = $request->input();
         $ads->update($input);
+        if ($request->hasFile('photo')) {
+            $ads->addMedia($request->file('photo'))->toMediaCollection('photo');
+        }
+        if ($request->hasFile('video')) {
+            $ads->addMedia($request->file('video'))->toMediaCollection('video');
+        }
 
         return back();
     }

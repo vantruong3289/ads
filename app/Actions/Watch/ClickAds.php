@@ -2,7 +2,6 @@
 
 namespace App\Actions\Watch;
 
-use App\Enums\WatchEnum;
 use App\Models\Ads;
 use App\Models\Asset;
 use App\Models\Watch;
@@ -24,7 +23,7 @@ class ClickAds
                 'currency' => $ads->currency,
                 'money' => $ads->money,
                 'voucher' => $ads->voucher,
-                'status' => WatchEnum::WAITING,
+                'status' => Watch::WAITING,
             ]);
 
             $attributes = ['consumer_id' => $consumer->id, 'brand_id' => $ads->brand_id, 'currency' => $ads->currency];
