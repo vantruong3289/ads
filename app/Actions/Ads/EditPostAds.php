@@ -20,7 +20,7 @@ class EditPostAds
         if ($request->hasFile('video')) {
             $ads->addMedia($request->file('video'))->toMediaCollection('video');
         }
-        AllowAds::dispatch();
+        AllowAds::dispatch($ads->brand->advertiser);
 
         return back();
     }

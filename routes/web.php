@@ -1,5 +1,7 @@
 <?php
 
+use App\Actions\Admin\Bill\EditFormBillAdmin;
+use App\Actions\Admin\Bill\EditPostBillAdmin;
 use App\Actions\Admin\Bill\ListBillAdmin;
 use App\Actions\Admin\HomeAdmin;
 use App\Actions\Admin\SignInFormAdmin;
@@ -80,4 +82,5 @@ Route::get('/admins/home', HomeAdmin::class)->middleware('auth:admin');
 Route::put('/admins/password', UpdatePasswordAdmin::class);
 Route::post('/admins/sign-out', SignoutAdmin::class);
 Route::get('/admins/bills', ListBillAdmin::class);
-Route::get('/admins/bills/{bill}/edit', ListBillAdmin::class);
+Route::get('/admins/bills/{bill}/edit', EditFormBillAdmin::class);
+Route::put('/admins/bills/{bill}', EditPostBillAdmin::class);

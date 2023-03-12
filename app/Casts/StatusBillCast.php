@@ -20,12 +20,9 @@ class StatusBillCast implements CastsAttributes
         switch ($value) {
             case 0:
                 return 'PENDING';
-                break;
             case 1:
                 return 'PAID';
-                break;
         }
-        return $value;
     }
 
     /**
@@ -39,6 +36,11 @@ class StatusBillCast implements CastsAttributes
      */
     public function set($model, string $key, $value, array $attributes)
     {
-        return $value;
+        switch ($value) {
+            case 'PENDING':
+                return 0;
+            case 'PAID':
+                return 1;
+        }
     }
 }
