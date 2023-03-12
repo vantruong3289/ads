@@ -27,7 +27,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="grid grid-cols-3 gap-6">
+                    <div class="grid grid-cols-3 gap-6 sr-only">
                         <div class="col-span-3 sm:col-span-2">
                             <label class="block text-sm font-medium leading-6 text-gray-900">Voucher</label>
                             <div class="mt-2">

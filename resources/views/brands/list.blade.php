@@ -58,13 +58,15 @@
                             <div class="border-t border-gray-200">
                                 @foreach ($brands as $brand)
                                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                        <div class="text-sm font-medium text-gray-500">
+                                        <div class="font-medium">
                                             {{ $brand->name }}
                                         </div>
-                                        <div class="mt-1 text-sm font-medium text-gray-500 sm:mt-0">
-                                            {{ $brand->phone }}
+                                        <div class="mt-1 text-sm font-medium text-gray-500 sm:mt-0 space-y-2">
+                                            <p>{{ $brand->email }}</p>
+                                            <p>{{ $brand->phone }}</p>
+                                            <address>{{ $brand->address }}</address>
                                         </div>
-                                        <div class="mt-1 text-sm text-blue-500 sm:mt-0">
+                                        <div class="mt-1 text-sm text-blue-500 sm:mt-0 text-right">
                                             <a href="/brands/{{ $brand->id }}/edit">Edit</a>
                                         </div>
                                     </div>

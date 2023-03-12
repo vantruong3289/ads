@@ -35,9 +35,7 @@ class Bill extends Model
     protected static function booted(): void
     {
         static::updated(function (Bill $bill) {
-            if ($bill->status == 'PAID') {
-                AllowAds::dispatch($bill);
-            }
+            AllowAds::dispatch();
         });
     }
 }

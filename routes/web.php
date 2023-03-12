@@ -12,6 +12,7 @@ use App\Actions\Advertiser\SignoutAdvertiser;
 use App\Actions\Advertiser\SignUpFormAdvertiser;
 use App\Actions\Advertiser\SignUpPostAdvertiser;
 use App\Actions\Advertiser\UpdateAdvertiser;
+use App\Actions\Advertiser\UpdatePasswordAdvertiser;
 use App\Actions\Bill\CreatePostBill;
 use App\Actions\Bill\ListBill;
 use App\Actions\Brand\CreatePostBrand;
@@ -27,6 +28,7 @@ use App\Actions\Consumer\SignoutConsumer;
 use App\Actions\Consumer\SignUpFormConsumer;
 use App\Actions\Consumer\SignUpPostConsumer;
 use App\Actions\Consumer\UpdateConsumer;
+use App\Actions\Consumer\UpdatePasswordConsumer;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', WelcomeAction::class);
@@ -52,6 +54,7 @@ Route::post('/consumers/sign-up', SignUpPostConsumer::class);
 Route::put('/consumers/update', UpdateConsumer::class);
 Route::get('/consumers/home', HomeConsumer::class)->middleware('auth:consumer');
 Route::get('/consumers/assets', AssetConsumer::class)->middleware('auth:consumer');
+Route::put('/consumers/password', UpdatePasswordConsumer::class);
 Route::post('/consumers/sign-out', SignoutConsumer::class);
 
 Route::get('/advertisers/sign-in', SignInFormAdvertiser::class)->middleware('guest:advertiser');
@@ -60,4 +63,5 @@ Route::get('/advertisers/sign-up', SignUpFormAdvertiser::class)->middleware('gue
 Route::post('/advertisers/sign-up', SignUpPostAdvertiser::class);
 Route::put('/advertisers/update', UpdateAdvertiser::class);
 Route::get('/advertisers/home', HomeAdvertiser::class)->middleware('auth:advertiser');
+Route::put('/advertisers/password', UpdatePasswordAdvertiser::class);
 Route::post('/advertisers/sign-out', SignoutAdvertiser::class);

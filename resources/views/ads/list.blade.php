@@ -70,11 +70,19 @@
                                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                         <div class="text-sm font-medium text-gray-500">
                                             {{ $ads->title }}
+                                            <div class="flex mt-1 space-x-3 items-center">
+                                                <x-icons.eye />
+                                                <span>{{ $ads->watchs->count() }}</span>
+                                            </div>
+                                            <div class="flex mt-1 space-x-3 items-center">
+                                                <x-icons.gift />
+                                                <span>{{ $ads->watchs->sum('money') }} {{ $ads->currency }}</span>
+                                            </div>
                                         </div>
                                         <div class="mt-1 text-sm text-gray-500 sm:mt-0">
                                             {{ $ads->content }}
                                         </div>
-                                        <div class="mt-1 text-sm text-blue-500 sm:mt-0">
+                                        <div class="mt-1 text-sm text-blue-500 sm:mt-0 text-right">
                                             <a href="/adss/{{ $ads->id }}/edit">Edit</a>
                                         </div>
                                     </div>

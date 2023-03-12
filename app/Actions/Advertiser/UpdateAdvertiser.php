@@ -14,7 +14,7 @@ class UpdateAdvertiser
     public function handle(Request $request)
     {
         $advertiser = Auth::guard('advertiser')->user();
-        $input = $request->only('name', 'email');
+        $input = $request->only('name', 'email', 'sex');
         /** @var Advertiser $advertiser  */
         $advertiser->update($input);
         if ($request->hasFile('avatar')) {

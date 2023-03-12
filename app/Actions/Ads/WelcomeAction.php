@@ -18,6 +18,10 @@ class WelcomeAction
             ->paginate(1);
         $ads = $next->first();
 
-        return view('ads.welcome', compact('ads', 'next'));
+        if ($ads) {
+            return view('ads.welcome', compact('ads', 'next'));
+        }
+
+        return view('about');
     }
 }

@@ -41,6 +41,11 @@ class Ads extends Model implements HasMedia
         return $this->belongsTo(Design::class);
     }
 
+    public function watchs()
+    {
+        return $this->hasMany(Watch::class);
+    }
+
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('photo')->singleFile();

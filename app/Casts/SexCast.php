@@ -20,10 +20,8 @@ class SexCast implements CastsAttributes
         switch ($value) {
             case 0:
                 return 'MALE';
-                break;
             case 1:
                 return 'FEMALE';
-                break;
         }
         return $value;
     }
@@ -39,6 +37,11 @@ class SexCast implements CastsAttributes
      */
     public function set($model, string $key, $value, array $attributes)
     {
-        return $value;
+        switch ($value) {
+            case 'MALE':
+                return 0;
+            case 'FEMALE':
+                return 1;
+        }
     }
 }
