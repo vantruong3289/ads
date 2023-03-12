@@ -7,7 +7,7 @@ use Auth;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class UpdateConsumer
+class ConsumerUpdate
 {
     use AsAction;
 

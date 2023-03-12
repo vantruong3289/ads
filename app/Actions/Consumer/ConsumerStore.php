@@ -4,7 +4,7 @@ namespace App\Actions\Consumer;
 
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class CreateConsumer
+class ConsumerStore
 {
     use AsAction;
 

@@ -8,7 +8,7 @@ use Hash;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class SignUpPostAdvertiser
+class AdvertiserSignUpPost
 {
     use AsAction;
 

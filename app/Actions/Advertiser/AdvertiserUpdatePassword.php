@@ -8,7 +8,7 @@ use Hash;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class UpdatePasswordAdvertiser
+class AdvertiserUpdatePassword
 {
     use AsAction;
 

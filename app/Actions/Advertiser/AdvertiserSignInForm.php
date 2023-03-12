@@ -5,7 +5,7 @@ namespace App\Actions\Advertiser;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class SignInFormAdvertiser
+class AdvertiserSignInForm
 {
     use AsAction;
 

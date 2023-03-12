@@ -5,7 +5,7 @@ namespace App\Actions\Consumer;
 use Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class SignoutConsumer
+class ConsumerSignout
 {
     use AsAction;
 

@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Actions\Consumer;
+namespace App\Actions\Advertiser;
 
 use Auth;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class SignInPostConsumer
+class AdvertiserSignInPost
 {
     use AsAction;
 
     public function handle(Request $request)
     {
         $credentials = $request->only('email', 'password');
-        if (Auth::guard('consumer')->attempt($credentials)) {
-            return redirect('/consumers/home');
+        if (Auth::guard('advertiser')->attempt($credentials)) {
+            return redirect('/advertisers/home');
         }
 
         return back();

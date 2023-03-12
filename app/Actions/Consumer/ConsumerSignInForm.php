@@ -4,12 +4,12 @@ namespace App\Actions\Consumer;
 
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class EditPasswordConsumer
+class ConsumerSignInForm
 {
     use AsAction;
 
     public function handle()
     {
-        return view('consumer.password');
+        return view('consumers.sign-in');
     }
 }

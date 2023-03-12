@@ -5,7 +5,7 @@ namespace App\Actions\Advertiser;
 use Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class HomeAdvertiser
+class AdvertiserHome
 {
     use AsAction;
 

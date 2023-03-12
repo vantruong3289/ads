@@ -5,7 +5,7 @@ namespace App\Actions\Advertiser;
 use Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class SignoutAdvertiser
+class AdvertiserSignout
 {
     use AsAction;
 

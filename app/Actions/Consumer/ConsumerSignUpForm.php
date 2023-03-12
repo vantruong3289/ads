@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class SignUpFormConsumer
+class ConsumerSignUpForm
 {
     use AsAction;
 

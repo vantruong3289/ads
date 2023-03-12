@@ -2,16 +2,14 @@
 
 namespace App\Actions\Consumer;
 
-use Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class HomeConsumer
+class ConsumerEdit
 {
     use AsAction;
 
     public function handle()
     {
-        $consumer = Auth::guard('consumer')->user();
-        return view('consumers.home', compact('consumer'));
+        return view('consumer.edit');
     }
 }

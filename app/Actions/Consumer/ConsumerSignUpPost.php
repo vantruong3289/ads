@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class SignUpPostConsumer
+class ConsumerSignUpPost
 {
     use AsAction;
 
