@@ -8,7 +8,7 @@ return [
 
     'defaults' => [
         'guard' => 'consumer',
-        'passwords' => 'users',
+        'passwords' => 'consumers',
     ],
 
     'guards' => [
