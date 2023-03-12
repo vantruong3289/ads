@@ -3,10 +3,10 @@
         <div class="flex items-center justify-between">
             <div class="space-x-5 flex items-center">
                 <a href="/" class="font-semibold">Ads</a>
-                <a href="/brands" class="px-2 py-4">Brand</a>
-                <a href="/adss" class="px-2 py-4">Ads</a>
-                <a href="/bills" class="px-2 py-4">Bill</a>
-                <a href="/designs" class="px-2 py-4">Design</a>
+                <a href="/advertisers/brands" class="px-2 py-4">Brand</a>
+                <a href="/advertisers/ads" class="px-2 py-4">Ads</a>
+                <a href="/advertisers/bills" class="px-2 py-4">Bill</a>
+                <a href="/advertisers/designs" class="px-2 py-4">Design</a>
             </div>
             @auth('advertiser')
                 <div class="flex items-center space-x-3">
