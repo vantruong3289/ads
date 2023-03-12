@@ -1,8 +1,8 @@
 <?php
 
+use App\Models\Admin;
 use App\Models\Advertiser;
 use App\Models\Consumer;
-use App\Models\User;
 
 return [
 
@@ -12,9 +12,9 @@ return [
     ],
 
     'guards' => [
-        'web' => [
+        'admin' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'admins',
         ],
         'consumer' => [
             'driver' => 'session',
@@ -27,9 +27,9 @@ return [
     ],
 
     'providers' => [
-        'users' => [
+        'admins' => [
             'driver' => 'eloquent',
-            'model' => User::class,
+            'model' => Admin::class,
         ],
         'consumers' => [
             'driver' => 'eloquent',
@@ -42,14 +42,20 @@ return [
     ],
 
     'passwords' => [
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
         'consumers' => [
-            'provider' => 'users',
+            'provider' => 'consumers',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
         ],
         'advertisers' => [
-            'provider' => 'users',
+            'provider' => 'advertisers',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

@@ -13,24 +13,24 @@
                 </div>
             </div>
             <div class="mt-10 sm:mt-0">
-                @include('ads.forms.gift')
             </div>
+            @include('ads.forms.gift')
             <div class="hidden sm:block" aria-hidden="true">
                 <div class="py-5">
                     <div class="border-t border-gray-200"></div>
                 </div>
             </div>
             <div class="mt-10 sm:mt-0">
-                @include('ads.forms.photo')
             </div>
+            @include('ads.forms.photo')
             <div class="hidden sm:block" aria-hidden="true">
                 <div class="py-5">
                     <div class="border-t border-gray-200"></div>
                 </div>
             </div>
             <div class="mt-10 sm:mt-0">
-                @include('ads.forms.video')
             </div>
+            @include('ads.forms.video')
         </div>
     </div>
 @endsection
