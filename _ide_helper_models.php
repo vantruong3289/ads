@@ -12,11 +12,42 @@
 
 namespace App\Models{
 /**
+ * App\Models\Admin
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $email
+ * @property string $password
+ * @property mixed $sex
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Spatie\MediaLibrary\MediaCollections\Models\Media> $media
+ * @property-read int|null $media_count
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
+ * @property-read int|null $notifications_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Sanctum\PersonalAccessToken> $tokens
+ * @property-read int|null $tokens_count
+ * @method static \Database\Factories\AdminFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder|Admin newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Admin newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Admin query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Admin whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Admin whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Admin whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Admin whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Admin wherePassword($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Admin whereSex($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Admin whereUpdatedAt($value)
+ */
+	class Admin extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
+}
+
+namespace App\Models{
+/**
  * App\Models\Ads
  *
  * @property int $id
  * @property int|null $brand_id
- * @property int|null $advertiser_id
  * @property int|null $design_id
  * @property string|null $title
  * @property string|null $content
@@ -29,17 +60,17 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $deleted_at
- * @property-read \App\Models\Advertiser|null $advertiser
  * @property-read \App\Models\Brand|null $brand
  * @property-read \App\Models\Design|null $design
- * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
+ * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Spatie\MediaLibrary\MediaCollections\Models\Media> $media
  * @property-read int|null $media_count
- * @method static \Database\Factories\AdsFactory factory(...$parameters)
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Watch> $watchs
+ * @property-read int|null $watchs_count
+ * @method static \Database\Factories\AdsFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Ads newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Ads newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Ads query()
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereActive($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Ads whereAdvertiserId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereAllow($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereBrandId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereContent($value)
@@ -69,19 +100,19 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $deleted_at
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Ads[] $adss
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Ads> $adss
  * @property-read int|null $adss_count
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Bill[] $bills
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Bill> $bills
  * @property-read int|null $bills_count
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Brand[] $brands
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Brand> $brands
  * @property-read int|null $brands_count
- * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
+ * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Spatie\MediaLibrary\MediaCollections\Models\Media> $media
  * @property-read int|null $media_count
- * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
  * @property-read int|null $notifications_count
- * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Sanctum\PersonalAccessToken[] $tokens
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Sanctum\PersonalAccessToken> $tokens
  * @property-read int|null $tokens_count
- * @method static \Database\Factories\AdvertiserFactory factory(...$parameters)
+ * @method static \Database\Factories\AdvertiserFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Advertiser newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Advertiser newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Advertiser query()
@@ -111,7 +142,7 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Brand|null $brand
  * @property-read \App\Models\Consumer|null $consumer
- * @method static \Database\Factories\AssetFactory factory(...$parameters)
+ * @method static \Database\Factories\AssetFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Asset newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Asset newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Asset query()
@@ -141,7 +172,7 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Advertiser $advertiser
- * @method static \Database\Factories\BillFactory factory(...$parameters)
+ * @method static \Database\Factories\BillFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Bill newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Bill newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Bill query()
@@ -174,12 +205,12 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $deleted_at
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Ads[] $adss
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Ads> $adss
  * @property-read int|null $adss_count
  * @property-read \App\Models\Advertiser $advertiser
- * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
+ * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Spatie\MediaLibrary\MediaCollections\Models\Media> $media
  * @property-read int|null $media_count
- * @method static \Database\Factories\BrandFactory factory(...$parameters)
+ * @method static \Database\Factories\BrandFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Brand newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Brand newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Brand query()
@@ -211,17 +242,17 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $deleted_at
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Asset[] $assets
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Asset> $assets
  * @property-read int|null $assets_count
- * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
+ * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Spatie\MediaLibrary\MediaCollections\Models\Media> $media
  * @property-read int|null $media_count
- * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
  * @property-read int|null $notifications_count
- * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Sanctum\PersonalAccessToken[] $tokens
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Sanctum\PersonalAccessToken> $tokens
  * @property-read int|null $tokens_count
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Watch[] $watchs
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Watch> $watchs
  * @property-read int|null $watchs_count
- * @method static \Database\Factories\ConsumerFactory factory(...$parameters)
+ * @method static \Database\Factories\ConsumerFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Consumer newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Consumer newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Consumer query()
@@ -270,11 +301,11 @@ namespace App\Models{
  * @property string|null $remember_token
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
  * @property-read int|null $notifications_count
- * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Sanctum\PersonalAccessToken[] $tokens
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Sanctum\PersonalAccessToken> $tokens
  * @property-read int|null $tokens_count
- * @method static \Database\Factories\UserFactory factory(...$parameters)
+ * @method static \Database\Factories\UserFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|User newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|User query()
@@ -307,7 +338,7 @@ namespace App\Models{
  * @property-read \App\Models\Ads|null $ads
  * @property-read \App\Models\Brand|null $brand
  * @property-read \App\Models\Consumer|null $consumer
- * @method static \Database\Factories\WatchFactory factory(...$parameters)
+ * @method static \Database\Factories\WatchFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Watch newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Watch newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Watch query()

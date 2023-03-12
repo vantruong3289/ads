@@ -2,6 +2,8 @@ serve:
 	php artisan serve --port=9005
 ide:
 	php artisan ide-helper:models
+ide-action:
+	php artisan ide-helper:actions
 seed:
 	php artisan db:seed
 vite:
