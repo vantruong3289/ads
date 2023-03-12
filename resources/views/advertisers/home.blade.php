@@ -54,7 +54,7 @@
                                     <label class="block text-sm font-medium leading-6 text-gray-900">Photo</label>
                                     <div class="mt-2 flex items-center">
                                         <span class="inline-block h-12 w-12 overflow-hidden rounded-full bg-gray-100">
-                                            <img class="rounded-full" src="{{ auth()->user()->getFirstMediaUrl('avatar') }}" alt="">
+                                            <img class="rounded-full" src="{{ auth('advertiser')->user()->getFirstMediaUrl('avatar') }}" alt="">
                                         </span>
                                         <label for="avatar" class="ml-5 rounded-md border border-gray-300 bg-white py-1.5 px-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50"">
                                             <span>Change</span>

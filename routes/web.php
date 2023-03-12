@@ -1,5 +1,11 @@
 <?php
 
+use App\Actions\Admin\HomeAdmin;
+use App\Actions\Admin\SignInFormAdmin;
+use App\Actions\Admin\SignInPostAdmin;
+use App\Actions\Admin\SignoutAdmin;
+use App\Actions\Admin\UpdateAdmin;
+use App\Actions\Admin\UpdatePasswordAdmin;
 use App\Actions\Ads\CreatePostAds;
 use App\Actions\Ads\EditFormAds;
 use App\Actions\Ads\EditPostAds;
@@ -65,3 +71,11 @@ Route::put('/advertisers/update', UpdateAdvertiser::class);
 Route::get('/advertisers/home', HomeAdvertiser::class)->middleware('auth:advertiser');
 Route::put('/advertisers/password', UpdatePasswordAdvertiser::class);
 Route::post('/advertisers/sign-out', SignoutAdvertiser::class);
+
+
+Route::get('/admins/sign-in', SignInFormAdmin::class)->middleware('guest:admin');
+Route::post('/admins/sign-in', SignInPostAdmin::class);
+Route::put('/admins/update', UpdateAdmin::class);
+Route::get('/admins/home', HomeAdmin::class)->middleware('auth:admin');
+Route::put('/admins/password', UpdatePasswordAdmin::class);
+Route::post('/admins/sign-out', SignoutAdmin::class);

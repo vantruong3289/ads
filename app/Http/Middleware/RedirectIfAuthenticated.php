@@ -29,6 +29,9 @@ class RedirectIfAuthenticated
                 if( $guard == 'advertiser') {
                     return redirect(RouteServiceProvider::HOME_ADVERTISER);
                 }
+                if( $guard == 'admin') {
+                    return redirect(RouteServiceProvider::HOME_ADMIN);
+                }
                 return redirect(RouteServiceProvider::HOME);
             }
         }

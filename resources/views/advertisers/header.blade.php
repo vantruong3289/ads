@@ -6,13 +6,14 @@
                 <a href="/brands" class="px-2 py-4">Brand</a>
                 <a href="/adss" class="px-2 py-4">Ads</a>
                 <a href="/bills" class="px-2 py-4">Bill</a>
+                <a href="/designs" class="px-2 py-4">Design</a>
             </div>
             @auth
                 <div class="flex items-center space-x-3">
                     <a href="/advertisers/home">
                         <div class="flex space-x-3 items-center">
                             <span>{{ auth('advertiser')->user()->name }}</span>
-                            <img class="h-8 w-8 rounded-full" src="{{ auth()->user()->getFirstMediaUrl('avatar') }}" alt="">
+                            <img class="h-8 w-8 rounded-full" src="{{ auth('advertiser')->user()->getFirstMediaUrl('avatar') }}" alt="">
                         </div>
                     </a>
                     <form action="/advertisers/sign-out" method="post">

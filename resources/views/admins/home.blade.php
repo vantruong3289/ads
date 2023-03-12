@@ -3,7 +3,7 @@
     <title>Home</title>
 @endsection
 @section('content')
-    @include('consumers.header')
+    @include('admins.header')
     <div class="bg-gray-100 py-10">
         <div class="max-w-7xl mx-auto">
             <div class="md:grid md:grid-cols-3 md:gap-6">
@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="mt-5 md:col-span-2 md:mt-0">
-                    <form action="/consumers/update" method="POST" enctype="multipart/form-data">
+                    <form action="/admins/update" method="POST" enctype="multipart/form-data">
                         @csrf @method('put')
                         <div class="shadow sm:overflow-hidden sm:rounded-md">
                             <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
@@ -22,7 +22,7 @@
                                     <div class="col-span-3 sm:col-span-2">
                                         <label class="block text-sm font-medium leading-6 text-gray-900">Name</label>
                                         <div class="mt-2">
-                                            <input type="text" value="{{ $consumer->name }}" name="name" class="block w-full rounded border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="">
+                                            <input type="text" value="{{ $admin->name }}" name="name" class="block w-full rounded border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -31,7 +31,7 @@
                                     <div class="col-span-3 sm:col-span-2">
                                         <label class="block text-sm font-medium leading-6 text-gray-900">Email</label>
                                         <div class="mt-2">
-                                            <input type="email" value="{{ $consumer->email }}" name="email" class="block w-full rounded border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="">
+                                            <input type="email" value="{{ $admin->email }}" name="email" class="block w-full rounded border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -41,11 +41,11 @@
                                         <label class="block text-sm font-medium leading-6 text-gray-900">Sex</label>
                                         <div class="mt-2 space-x-4 flex">
                                             <div class="flex items-center">
-                                                <input id="MALE" value="MALE" name="sex" type="radio" {{ $consumer->sex == 'MALE' ? 'checked' : '' }} class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                <input id="MALE" value="MALE" name="sex" type="radio" {{ $admin->sex == 'MALE' ? 'checked' : '' }} class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                 <label for="MALE" class="ml-3 block text-sm font-medium leading-6 text-gray-900">Male</label>
                                             </div>
                                             <div class="flex items-center">
-                                                <input id="FEMALE" value="FEMALE" name="sex" type="radio" {{ $consumer->sex == 'FEMALE' ? 'checked' : '' }} class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                <input id="FEMALE" value="FEMALE" name="sex" type="radio" {{ $admin->sex == 'FEMALE' ? 'checked' : '' }} class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                 <label for="FEMALE" class="ml-3 block text-sm font-medium leading-6 text-gray-900">Female</label>
                                             </div>
                                         </div>
@@ -56,7 +56,7 @@
                                     <label class="block text-sm font-medium leading-6 text-gray-900">Photo</label>
                                     <div class="mt-2 flex items-center">
                                         <span class="inline-block h-12 w-12 overflow-hidden rounded-full bg-gray-100">
-                                            <img class="rounded-full" src="{{ auth('consumer')->user()->getFirstMediaUrl('avatar') }}" alt="">
+                                            <img class="rounded-full" src="{{ auth('admin')->user()->getFirstMediaUrl('avatar') }}" alt="">
                                         </span>
                                         <label for="avatar" class="ml-5 rounded-md border border-gray-300 bg-white py-1.5 px-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50"">
                                             <span>Change</span>
@@ -86,7 +86,7 @@
                     </div>
                 </div>
                 <div class="mt-5 md:col-span-2 md:mt-0">
-                    <form action="/consumers/password" method="POST" enctype="multipart/form-data">
+                    <form action="/admins/password" method="POST" enctype="multipart/form-data">
                         @csrf @method('put')
                         <div class="shadow sm:overflow-hidden sm:rounded-md">
                             <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
