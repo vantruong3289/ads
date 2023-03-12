@@ -14,7 +14,7 @@ class AdminFactory extends Factory
             'name' => $this->faker->name,
             'email' => "admin@ads.com",
             'password' => Hash::make('password'),
-            'sex' => 1,
+            'sex' => 'MALE',
         ];
     }
 }

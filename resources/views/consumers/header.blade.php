@@ -5,7 +5,7 @@
                 <a href="/" class="font-semibold">Ads</a>
                 <a href="/consumers/assets" class="px-2 py-4 text-blue-600">Asset</a>
             </div>
-            @auth
+            @auth('consumer')
                 <div class="flex items-center space-x-3">
                     <a href="/consumers/home">
                         <div class="flex space-x-3 items-center">

@@ -14,7 +14,7 @@ class AdvertiserFactory extends Factory
             'name' => $this->faker->name,
             'email' => 'advertiser@ads.com',
             'password' => Hash::make('password'),
-            'sex' => 1,
+            'sex' => 'MALE',
         ];
     }
 }

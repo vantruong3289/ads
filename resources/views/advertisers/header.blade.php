@@ -8,7 +8,7 @@
                 <a href="/bills" class="px-2 py-4">Bill</a>
                 <a href="/designs" class="px-2 py-4">Design</a>
             </div>
-            @auth
+            @auth('advertiser')
                 <div class="flex items-center space-x-3">
                     <a href="/advertisers/home">
                         <div class="flex space-x-3 items-center">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Actions\Admin\Bill\ListBillAdmin;
 use App\Actions\Admin\HomeAdmin;
 use App\Actions\Admin\SignInFormAdmin;
 use App\Actions\Admin\SignInPostAdmin;
@@ -72,10 +73,11 @@ Route::get('/advertisers/home', HomeAdvertiser::class)->middleware('auth:adverti
 Route::put('/advertisers/password', UpdatePasswordAdvertiser::class);
 Route::post('/advertisers/sign-out', SignoutAdvertiser::class);
 
-
 Route::get('/admins/sign-in', SignInFormAdmin::class)->middleware('guest:admin');
 Route::post('/admins/sign-in', SignInPostAdmin::class);
 Route::put('/admins/update', UpdateAdmin::class);
 Route::get('/admins/home', HomeAdmin::class)->middleware('auth:admin');
 Route::put('/admins/password', UpdatePasswordAdmin::class);
 Route::post('/admins/sign-out', SignoutAdmin::class);
+Route::get('/admins/bills', ListBillAdmin::class);
+Route::get('/admins/bills/{bill}/edit', ListBillAdmin::class);
