@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions;
+namespace App\Actions\Consumer\Ads;
 
 use App\Models\Ads;
 use Lorisleiva\Actions\Concerns\AsAction;

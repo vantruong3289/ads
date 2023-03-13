@@ -2,6 +2,7 @@
 
 namespace App\Actions\Admin\Bill;
 
+use App\Actions\System\SystemAllowAds;
 use App\Models\Bill;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
@@ -15,7 +16,7 @@ class AdminBillUpdate
         $bill->status = $request->status;
         $bill->save();
 
-        // AllowAds::dispatch($bill->advertiser);
+        SystemAllowAds::dispatch($bill->advertiser);
 
         return back();
     }

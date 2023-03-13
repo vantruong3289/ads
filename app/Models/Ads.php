@@ -48,7 +48,7 @@ class Ads extends Model implements HasMedia
 
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('photo')->singleFile();
+        $this->addMediaCollection('photos');
         $this->addMediaCollection('video')->singleFile();
     }
 }

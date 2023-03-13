@@ -2,6 +2,7 @@
 
 namespace App\Actions\Advertiser\Ads;
 
+use App\Actions\System\SystemAllowAds;
 use App\Models\Ads;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
@@ -20,7 +21,7 @@ class AdvertiserAdsUpdate
         if ($request->hasFile('video')) {
             $ads->addMedia($request->file('video'))->toMediaCollection('video');
         }
-        // AllowAds::dispatch($ads->brand->advertiser);
+        SystemAllowAds::dispatch($ads->brand->advertiser);
 
         return back();
     }

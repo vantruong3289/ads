@@ -13,9 +13,11 @@ class DatabaseSeeder extends Seeder
     {
         Schema::disableForeignKeyConstraints();
         $this->call([
+            AdminSeeder::class,
             ConsumerSeeder::class,
             AdvertiserSeeder::class,
             BrandSeeder::class,
+            DesignSeeder::class,
             AdsSeeder::class,
             WatchSeeder::class,
         ]);

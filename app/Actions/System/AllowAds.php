@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Actions\Ads;
+namespace App\Actions\System;
 
 use App\Models\Ads;
 use App\Models\Advertiser;
 use App\Models\Bill;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class AllowAds
+class SystemAllowAds
 {
     use AsAction;
 

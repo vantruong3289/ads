@@ -1,6 +1,6 @@
 <?php
 
-use App\Actions\ConsumerAdsShow;
+use App\Actions\Consumer\Ads\ConsumerAdsShow;
 use App\Actions\Consumer\Brand\ConsumerBrandShow;
 use Illuminate\Support\Facades\Route;
 

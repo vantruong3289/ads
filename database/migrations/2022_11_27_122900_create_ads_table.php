@@ -21,7 +21,7 @@ return new class extends Migration
             $table->unsignedInteger('seconds')->nullable();
             $table->string('currency')->nullable();
             $table->float('money', 16)->nullable();
-            $table->float('voucher', 16)->nullable();
+            // $table->float('voucher', 16)->nullable();
             $table->boolean('allow')->default(true);
             $table->timestamps();
             $table->softDeletes();
