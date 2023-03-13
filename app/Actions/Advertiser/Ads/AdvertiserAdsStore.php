@@ -13,7 +13,7 @@ class AdvertiserAdsStore
 
     public function handle(Request $request)
     {
-        $input = $request->only('title', 'brand_id');
+        $input = $request->only('name', 'brand_id');
         $ads = Ads::create($input);
 
         return redirect("adss/{$ads->id}/edit");

@@ -11,13 +11,11 @@ class AdsFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->jobTitle,
-            'content' => $this->faker->realText,
+            'name' => $this->faker->jobTitle,
             'active' => $this->faker->boolean,
             'currency' => 'VND',
             'seconds' => $this->faker->numberBetween(10, 20),
             'money' => $this->faker->numberBetween(10, 20),
-            // 'voucher' => $this->faker->numberBetween(0, 9) / 100,
             'brand_id' => Brand::inRandomOrder()->first()?->id,
             'design_id' => Design::inRandomOrder()->first()?->id,
         ];

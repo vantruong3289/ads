@@ -13,14 +13,13 @@ class Ads extends Model implements HasMedia
     use InteractsWithMedia;
 
     protected $fillable = [
-        'title',
-        'content',
+        'name',
         'active',
         'seconds',
         'currency',
         'money',
-        // 'voucher',
         'allow',
+        'data',
 
         'brand_id',
         'design_id',
@@ -29,6 +28,7 @@ class Ads extends Model implements HasMedia
     protected $casts = [
         'active' => 'boolean',
         'allow' => 'boolean',
+        'data' => 'json',
     ];
 
     public function brand()

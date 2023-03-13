@@ -20,9 +20,9 @@
                             <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
                                 <div class="grid grid-cols-3 gap-6">
                                     <div class="col-span-3 sm:col-span-2">
-                                        <label class="block text-sm font-medium leading-6 text-gray-900">Title</label>
+                                        <label class="block text-sm font-medium leading-6 text-gray-900">Name</label>
                                         <div class="mt-2">
-                                            <input type="text" name="title" class="block w-full rounded border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="">
+                                            <input type="text" name="name" class="block w-full rounded border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -69,18 +69,26 @@
                             @foreach ($adss as $ads)
                                 <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                     <div class="text-sm font-medium text-gray-500">
-                                        {{ $ads->title }}
+                                        {{ $ads->name }}
                                         <div class="flex mt-1 space-x-3 items-center">
                                             <x-icons.eye />
                                             <span>{{ $ads->watchs->count() }}</span>
                                         </div>
                                         <div class="flex mt-1 space-x-3 items-center">
-                                            <x-icons.gift />
+                                            <x-icons.globe />
                                             <span>{{ $ads->watchs->sum('money') }} {{ $ads->currency }}</span>
                                         </div>
                                     </div>
                                     <div class="mt-1 text-sm text-gray-500 sm:mt-0">
-                                        {{ $ads->content }}
+                                        {{ $ads->brand->name }}
+                                        <div class="flex mt-1 space-x-3 items-center">
+                                            <x-icons.clock />
+                                            <span>{{ $ads->seconds }} s</span>
+                                        </div>
+                                        <div class="flex mt-1 space-x-3 items-center">
+                                            <x-icons.gift />
+                                            <span>{{ $ads->money }} {{ $ads->currency }}</span>
+                                        </div>
                                     </div>
                                     <div class="mt-1 text-sm text-blue-500 sm:mt-0 text-right">
                                         <a href="/advertisers/ads/{{ $ads->id }}/edit">Edit</a>

@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('designs', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('code');
+            $table->string('name')->nullable();
+            $table->string('code')->nullable();
+            $table->boolean('active')->nullable()->default();
             $table->timestamps();
         });
     }

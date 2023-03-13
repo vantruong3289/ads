@@ -12,5 +12,10 @@ class Design extends Model
     protected $fillable = [
         'code',
         'name',
+        'active',
+    ];
+
+    protected $casts = [
+        'active' => 'boolean',
     ];
 }

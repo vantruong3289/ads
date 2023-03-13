@@ -20,17 +20,6 @@
                     <div class="border-t border-gray-200"></div>
                 </div>
             </div>
-            <div class="mt-10 sm:mt-0">
-            </div>
-            @include('advertisers.ads.forms.photo')
-            <div class="hidden sm:block" aria-hidden="true">
-                <div class="py-5">
-                    <div class="border-t border-gray-200"></div>
-                </div>
-            </div>
-            <div class="mt-10 sm:mt-0">
-            </div>
-            @include('advertisers.ads.forms.video')
         </div>
     </div>
 @endsection
