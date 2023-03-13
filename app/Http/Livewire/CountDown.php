@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Actions\Watch\ClickAds;
+use App\Actions\Watch\ConsumerWatchStore;
 use Livewire\Component;
 
 class CountDown extends Component
@@ -16,7 +16,7 @@ class CountDown extends Component
 
     public function watch()
     {
-        ClickAds::dispatch($this->ads);
+        ConsumerWatchStore::dispatch($this->ads);
     }
 
     public function render()

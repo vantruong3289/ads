@@ -20,10 +20,8 @@ class StatusWatchCast implements CastsAttributes
         switch ($value) {
             case 0:
                 return 'WAITING';
-                break;
             case 1:
                 return 'PAID';
-                break;
         }
         return $value;
     }
@@ -39,6 +37,12 @@ class StatusWatchCast implements CastsAttributes
      */
     public function set($model, string $key, $value, array $attributes)
     {
+        switch ($value) {
+            case 'WAITING':
+                return 0;
+            case 'PAID':
+                return 1;
+        }
         return $value;
     }
 }

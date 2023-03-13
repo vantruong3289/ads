@@ -15,6 +15,9 @@ class Consumer extends Authenticatable implements HasMedia
     use HasApiTokens, HasFactory, Notifiable;
     use InteractsWithMedia;
 
+    const MALE = 'MALE';
+    const FEMALE = 'FEMALE';
+
     protected $fillable = [
         'name',
         'email',

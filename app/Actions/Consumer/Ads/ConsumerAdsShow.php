@@ -5,7 +5,7 @@ namespace App\Actions;
 use App\Models\Ads;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class AdsShow
+class ConsumerAdsShow
 {
     use AsAction;
 

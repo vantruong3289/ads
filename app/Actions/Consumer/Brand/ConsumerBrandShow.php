@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Actions;
+namespace App\Actions\Consumer\Brand;
 
 use App\Models\Brand;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class BrandShow
+class ConsumerBrandShow
 {
     use AsAction;
 

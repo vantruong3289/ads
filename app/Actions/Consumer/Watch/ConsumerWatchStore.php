@@ -9,7 +9,7 @@ use App\Models\Watch;
 use Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class ClickAds
+class ConsumerWatchStore
 {
     use AsAction;
 

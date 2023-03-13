@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class Watch extends Model
 {
     use HasFactory;
-    const WAITING = 0;
-    const PAID = 1;
+    const WAITING = 'WAITING';
+    const PAID = 'PAID';
 
     protected $fillable = [
         'consumer_id',
