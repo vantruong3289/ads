@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Watch;
+namespace App\Actions\Consumer\Watch;
 
 use App\Models\Ads;
 use App\Models\Asset;

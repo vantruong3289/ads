@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Actions\Watch\ConsumerWatchStore;
+use App\Actions\Consumer\Watch\ConsumerWatchStore;
 use Livewire\Component;
 
 class CountDown extends Component

@@ -16,6 +16,6 @@ class AdvertiserAdsStore
         $input = $request->only('name', 'brand_id');
         $ads = Ads::create($input);
 
-        return redirect("adss/{$ads->id}/edit");
+        return redirect("advertisers/ads/{$ads->id}/edit");
     }
 }

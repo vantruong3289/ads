@@ -23,7 +23,7 @@ return [
     | The default is `admin` but you can change it to whatever works best and
     | doesn't conflict with the routing in your application.
     |
-    */
+     */
 
     'path' => env('FILAMENT_PATH', 'admin'),
 
@@ -35,7 +35,7 @@ return [
     | This is the path which Filament will use to load its core routes and assets.
     | You may change it if it conflicts with your other routes.
     |
-    */
+     */
 
     'core_path' => env('FILAMENT_CORE_PATH', 'filament'),
 
@@ -47,7 +47,7 @@ return [
     | You may change the domain where Filament should be active. If the domain
     | is empty, all domains will be valid.
     |
-    */
+     */
 
     'domain' => env('FILAMENT_DOMAIN'),
 
@@ -59,7 +59,7 @@ return [
     | This is the URL that Filament will redirect the user to when they click
     | on the sidebar's header.
     |
-    */
+     */
 
     'home_url' => '/',
 
@@ -70,7 +70,7 @@ return [
     |
     | This will be displayed on the login page and in the sidebar's header.
     |
-    */
+     */
 
     'brand' => env('APP_NAME'),
 
@@ -82,7 +82,7 @@ return [
     | This is the configuration that Filament will use to handle authentication
     | into the admin panel.
     |
-    */
+     */
 
     'auth' => [
         'guard' => env('FILAMENT_AUTH_GUARD', 'web'),
@@ -99,7 +99,7 @@ return [
     | This is the namespace and directory that Filament will automatically
     | register pages from. You may also register pages here.
     |
-    */
+     */
 
     'pages' => [
         'namespace' => 'App\\Filament\\Pages',
@@ -117,7 +117,7 @@ return [
     | This is the namespace and directory that Filament will automatically
     | register resources from. You may also register resources here.
     |
-    */
+     */
 
     'resources' => [
         'namespace' => 'App\\Filament\\Resources',
@@ -133,7 +133,7 @@ return [
     | This is the namespace and directory that Filament will automatically
     | register dashboard widgets from. You may also register widgets here.
     |
-    */
+     */
 
     'widgets' => [
         'namespace' => 'App\\Filament\\Widgets',
@@ -152,7 +152,7 @@ return [
     | This is the namespace and directory that Filament will automatically
     | register Livewire components inside.
     |
-    */
+     */
 
     'livewire' => [
         'namespace' => 'App\\Filament',
@@ -167,7 +167,7 @@ return [
     | By enabling this feature, your users are able to select between a light
     | and dark appearance for the admin panel, or let their system decide.
     |
-    */
+     */
 
     'dark_mode' => false,
 
@@ -179,7 +179,7 @@ return [
     | By enabling this feature, your users are able to open a slide-over within
     | the admin panel to view their database notifications.
     |
-    */
+     */
 
     'database_notifications' => [
         'enabled' => false,
@@ -196,7 +196,7 @@ return [
     |
     | This will allow your admin panel to receive real-time notifications.
     |
-    */
+     */
 
     'broadcasting' => [
 
@@ -219,7 +219,7 @@ return [
     | You may configure the max content width from `xl` to `7xl`, or `full`
     | for no max width.
     |
-    */
+     */
 
     'layout' => [
         'actions' => [
@@ -260,7 +260,7 @@ return [
     |
     | This is the path to the favicon used for pages in the admin panel.
     |
-    */
+     */
 
     'favicon' => null,
 
@@ -272,7 +272,7 @@ return [
     | This is the service that will be used to retrieve default avatars if one
     | has not been uploaded.
     |
-    */
+     */
 
     'default_avatar_provider' => \Filament\AvatarProviders\UiAvatarsProvider::class,
 
@@ -284,7 +284,7 @@ return [
     | This is the storage disk Filament will use to put media. You may use any
     | of the disks defined in the `config/filesystems.php`.
     |
-    */
+     */
 
     'default_filesystem_disk' => env('FILAMENT_FILESYSTEM_DRIVER', 'public'),
 
@@ -299,7 +299,7 @@ return [
     | When using a custom font, you should also set the font family in your
     | custom theme's `tailwind.config.js` file.
     |
-    */
+     */
 
     'google_fonts' => 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap',
 
@@ -311,7 +311,7 @@ return [
     | You may customize the middleware stack that Filament uses to handle
     | requests.
     |
-    */
+     */
 
     'middleware' => [
         'auth' => [

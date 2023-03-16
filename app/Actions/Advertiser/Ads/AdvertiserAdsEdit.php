@@ -4,6 +4,7 @@ namespace App\Actions\Advertiser\Ads;
 
 use App\Models\Ads;
 use App\Models\Brand;
+use App\Models\Design;
 use Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 
@@ -15,7 +16,7 @@ class AdvertiserAdsEdit
     {
         $advertiser = Auth::guard('advertiser')->user();
         $brands = Brand::whereAdvertiserId($advertiser->id)->get();
-
-        return view('advertisers.ads.edit', compact('ads', 'brands'));
+        $designs = Design::all();
+        return view('advertisers.ads.edit', compact('ads', 'brands', 'designs'));
     }
 }

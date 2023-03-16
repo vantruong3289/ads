@@ -13,8 +13,8 @@ class ConsumerAdsShow
     {
         $next = Ads::orderBy('money')
             ->where('active', true)
+            ->whereHas('design')
             ->where('allow', true)
-            ->orderBy('voucher')
             ->paginate(1);
         $ads = $next->first();
 

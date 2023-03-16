@@ -18,6 +18,8 @@ use App\Actions\Advertiser\Brand\AdvertiserBrandEdit;
 use App\Actions\Advertiser\Brand\AdvertiserBrandIndex;
 use App\Actions\Advertiser\Brand\AdvertiserBrandStore;
 use App\Actions\Advertiser\Brand\AdvertiserBrandUpdate;
+use App\Actions\Advertiser\Design\AdvertiserDesignForm;
+use App\Actions\Advertiser\Design\AdvertiserDesignIndex;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/advertisers/sign-in', AdvertiserSignInForm::class)->middleware('guest:advertiser');
@@ -41,3 +43,6 @@ Route::post('/advertisers/ads', AdvertiserAdsStore::class)->middleware('auth:adv
 
 Route::get('/advertisers/bills', AdvertiserBillIndex::class)->middleware('auth:advertiser');
 Route::post('/advertisers/bills', AdvertiserBillStore::class)->middleware('auth:advertiser');
+
+Route::get('/advertisers/designs', AdvertiserDesignIndex::class)->middleware('auth:advertiser');
+Route::get('/advertisers/designs/{design}/form', AdvertiserDesignForm::class)->middleware('auth:advertiser');
