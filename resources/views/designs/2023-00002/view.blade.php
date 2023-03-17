@@ -1,15 +1,21 @@
-@php
-    $isProfile = \Request::route()->getName() == 'profile';
-@endphp
-<div class="relative w-full h-full">
-    <img alt="{{ $ads->title }}" class="block object-cover w-full h-full {{ $isProfile ? 'rounded-lg' : '' }}" src="{{ $ads->getFirstMediaUrl('photo') }}">
-    <div class="absolute top-2 left-1 w-full text-white">
-        <div class="flex space-x-3">
-            <img src="{{ $ads->brand->getFirstMediaUrl('logo') }}" alt="{{ $ads->brand->name }}" class="rounded-full w-20 h-20">
-            <div class="space-y-2">
-                <h5 class="text-base font-semibold">{{ $ads->brand->name }}</h5>
-                <p class="text-sm md:max-w-xl">{{ $ads->content }}</p>
-            </div>
-        </div>
+@section('body-class', 'bg-gray-100')
+<div class="bg-white max-w-2xl mx-auto">
+    <div class="">
+        <ul class="divide-y">
+            @foreach ($ads->data ?? $design->data as $job)
+                <li class="relative py-8 px-2 sm:px-10">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-sm font-semibold text-slate-500">{{ $job->name }}</h3>
+                    </div>
+                    <p class="flex items-center">
+                        <span class="text-2xl text-slate-900">
+                            {{ $job->symbol }}
+                            <span class="font-bold">{{ $job->range }}</span>
+                        </span>
+                    </p>
+                    <p class="mt-3 text-sm leading-6 text-slate-600">{{ $job->content }}</p>
+                </li>
+            @endforeach
+        </ul>
     </div>
 </div>

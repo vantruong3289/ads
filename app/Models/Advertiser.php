@@ -15,8 +15,8 @@ class Advertiser extends Authenticatable implements HasMedia
     use HasApiTokens, HasFactory, Notifiable;
     use InteractsWithMedia;
 
-    const MALE = 'MALE';
-    const FEMALE = 'FEMALE';
+    const MALE = 0;
+    const FEMALE = 1;
 
     protected $fillable = [
         'name',

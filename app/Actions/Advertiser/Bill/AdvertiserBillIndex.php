@@ -14,7 +14,7 @@ class AdvertiserBillIndex
     {
         $advertiser = Auth::guard('advertiser')->user();
         $bills = $advertiser->bills;
-        $hasPending = Bill::whereAdvertiserId($advertiser->id)->whereStatus(Bill::PEDING)->exists();
+        $hasPending = Bill::whereAdvertiserId($advertiser->id)->whereStatus(Bill::PENDING)->exists();
         return view('advertisers.bills.list', compact('bills', 'hasPending'));
     }
 }

@@ -26,5 +26,6 @@ class SexCast implements CastsAttributes
             case 'FEMALE':
                 return 1;
         }
+        return $value;
     }
 }

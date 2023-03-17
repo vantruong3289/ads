@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Marketing",
+        "range": "200-500",
+        "symbol": "đ",
+        "content": "Heroes, feature sections, newsletter sign up forms — all of the components you need to build beautiful marketing websites."
+    },
+    {
+        "name": "Application UI",
+        "range": "200-500",
+        "symbol": "đ",
+        "content": "Form layouts, tables, modal dialogs — all of the components you need to build beautiful responsive web applications."
+    },
+    {
+        "name": "Ecommerce",
+        "range": "200-500",
+        "symbol": "đ",
+        "content": "Checkout forms, shopping carts, product views — all of the components you need to build your next ecommerce front-end."
+    }
+]

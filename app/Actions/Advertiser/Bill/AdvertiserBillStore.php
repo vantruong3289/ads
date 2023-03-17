@@ -15,7 +15,7 @@ class AdvertiserBillStore
     public function handle(Request $request)
     {
         $advertiser = Auth::guard('advertiser')->user();
-        $hasPending = Bill::whereAdvertiserId($advertiser->id)->whereStatus(Bill::PEDING)->exists();
+        $hasPending = Bill::whereAdvertiserId($advertiser->id)->whereStatus(Bill::PENDING)->exists();
         if ($hasPending) {
             return back();
         }

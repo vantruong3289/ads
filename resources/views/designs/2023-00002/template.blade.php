@@ -7,7 +7,6 @@
                 </div>
                 <p class="flex items-center">
                     <span class="text-2xl text-slate-900">$<span class="font-bold">149</span></span>
-                    <span class="ml-2 text-sm text-slate-500">plus local taxes</span>
                 </p>
                 <p class="mt-3 text-sm leading-6 text-slate-600">Heroes, feature sections, newsletter sign up forms — all of the components you need to build beautiful marketing websites.</p>
             </li>
@@ -17,7 +16,6 @@
                 </div>
                 <p class="flex items-center">
                     <span class="text-2xl text-slate-900">$<span class="font-bold">149</span></span>
-                    <span class="ml-2 text-sm text-slate-500">plus local taxes</span>
                 </p>
                 <p class="mt-3 text-sm leading-6 text-slate-600">Form layouts, tables, modal dialogs — all of the components you need to build beautiful responsive web applications.</p>
             </li>
@@ -26,7 +24,6 @@
                     <h3 class="text-sm font-semibold text-slate-500">Ecommerce</h3>
                 </div>
                 <p class="flex items-center"><span class="text-2xl text-slate-900">$<span class="font-bold">149</span></span>
-                    <span class="ml-2 text-sm text-slate-500">plus local taxes</span>
                 </p>
                 <p class="mt-3 text-sm leading-6 text-slate-600">Checkout forms, shopping carts, product views — all of the components you need to build your next ecommerce front-end.</p>
             </li>

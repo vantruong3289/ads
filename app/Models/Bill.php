@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class Bill extends Model
 {
     use HasFactory;
-    const PEDING = 'PEDING';
-    const PAID = 'PAID';
+    const PENDING = 0;
+    const PAID = 1;
 
     protected $fillable = [
         'advertiser_id',

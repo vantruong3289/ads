@@ -15,7 +15,7 @@
     @laravelPWA
 </head>
 
-<body class="font-ads">
+<body class="font-ads @yield('body-class')">
     @yield('content')
     @livewireScripts
     @vite('resources/js/app.js')

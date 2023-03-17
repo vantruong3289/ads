@@ -15,6 +15,7 @@ class StatusBillCast implements CastsAttributes
             case 1:
                 return 'PAID';
         }
+        return $value;
     }
 
     public function set($model, string $key, $value, array $attributes)
@@ -25,5 +26,6 @@ class StatusBillCast implements CastsAttributes
             case 'PAID':
                 return 1;
         }
+        return $value;
     }
 }

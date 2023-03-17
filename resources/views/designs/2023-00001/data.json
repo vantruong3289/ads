@@ -1,0 +1,26 @@
+[
+    {
+        "tag": "Marketing",
+        "money": {
+            "value": 200,
+            "currency": "USD"
+        },
+        "content": "Heroes, feature sections, newsletter sign up forms — all of the components you need to build beautiful marketing websites."
+    },
+    {
+        "tag": "Application UI",
+        "money": {
+            "value": 200,
+            "currency": "USD"
+        },
+        "content": "Form layouts, tables, modal dialogs — all of the components you need to build beautiful responsive web applications."
+    },
+    {
+        "tag": "Ecommerce",
+        "money": {
+            "value": 200,
+            "currency": "USD"
+        },
+        "content": "Checkout forms, shopping carts, product views — all of the components you need to build your next ecommerce front-end."
+    }
+]

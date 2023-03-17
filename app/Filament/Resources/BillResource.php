@@ -34,7 +34,7 @@ class BillResource extends Resource
                 Forms\Components\DateTimePicker::make('time'),
                 Forms\Components\Select::make('status')
                 ->options([
-                    Bill::PEDING => 'PEDING',
+                    Bill::PENDING => 'PENDING',
                     Bill::PAID => 'PAID',
                 ])
                     ->required(),

@@ -90,7 +90,8 @@
                                             <span>{{ $ads->money }} {{ $ads->currency }}</span>
                                         </div>
                                     </div>
-                                    <div class="mt-1 text-sm text-blue-500 sm:mt-0 text-right">
+                                    <div class="mt-1 text-sm text-blue-500 sm:mt-0 md:text-right space-x-3">
+                                        <a href="/advertisers/ads/{{ $ads->id }}/designs/{{ $ads->design_id }}/form">{{ $ads->design->code }}</a>
                                         <a href="/advertisers/ads/{{ $ads->id }}/edit">Edit</a>
                                     </div>
                                 </div>
