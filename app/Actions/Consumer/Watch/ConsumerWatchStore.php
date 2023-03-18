@@ -43,6 +43,7 @@ class ConsumerWatchStore
             ]);
 
             $asset->money += $sub;
+            $asset->view++;
             $asset->save();
         }
 

@@ -15,7 +15,7 @@ class DesignSeeder extends Seeder
     public function run()
     {
         Design::truncate();
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 2; $i++) {
             Design::factory(1)->create();
         }
     }

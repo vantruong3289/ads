@@ -14,7 +14,7 @@ class Asset extends Model
         'brand_id',
         'currency',
         'money',
-        'voucher',
+        'view',
     ];
 
     public function consumer()

@@ -3,7 +3,7 @@
     <title>{{ env('APP_NAME') }}</title>
 @endsection
 @section('content')
-    <div class="fixed inset-0 grid place-content-center">
+    <div class="min-h-screen md:grid place-content-center">
         @include("designs.{$ads->design->code}.view")
     </div>
     <div class="fixed bottom-4 right-4 grid grid-cols-1 gap-4 items-center text-black">

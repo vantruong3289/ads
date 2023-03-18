@@ -1,0 +1,7 @@
+{
+    "default": {
+        "bg-body": "bg-gray-100"
+    },
+    "light": {},
+    "dark": {}
+}
