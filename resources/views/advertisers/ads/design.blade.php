@@ -15,10 +15,19 @@
                         @csrf @method('put')
                         <div class="shadow sm:rounded-md">
                             @foreach ($ads->data as $key => $data)
-                                <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
-                                    @foreach ($design->fields as $name => $field)
-                                        @include("controls.{$field->type}")
-                                    @endforeach
+                                <div class="relative">
+                                    <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
+                                        @foreach ($design->fields as $name => $field)
+                                            @include("controls.{$field->type}")
+                                        @endforeach
+                                    </div>
+                                    @if (!$loop->first)
+                                        <div class="text-right absolute right-0 top-0">
+                                            <a href="" class="text-indigo-500 inline-block p-1 bg-gray-100">
+                                                <x-icons.mark />
+                                            </a>
+                                        </div>
+                                    @endif
                                 </div>
                                 <hr>
                             @endforeach
