@@ -28,7 +28,7 @@ class Ads extends Model implements HasMedia
     protected $casts = [
         'active' => 'boolean',
         'allow' => 'boolean',
-        'data' => 'json',
+        'data' => 'object',
     ];
 
     public function brand()

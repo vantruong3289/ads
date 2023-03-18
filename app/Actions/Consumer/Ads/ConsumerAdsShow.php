@@ -17,9 +17,9 @@ class ConsumerAdsShow
             ->where('allow', true)
             ->paginate(1);
         $ads = $next->first();
-
+        $design = $ads->design;
         if ($ads) {
-            return view('welcome', compact('ads', 'next'));
+            return view('welcome', compact('ads', 'design', 'next'));
         }
 
         return view('about');

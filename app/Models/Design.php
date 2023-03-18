@@ -23,19 +23,23 @@ class Design extends Model
 
     protected function data(): Attribute
     {
-        $json = File::get(resource_path("/views/designs/{$this->code}/data.json"));
-        $data = json_decode($json);
         return Attribute::make(
-            get:fn() => $data,
+            get:function () {
+                $json = File::get(resource_path("/views/designs/{$this->code}/data.json"));
+                $data = json_decode($json);
+                return $data;
+            }
         );
     }
 
     protected function fields(): Attribute
     {
-        $json = File::get(resource_path("/views/designs/{$this->code}/fields.json"));
-        $data = json_decode($json);
         return Attribute::make(
-            get:fn() => $data,
+            get:function () {
+                $json = File::get(resource_path("/views/designs/{$this->code}/fields.json"));
+                $data = json_decode($json);
+                return $data;
+            }
         );
     }
 }

@@ -1,5 +1,5 @@
 @section('body-class', 'bg-gray-100')
-<div class="bg-white px-4 py-10 sm:px-10 max-w-2xl mx-auto">
+<div class="bg-white px-4 py-10 sm:px-10 max-w-2xl mx-auto shadow sm:rounded-md">
     <div class="">
         <div class="relative">
             <div class="flex items-center justify-between">

@@ -15,7 +15,9 @@ class AdvertiserAdsUpdate
     {
         $input = $request->input();
         $ads->update($input);
-        SystemAllowAds::dispatch($ads->brand->advertiser);
+        if ($request->filled('money')) {
+            SystemAllowAds::dispatch($ads->brand->advertiser);
+        }
 
         return back();
     }

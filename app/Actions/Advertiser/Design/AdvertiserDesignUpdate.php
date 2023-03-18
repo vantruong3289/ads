@@ -13,8 +13,10 @@ class AdvertiserDesignUpdate
 
     public function handle(Ads $ads, Design $design, Request $request)
     {
-        $input = $request->except('_token', '_method');
-        $json = json_encode($input);
-        
+        $input = $request->input('data');
+        $json = json_encode($input, );
+        $ads->data = $json;
+        $ads->save();
+        return back();
     }
 }

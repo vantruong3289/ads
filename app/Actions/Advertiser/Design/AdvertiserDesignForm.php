@@ -12,6 +12,10 @@ class AdvertiserDesignForm
 
     public function handle(Ads $ads, Design $design)
     {
+        if (!$ads->data) {
+            $ads->data = $design->data;
+            $ads->save();
+        }
         return view("advertisers.ads.design", compact('design', 'ads'));
     }
 }
