@@ -13,7 +13,7 @@ class BrandSeeder extends Seeder
         $brands = Brand::factory(1)->create();
         $brands->each(function (Brand $brand) {
             $brand->addMediaFromUrl('https://source.unsplash.com/random/80x80')->toMediaCollection('logo');
-            $brand->addMediaFromUrl('https://source.unsplash.com/random/1200x500')->toMediaCollection('cover');
+            // $brand->addMediaFromUrl('https://source.unsplash.com/random/1200x500')->toMediaCollection('cover');
             $brand->addMediaFromUrl('https://source.unsplash.com/random/1200x300')->toMediaCollection('banner');
         });
     }
