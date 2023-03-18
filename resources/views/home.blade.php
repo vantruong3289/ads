@@ -67,7 +67,7 @@
         <section class="px-2 md:px-5 mt-10">
             <div class="grid gap-2 md:gap-4 grid-cols-1 md:grid-cols-2">
                 @foreach ($brand->adss as $ads)
-                    @include('designs.banner')
+                    @include("designs.{$ads->design->code}.view")
                 @endforeach
             </div>
         </section>

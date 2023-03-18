@@ -20,7 +20,8 @@ class AdvertiserBillStore
             return back();
         }
 
-        $input = $request->only('money', 'currency');
+        $input = $request->only('budget', 'currency');
+        $input['money'] = $input['budget'];
         $input['time'] = Carbon::now();
         $input['advertiser_id'] = $advertiser->id;
         $input['code'] = date('Ymd') . '-' . sprintf("%'.05d", Bill::count() + 1);

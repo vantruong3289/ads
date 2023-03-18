@@ -1,5 +1,4 @@
-@section('body-class', 'bg-gray-100')
-<div class="bg-white max-w-2xl mx-auto shadow sm:rounded-md">
+<div class="bg-white max-w-2xl mx-auto shadow sm:rounded-md border">
     <div class="">
         <ul class="divide-y">
             @foreach ($ads->data as $job)
@@ -7,7 +6,7 @@
                     <div class="flex items-center justify-between">
                         <h3 class="text-sm font-semibold text-slate-500">{{ $job['name'] }}</h3>
                     </div>
-                    <p class="flex items-center">
+                    <p class="flex items-center mt-3">
                         <span class="text-2xl text-slate-900">
                             {{ $job['symbol'] }}
                             <span class="font-bold">{{ $job['range'] }}</span>

@@ -23,6 +23,7 @@ class BillFactory extends Factory
             'advertiser_id' => Advertiser::inRandomOrder()->first()->id,
             'code' => date('Ymd') . '-' . sprintf("%'.05d", Bill::count() + 1),
             'currency' => 'VND',
+            'budget' => $this->faker->numberBetween(1, 10) * 100000,
             'money' => $this->faker->numberBetween(1, 10) * 100000,
             'time' => $this->faker->dateTime,
         ];

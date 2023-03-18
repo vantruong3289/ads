@@ -16,6 +16,7 @@ class Bill extends Model
         'advertiser_id',
         'code',
         'currency',
+        'budget',
         'money',
         'time',
         'status',

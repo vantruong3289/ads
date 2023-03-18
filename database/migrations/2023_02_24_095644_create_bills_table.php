@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignIdFor(Advertiser::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('code')->nullable();
             $table->string('currency')->default('VND');
+            $table->float('budget', 16)->nullable();
             $table->float('money', 16)->nullable();
             $table->dateTime('time')->nullable();
             $table->integer('status')->default(0);

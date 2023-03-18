@@ -3,7 +3,7 @@
         <div class="flex items-center">
             <a href="/" class="font-semibold px-4 text-xl italic">Ads</a>
             <div class="space-x-5 items-center hidden sm:flex">
-                <a href="/consumers/assets" class="px-2 py-4 border-b-2 border-indigo-500">Asset</a>
+                <a href="/consumers/assets" class="px-2 py-4 {{ request()->is('consumers/assets*') ? 'border-b-2 border-indigo-500' : '' }}">Asset</a>
             </div>
             <div class="flex-1 flex justify-end">
                 @auth('consumer')

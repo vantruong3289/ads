@@ -3,9 +3,9 @@
         <div class="flex items-center">
             <a href="/" class="font-semibold px-4 text-xl italic">Ads</a>
             <div class="space-x-5 items-center hidden sm:flex">
-                <a href="/advertisers/brands" class="px-2 py-4 border-b-2 border-indigo-500">Brand</a>
-                <a href="/advertisers/ads" class="px-2 py-4">Ads</a>
-                <a href="/advertisers/bills" class="px-2 py-4">Bill</a>
+                <a href="/advertisers/brands" class="px-2 py-4 {{ request()->is('advertisers/brands*') ? 'border-b-2 border-indigo-500' : '' }}">Brand</a>
+                <a href="/advertisers/ads" class="px-2 py-4 {{ request()->is('advertisers/ads*') ? 'border-b-2 border-indigo-500' : '' }}">Ads</a>
+                <a href="/advertisers/bills" class="px-2 py-4 {{ request()->is('advertisers/bills*') ? 'border-b-2 border-indigo-500' : '' }}">Bill</a>
             </div>
             <div class="flex-1 flex justify-end">
                 @auth('advertiser')

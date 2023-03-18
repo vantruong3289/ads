@@ -25,22 +25,24 @@ class ConsumerWatchStore
 
         $bill = Bill::whereAdvertiserId($ads->brand->advertiser_id)
             ->whereCurrency($ads->currency)
-            ->where('money', '>=', $ads->money)
+            ->where('money', '>', 0)
+            ->orderBy('money', 'desc')
             ->first();
 
         if ($bill) {
-            $bill->money -= $ads->money;
+            $sub = $bill->money > $ads->money ? $ads->money : $bill->money;
+            $bill->money -= $sub;
             $bill->save();
             Watch::create([
                 'consumer_id' => $consumer->id,
                 'brand_id' => $ads->brand_id,
                 'ads_id' => $ads->id,
                 'currency' => $ads->currency,
-                'money' => $ads->money,
+                'money' => $sub,
                 'status' => Watch::WAITING,
             ]);
 
-            $asset->money += $ads->money;
+            $asset->money += $sub;
             $asset->save();
         }
 
