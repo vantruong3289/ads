@@ -16,7 +16,7 @@ class AdminBillUpdate
         $bill->status = $request->status;
         $bill->save();
 
-        SystemAllowAds::dispatch($bill->advertiser);
+        SystemAllowAds::dispatch($bill);
 
         return back();
     }
