@@ -29,5 +29,30 @@
         "required": true,
         "placeholder": "",
         "value": "Heroes, feature sections, newsletter sign up forms — all of the components you need to build beautiful marketing websites."
-    }
+    },
+    "items": [
+        {
+            "icon": {
+                "type": "text",
+                "label": "Icon",
+                "placeholder": "http",
+                "required": true,
+                "value": ""
+            },
+            "title": {
+                "type": "text",
+                "label": "Title",
+                "placeholder": "Title",
+                "required": true,
+                "value": ""
+            },
+            "detail": {
+                "type": "area",
+                "label": "Detail",
+                "placeholder": "Detail",
+                "required": true,
+                "value": ""
+            }
+        }
+    ]
 }

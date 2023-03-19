@@ -21,6 +21,11 @@ class Design extends Model
         'active' => 'boolean',
     ];
 
+    public function ads()
+    {
+        return $this->hasMany(Ads::class);
+    }
+
     protected function data(): Attribute
     {
         return Attribute::make(

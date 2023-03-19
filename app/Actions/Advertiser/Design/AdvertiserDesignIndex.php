@@ -12,7 +12,7 @@ class AdvertiserDesignIndex
 
     public function handle(Ads $ads)
     {
-        $designs = Design::all();
+        $designs = Design::query()->withCount('ads')->get();
 
         return view('advertisers.designs.list', compact('designs', 'ads'));
     }

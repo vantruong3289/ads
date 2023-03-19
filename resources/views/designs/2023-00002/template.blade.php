@@ -1,4 +1,4 @@
-<div class="bg-white max-w-2xl mx-auto shadow sm:rounded-md">
+<div class="bg-white max-w-2xl mx-auto sm:rounded-md border">
     <div class="">
         <ul class="divide-y">
             <li class="relative py-8 px-2 sm:px-10">

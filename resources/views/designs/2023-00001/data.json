@@ -2,6 +2,23 @@
     {
         "money": 200,
         "symbol": "$",
-        "content": "Get lifetime access to all of the application UI, marketing, and ecommerce components, as well as all of our site templates for a single one-time purchase."
+        "content": "Nhận quyền truy cập trọn đời vào tất cả các thành phần giao diện người dùng, tiếp thị và thương mại điện tử của ứng dụng, cũng như tất cả các mẫu trang web của chúng tôi cho một giao dịch mua một lần.",
+        "items": [
+            {
+                "icon": "",
+                "title": "Hơn 500+ thành phần",
+                "detail": "Mọi thứ bạn cần để xây dựng giao diện người dùng ứng dụng đẹp mắt, trang web tiếp thị, cửa hàng thương mại điện tử, v.v."
+            },
+            {
+                "icon": "",
+                "title": "Mỗi mẫu trang web",
+                "detail": "Các mẫu trang web được thiết kế đẹp mắt, thủ công chuyên nghiệp được xây dựng bằng các công nghệ hiện đại như React và Next.js."
+            },
+            {
+                "icon": "",
+                "title": "Truy cập trọn đời",
+                "detail": "Có quyền truy cập tức thì vào mọi thứ chúng tôi có hôm nay, cùng với mọi thành phần và mẫu mới mà chúng tôi thêm vào trong tương lai."
+            }
+        ]
     }
 ]

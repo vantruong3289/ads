@@ -18,6 +18,7 @@ use App\Actions\Advertiser\Brand\AdvertiserBrandEdit;
 use App\Actions\Advertiser\Brand\AdvertiserBrandIndex;
 use App\Actions\Advertiser\Brand\AdvertiserBrandStore;
 use App\Actions\Advertiser\Brand\AdvertiserBrandUpdate;
+use App\Actions\Advertiser\Design\AdvertiserDesignChoice;
 use App\Actions\Advertiser\Design\AdvertiserDesignForm;
 use App\Actions\Advertiser\Design\AdvertiserDesignIndex;
 use App\Actions\Advertiser\Design\AdvertiserDesignUpdate;
@@ -48,3 +49,4 @@ Route::post('/advertisers/bills', AdvertiserBillStore::class)->middleware('auth:
 Route::get('/advertisers/ads/{ads}/designs', AdvertiserDesignIndex::class)->middleware('auth:advertiser');
 Route::get('/advertisers/ads/{ads}/designs/{design}/form', AdvertiserDesignForm::class)->middleware('auth:advertiser');
 Route::put('/advertisers/ads/{ads}/designs/{design}', AdvertiserDesignUpdate::class)->middleware('auth:advertiser');
+Route::put('/advertisers/ads/{ads}/designs/{design}/choice', AdvertiserDesignChoice::class)->middleware('auth:advertiser');

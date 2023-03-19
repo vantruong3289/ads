@@ -18,7 +18,10 @@
                                 <div class="relative">
                                     <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
                                         @foreach ($design->fields as $name => $field)
-                                            @include("controls.{$field->type}")
+                                            @if (is_array($field))
+                                            @else
+                                                @include("controls.{$field->type}")
+                                            @endif
                                         @endforeach
                                     </div>
                                     @if (!$loop->first)

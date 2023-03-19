@@ -1,4 +1,4 @@
-<div class="bg-white px-4 py-10 sm:px-10 max-w-2xl mx-auto shadow sm:rounded-md">
+<div class="bg-white px-4 py-10 sm:px-10 max-w-2xl mx-auto sm:rounded-md border">
     <div class="">
         <div class="relative">
             <div class="mt-3 flex items-center">

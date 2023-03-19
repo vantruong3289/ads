@@ -1,4 +1,4 @@
-<div class="bg-white max-w-2xl mx-auto shadow sm:rounded-md border">
+<div class="bg-white max-w-2xl mx-auto sm:rounded-md border">
     <div class="">
         <ul class="divide-y">
             @foreach ($ads->data as $job)
