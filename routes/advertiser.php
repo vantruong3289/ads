@@ -22,9 +22,11 @@ use App\Actions\Advertiser\Design\AdvertiserDesignChoice;
 use App\Actions\Advertiser\Design\AdvertiserDesignForm;
 use App\Actions\Advertiser\Design\AdvertiserDesignIndex;
 use App\Actions\Advertiser\Design\AdvertiserDesignUpdate;
+use App\Actions\Advertiser\Password\AdvertiserPasswordForgot;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/advertisers/sign-in', AdvertiserSignInForm::class)->middleware('guest:advertiser');
+Route::get('/advertisers/forgot-password', AdvertiserPasswordForgot::class)->middleware('guest:advertiser');
 Route::post('/advertisers/sign-in', AdvertiserSignInPost::class);
 Route::get('/advertisers/sign-up', AdvertiserSignUpForm::class)->middleware('guest:advertiser');
 Route::post('/advertisers/sign-up', AdvertiserSignUpPost::class);

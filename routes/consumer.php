@@ -8,9 +8,11 @@ use App\Actions\Consumer\ConsumerSignUpForm;
 use App\Actions\Consumer\ConsumerSignUpPost;
 use App\Actions\Consumer\ConsumerUpdate;
 use App\Actions\Consumer\ConsumerUpdatePassword;
+use App\Actions\Consumer\Password\ConsumerPasswordForgot;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/consumers/sign-in', ConsumerSignInForm::class)->middleware('guest:consumer');
+Route::get('/consumers/forgot-password', ConsumerPasswordForgot::class)->middleware('guest:consumer');
 Route::post('/consumers/sign-in', ConsumerSignInPost::class);
 Route::get('/consumers/sign-up', ConsumerSignUpForm::class)->middleware('guest:consumer');
 Route::post('/consumers/sign-up', ConsumerSignUpPost::class);
