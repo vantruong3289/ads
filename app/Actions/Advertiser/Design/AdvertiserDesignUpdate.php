@@ -14,7 +14,7 @@ class AdvertiserDesignUpdate
     public function handle(Ads $ads, Design $design, Request $request)
     {
         $input = $request->input('data');
-        $ads->data = $input;
+        $ads->data = json_decode($input);
         $ads->save();
         return back();
     }
