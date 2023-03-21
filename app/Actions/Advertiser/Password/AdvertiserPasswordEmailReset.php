@@ -17,5 +17,6 @@ class AdvertiserPasswordEmailReset
         $email = $request->email;
         $advertiser = Advertiser::whereEmail($email)->firstOrFail();
         Mail::to($email)->send(new AdvertiserEmailResetPassword($advertiser));
+        return back();
     }
 }

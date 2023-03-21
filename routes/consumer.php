@@ -10,6 +10,8 @@ use App\Actions\Consumer\ConsumerUpdate;
 use App\Actions\Consumer\ConsumerUpdatePassword;
 use App\Actions\Consumer\Password\ConsumerPasswordEmailReset;
 use App\Actions\Consumer\Password\ConsumerPasswordForgot;
+use App\Actions\Consumer\Password\ConsumerPasswordReset;
+use App\Actions\Consumer\Password\ConsumerPasswordResetForm;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/consumers/sign-in', ConsumerSignInForm::class)->middleware('guest:consumer');
@@ -23,5 +25,6 @@ Route::put('/consumers/password', ConsumerUpdatePassword::class);
 Route::post('/consumers/sign-out', ConsumerSignout::class);
 
 Route::get('/consumers/password/forgot', ConsumerPasswordForgot::class)->middleware('guest:consumer');
-Route::get('/consumers/password/reset', ConsumerPasswordForgot::class)->middleware('guest:consumer');
+Route::get('/consumers/password/reset', ConsumerPasswordResetForm::class)->middleware('guest:consumer')->name('consumer.password.reset');
+Route::post('/consumers/password/reset', ConsumerPasswordReset::class);
 Route::post('/consumers/password/email-reset', ConsumerPasswordEmailReset::class);

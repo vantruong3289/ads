@@ -24,6 +24,8 @@ use App\Actions\Advertiser\Design\AdvertiserDesignIndex;
 use App\Actions\Advertiser\Design\AdvertiserDesignUpdate;
 use App\Actions\Advertiser\Password\AdvertiserPasswordEmailReset;
 use App\Actions\Advertiser\Password\AdvertiserPasswordForgot;
+use App\Actions\Advertiser\Password\AdvertiserPasswordReset;
+use App\Actions\Advertiser\Password\AdvertiserPasswordResetForm;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/advertisers/sign-in', AdvertiserSignInForm::class)->middleware('guest:advertiser');
@@ -54,5 +56,6 @@ Route::put('/advertisers/ads/{ads}/designs/{design}', AdvertiserDesignUpdate::cl
 Route::put('/advertisers/ads/{ads}/designs/{design}/choice', AdvertiserDesignChoice::class)->middleware('auth:advertiser');
 
 Route::get('/advertisers/password/forgot', AdvertiserPasswordForgot::class)->middleware('guest:advertiser');
-Route::get('/advertisers/password/reset', AdvertiserPasswordForgot::class)->middleware('guest:advertiser');
+Route::get('/advertisers/password/reset', AdvertiserPasswordResetForm::class)->middleware('guest:advertiser')->name('advertiser.password.reset');
+Route::post('/advertisers/password/reset', AdvertiserPasswordReset::class);
 Route::post('/advertisers/password/email-reset', AdvertiserPasswordEmailReset::class);

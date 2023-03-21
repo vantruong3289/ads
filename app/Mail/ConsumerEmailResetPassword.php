@@ -2,26 +2,30 @@
 
 namespace App\Mail;
 
+use App\Models\Consumer;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\URL;
 
 class ConsumerEmailResetPassword extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
-    public $consumer;
+    public Consumer $consumer;
+    public $url;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Consumer $consumer)
     {
-        //
+        $this->consumer = $consumer;
+        $this->url = URL::temporarySignedRoute('consumer.password.reset', now()->addMinutes(30), ['id' => $consumer->id]);
     }
 
     /**

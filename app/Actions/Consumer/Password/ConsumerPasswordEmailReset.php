@@ -17,5 +17,6 @@ class ConsumerPasswordEmailReset
         $email = $request->email;
         $consumer = Consumer::whereEmail($email)->firstOrFail();
         Mail::to($email)->send(new ConsumerEmailResetPassword($consumer));
+        return back();
     }
 }
