@@ -11,7 +11,7 @@ class AdminDesignIndex
 
     public function handle()
     {
-        $designs = Design::all();
+        $designs = Design::withCount('ads')->get();
         return view('admins.designs.list', compact('designs'));
     }
 }

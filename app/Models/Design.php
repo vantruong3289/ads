@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Casts\ActiveDesignCast;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,6 +11,8 @@ use Illuminate\Support\Facades\File;
 class Design extends Model
 {
     use HasFactory;
+    const ACTIVE = 'ACTIVE';
+    const UNACTIVE = 'UNACTIVE';
 
     protected $fillable = [
         'code',
@@ -18,7 +21,11 @@ class Design extends Model
     ];
 
     protected $casts = [
-        'active' => 'boolean',
+        'active' => ActiveDesignCast::class,
+    ];
+
+    protected $attributes = [
+        'active' => 0,
     ];
 
     public function ads()
