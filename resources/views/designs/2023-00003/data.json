@@ -1,20 +1,7 @@
-[
-    {
-        "name": "Marketing",
-        "range": "200-500",
-        "symbol": "đ",
-        "detail": "Heroes, feature sections, newsletter sign up forms — all of the components you need to build beautiful marketing websites."
-    },
-    {
-        "name": "Application UI",
-        "range": "200-500",
-        "symbol": "đ",
-        "detail": "Form layouts, tables, modal dialogs — all of the components you need to build beautiful responsive web applications."
-    },
-    {
-        "name": "Ecommerce",
-        "range": "200-500",
-        "symbol": "đ",
-        "detail": "Checkout forms, shopping carts, product views — all of the components you need to build your next ecommerce front-end."
-    }
-]
+{
+    "avatar": "https://tuk-cdn.s3.amazonaws.com/assets/components/avatars/a_5.png",
+    "name": "Steve Doe",
+    "job": "Sales Representative",
+    "content": "Your Payment was successful. You can now use our services. Check the action below for more details. Thank you",
+    "link": "https://msg"
+}

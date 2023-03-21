@@ -1,8 +1,8 @@
-<div class="bg-white max-w-2xl mx-auto sm:rounded-md border">
+<div class="bg-white max-w-2xl mx-auto sm:rounded-md shadow-lg">
     <div class="">
         <ul class="divide-y">
             @foreach ($ads->data as $job)
-                <li class="relative py-8 px-2 sm:px-10">
+                <li class="relative py-8 px-4 sm:px-10">
                     <div class="flex items-center justify-between">
                         <h3 class="text-sm font-semibold text-slate-500">{{ $job['name'] }}</h3>
                     </div>

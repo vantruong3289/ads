@@ -44,11 +44,11 @@ class Design extends Model
         );
     }
 
-    protected function fields(): Attribute
+    protected function theme(): Attribute
     {
         return Attribute::make(
             get:function () {
-                $json = File::get(resource_path("/views/designs/{$this->code}/fields.json"));
+                $json = File::get(resource_path("/views/designs/{$this->code}/theme.json"));
                 $data = json_decode($json);
                 return $data;
             }

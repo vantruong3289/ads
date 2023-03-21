@@ -9,8 +9,10 @@ use App\Actions\Admin\AdminUpdatePassword;
 use App\Actions\Admin\Bill\AdminBillEdit;
 use App\Actions\Admin\Bill\AdminBillIndex;
 use App\Actions\Admin\Bill\AdminBillUpdate;
+use App\Actions\Admin\Design\AdminDesignEditForm;
 use App\Actions\Admin\Design\AdminDesignIndex;
 use App\Actions\Admin\Design\AdminDesignStore;
+use App\Actions\Admin\Design\AdminDesignUpdate;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/admins/sign-in', AdminSignInForm::class)->middleware('guest:admin');
@@ -26,3 +28,5 @@ Route::put('/admins/bills/{bill}', AdminBillUpdate::class);
 
 Route::get('/admins/designs', AdminDesignIndex::class);
 Route::post('/admins/designs', AdminDesignStore::class);
+Route::get('/admins/designs/{design}/edit', AdminDesignEditForm::class);
+Route::put('/admins/designs/{design}', AdminDesignUpdate::class);

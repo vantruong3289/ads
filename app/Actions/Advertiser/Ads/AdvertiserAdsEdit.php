@@ -16,7 +16,7 @@ class AdvertiserAdsEdit
     {
         $advertiser = Auth::guard('advertiser')->user();
         $brands = Brand::whereAdvertiserId($advertiser->id)->get();
-        $designs = Design::all();
+        $designs = Design::whereActive(true)->get();
         return view('advertisers.ads.edit', compact('ads', 'brands', 'designs'));
     }
 }

@@ -1,5 +1,5 @@
 @php $data = $ads->data @endphp
-<div class="bg-white px-4 py-10 sm:px-10 max-w-2xl mx-auto sm:rounded-md border">
+<div class="bg-white px-4 py-10 sm:px-10 max-w-2xl mx-auto sm:rounded-md shadow-lg">
     <div class="">
         <div class="relative">
             <div class="mt-3 flex items-center">
