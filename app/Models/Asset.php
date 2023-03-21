@@ -14,7 +14,13 @@ class Asset extends Model
         'brand_id',
         'currency',
         'money',
+        'withdraw',
         'view',
+    ];
+
+    protected $casts = [
+        'money' => 'float',
+        'withdraw' => 'float',
     ];
 
     public function consumer()

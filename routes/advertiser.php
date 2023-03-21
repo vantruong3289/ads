@@ -22,11 +22,11 @@ use App\Actions\Advertiser\Design\AdvertiserDesignChoice;
 use App\Actions\Advertiser\Design\AdvertiserDesignForm;
 use App\Actions\Advertiser\Design\AdvertiserDesignIndex;
 use App\Actions\Advertiser\Design\AdvertiserDesignUpdate;
+use App\Actions\Advertiser\Password\AdvertiserPasswordEmailReset;
 use App\Actions\Advertiser\Password\AdvertiserPasswordForgot;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/advertisers/sign-in', AdvertiserSignInForm::class)->middleware('guest:advertiser');
-Route::get('/advertisers/forgot-password', AdvertiserPasswordForgot::class)->middleware('guest:advertiser');
 Route::post('/advertisers/sign-in', AdvertiserSignInPost::class);
 Route::get('/advertisers/sign-up', AdvertiserSignUpForm::class)->middleware('guest:advertiser');
 Route::post('/advertisers/sign-up', AdvertiserSignUpPost::class);
@@ -52,3 +52,7 @@ Route::get('/advertisers/ads/{ads}/designs', AdvertiserDesignIndex::class)->midd
 Route::get('/advertisers/ads/{ads}/designs/{design}/form', AdvertiserDesignForm::class)->middleware('auth:advertiser');
 Route::put('/advertisers/ads/{ads}/designs/{design}', AdvertiserDesignUpdate::class)->middleware('auth:advertiser');
 Route::put('/advertisers/ads/{ads}/designs/{design}/choice', AdvertiserDesignChoice::class)->middleware('auth:advertiser');
+
+Route::get('/advertisers/password/forgot', AdvertiserPasswordForgot::class)->middleware('guest:advertiser');
+Route::get('/advertisers/password/reset', AdvertiserPasswordForgot::class)->middleware('guest:advertiser');
+Route::post('/advertisers/password/email-reset', AdvertiserPasswordEmailReset::class);
