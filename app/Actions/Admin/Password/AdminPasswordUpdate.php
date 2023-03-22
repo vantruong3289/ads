@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Admin;
+namespace App\Actions\Admin\Password;
 
 use App\Models\Admin;
 use Auth;
@@ -8,7 +8,7 @@ use Hash;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class AdminUpdatePassword
+class AdminPasswordUpdate
 {
     use AsAction;
 

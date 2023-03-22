@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Actions\Advertiser;
+namespace App\Actions\Advertiser\Account;
 
 use App\Models\Advertiser;
 use Auth;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class AdvertiserUpdate
+class AdvertiserAccountUpdate
 {
     use AsAction;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Actions\Consumer;
+namespace App\Actions\Consumer\Account;
 
 use Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class ConsumerHome
+class ConsumerAccountHome
 {
     use AsAction;
 

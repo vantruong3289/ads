@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Actions\Advertiser;
+namespace App\Actions\Consumer\SignIn;
 
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class AdvertiserSignUpForm
+class ConsumerSignInForm
 {
     use AsAction;
 
     public function handle()
     {
-        return view('advertisers.sign-up');
+        return view('consumers.sign-in');
     }
 }

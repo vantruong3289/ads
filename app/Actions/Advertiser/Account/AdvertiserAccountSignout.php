@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Actions\Advertiser;
+namespace App\Actions\Advertiser\Account;
 
 use Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class AdvertiserSignout
+class AdvertiserAccountSignout
 {
     use AsAction;
 

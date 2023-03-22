@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Advertiser;
+namespace App\Actions\Advertiser\Password;
 
 use App\Models\Advertiser;
 use Auth;
@@ -8,7 +8,7 @@ use Hash;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class AdvertiserUpdatePassword
+class AdvertiserPasswordUpdate
 {
     use AsAction;
 

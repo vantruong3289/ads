@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Advertiser;
+namespace App\Actions\Advertiser\SignUp;
 
 use App\Models\Advertiser;
 use Auth;

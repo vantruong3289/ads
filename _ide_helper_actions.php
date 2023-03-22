@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Admin;
+namespace App\Actions\Admin\Account;
 
 /**
  * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
@@ -13,7 +13,7 @@ namespace App\Actions\Admin;
  * @method static dispatchAfterResponse()
  * @method static mixed run()
  */
-class AdminHome
+class AdminAccountHome
 {
 }
 /**
@@ -27,7 +27,7 @@ class AdminHome
  * @method static dispatchAfterResponse()
  * @method static mixed run()
  */
-class AdminSignInForm
+class AdminAccountSignout
 {
 }
 /**
@@ -41,49 +41,7 @@ class AdminSignInForm
  * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
  * @method static mixed run(\Illuminate\Http\Request $request)
  */
-class AdminSignInPost
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
- * @method static dispatchSync()
- * @method static dispatchNow()
- * @method static dispatchAfterResponse()
- * @method static mixed run()
- */
-class AdminSignout
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
- * @method static dispatchSync(\Illuminate\Http\Request $request)
- * @method static dispatchNow(\Illuminate\Http\Request $request)
- * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
- * @method static mixed run(\Illuminate\Http\Request $request)
- */
-class AdminUpdate
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
- * @method static dispatchSync(\Illuminate\Http\Request $request)
- * @method static dispatchNow(\Illuminate\Http\Request $request)
- * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
- * @method static mixed run(\Illuminate\Http\Request $request)
- */
-class AdminUpdatePassword
+class AdminAccountUpdate
 {
 }
 namespace App\Actions\Admin\Bill;
@@ -133,6 +91,20 @@ class AdminBillUpdate
 namespace App\Actions\Admin\Design;
 
 /**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\App\Models\Design $design)
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\App\Models\Design $design)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\App\Models\Design $design)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \App\Models\Design $design)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \App\Models\Design $design)
+ * @method static dispatchSync(\App\Models\Design $design)
+ * @method static dispatchNow(\App\Models\Design $design)
+ * @method static dispatchAfterResponse(\App\Models\Design $design)
+ * @method static mixed run(\App\Models\Design $design)
+ */
+class AdminDesignEditForm
+{
+}
+/**
  * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
  * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
  * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
@@ -158,6 +130,110 @@ class AdminDesignIndex
  * @method static mixed run(\Illuminate\Http\Request $request)
  */
 class AdminDesignStore
+{
+}
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\App\Models\Design $design, \Illuminate\Http\Request $request)
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\App\Models\Design $design, \Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\App\Models\Design $design, \Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \App\Models\Design $design, \Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \App\Models\Design $design, \Illuminate\Http\Request $request)
+ * @method static dispatchSync(\App\Models\Design $design, \Illuminate\Http\Request $request)
+ * @method static dispatchNow(\App\Models\Design $design, \Illuminate\Http\Request $request)
+ * @method static dispatchAfterResponse(\App\Models\Design $design, \Illuminate\Http\Request $request)
+ * @method static mixed run(\App\Models\Design $design, \Illuminate\Http\Request $request)
+ */
+class AdminDesignUpdate
+{
+}
+namespace App\Actions\Admin\Password;
+
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static dispatchSync(\Illuminate\Http\Request $request)
+ * @method static dispatchNow(\Illuminate\Http\Request $request)
+ * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
+ * @method static mixed run(\Illuminate\Http\Request $request)
+ */
+class AdminPasswordUpdate
+{
+}
+namespace App\Actions\Admin\SignIn;
+
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
+ * @method static dispatchSync()
+ * @method static dispatchNow()
+ * @method static dispatchAfterResponse()
+ * @method static mixed run()
+ */
+class AdminSignInForm
+{
+}
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static dispatchSync(\Illuminate\Http\Request $request)
+ * @method static dispatchNow(\Illuminate\Http\Request $request)
+ * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
+ * @method static mixed run(\Illuminate\Http\Request $request)
+ */
+class AdminSignInPost
+{
+}
+namespace App\Actions\Advertiser\Account;
+
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
+ * @method static dispatchSync()
+ * @method static dispatchNow()
+ * @method static dispatchAfterResponse()
+ * @method static mixed run()
+ */
+class AdvertiserAccountHome
+{
+}
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
+ * @method static dispatchSync()
+ * @method static dispatchNow()
+ * @method static dispatchAfterResponse()
+ * @method static mixed run()
+ */
+class AdvertiserAccountSignout
+{
+}
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static dispatchSync(\Illuminate\Http\Request $request)
+ * @method static dispatchNow(\Illuminate\Http\Request $request)
+ * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
+ * @method static mixed run(\Illuminate\Http\Request $request)
+ */
+class AdvertiserAccountUpdate
 {
 }
 namespace App\Actions\Advertiser\Ads;
@@ -216,120 +292,6 @@ class AdvertiserAdsStore
  * @method static mixed run(\App\Models\Ads $ads, \Illuminate\Http\Request $request)
  */
 class AdvertiserAdsUpdate
-{
-}
-namespace App\Actions\Advertiser;
-
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
- * @method static dispatchSync()
- * @method static dispatchNow()
- * @method static dispatchAfterResponse()
- * @method static mixed run()
- */
-class AdvertiserHome
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
- * @method static dispatchSync(\Illuminate\Http\Request $request)
- * @method static dispatchNow(\Illuminate\Http\Request $request)
- * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
- * @method static mixed run(\Illuminate\Http\Request $request)
- */
-class AdvertiserSignInForm
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
- * @method static dispatchSync(\Illuminate\Http\Request $request)
- * @method static dispatchNow(\Illuminate\Http\Request $request)
- * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
- * @method static mixed run(\Illuminate\Http\Request $request)
- */
-class AdvertiserSignInPost
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
- * @method static dispatchSync()
- * @method static dispatchNow()
- * @method static dispatchAfterResponse()
- * @method static mixed run()
- */
-class AdvertiserSignUpForm
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
- * @method static dispatchSync(\Illuminate\Http\Request $request)
- * @method static dispatchNow(\Illuminate\Http\Request $request)
- * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
- * @method static mixed run(\Illuminate\Http\Request $request)
- */
-class AdvertiserSignUpPost
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
- * @method static dispatchSync()
- * @method static dispatchNow()
- * @method static dispatchAfterResponse()
- * @method static mixed run()
- */
-class AdvertiserSignout
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
- * @method static dispatchSync(\Illuminate\Http\Request $request)
- * @method static dispatchNow(\Illuminate\Http\Request $request)
- * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
- * @method static mixed run(\Illuminate\Http\Request $request)
- */
-class AdvertiserUpdate
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
- * @method static dispatchSync(\Illuminate\Http\Request $request)
- * @method static dispatchNow(\Illuminate\Http\Request $request)
- * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
- * @method static mixed run(\Illuminate\Http\Request $request)
- */
-class AdvertiserUpdatePassword
 {
 }
 namespace App\Actions\Advertiser\Bill;
@@ -536,6 +498,124 @@ class AdvertiserPasswordReset
 class AdvertiserPasswordResetForm
 {
 }
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static dispatchSync(\Illuminate\Http\Request $request)
+ * @method static dispatchNow(\Illuminate\Http\Request $request)
+ * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
+ * @method static mixed run(\Illuminate\Http\Request $request)
+ */
+class AdvertiserPasswordUpdate
+{
+}
+namespace App\Actions\Advertiser\SignIn;
+
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static dispatchSync(\Illuminate\Http\Request $request)
+ * @method static dispatchNow(\Illuminate\Http\Request $request)
+ * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
+ * @method static mixed run(\Illuminate\Http\Request $request)
+ */
+class AdvertiserSignInForm
+{
+}
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static dispatchSync(\Illuminate\Http\Request $request)
+ * @method static dispatchNow(\Illuminate\Http\Request $request)
+ * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
+ * @method static mixed run(\Illuminate\Http\Request $request)
+ */
+class AdvertiserSignInPost
+{
+}
+namespace App\Actions\Advertiser\SignUp;
+
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
+ * @method static dispatchSync()
+ * @method static dispatchNow()
+ * @method static dispatchAfterResponse()
+ * @method static mixed run()
+ */
+class AdvertiserSignUpForm
+{
+}
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static dispatchSync(\Illuminate\Http\Request $request)
+ * @method static dispatchNow(\Illuminate\Http\Request $request)
+ * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
+ * @method static mixed run(\Illuminate\Http\Request $request)
+ */
+class AdvertiserSignUpPost
+{
+}
+namespace App\Actions\Consumer\Account;
+
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
+ * @method static dispatchSync()
+ * @method static dispatchNow()
+ * @method static dispatchAfterResponse()
+ * @method static mixed run()
+ */
+class ConsumerAccountHome
+{
+}
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
+ * @method static dispatchSync()
+ * @method static dispatchNow()
+ * @method static dispatchAfterResponse()
+ * @method static mixed run()
+ */
+class ConsumerAccountSignout
+{
+}
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static dispatchSync(\Illuminate\Http\Request $request)
+ * @method static dispatchNow(\Illuminate\Http\Request $request)
+ * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
+ * @method static mixed run(\Illuminate\Http\Request $request)
+ */
+class ConsumerAccountUpdate
+{
+}
 namespace App\Actions\Consumer\Ads;
 
 /**
@@ -582,160 +662,6 @@ namespace App\Actions\Consumer;
  * @method static mixed run()
  */
 class ConsumerAsset
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
- * @method static dispatchSync()
- * @method static dispatchNow()
- * @method static dispatchAfterResponse()
- * @method static mixed run()
- */
-class ConsumerEdit
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
- * @method static dispatchSync()
- * @method static dispatchNow()
- * @method static dispatchAfterResponse()
- * @method static mixed run()
- */
-class ConsumerEditPassword
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
- * @method static dispatchSync()
- * @method static dispatchNow()
- * @method static dispatchAfterResponse()
- * @method static mixed run()
- */
-class ConsumerHome
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
- * @method static dispatchSync()
- * @method static dispatchNow()
- * @method static dispatchAfterResponse()
- * @method static mixed run()
- */
-class ConsumerSignInForm
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
- * @method static dispatchSync(\Illuminate\Http\Request $request)
- * @method static dispatchNow(\Illuminate\Http\Request $request)
- * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
- * @method static mixed run(\Illuminate\Http\Request $request)
- */
-class ConsumerSignInPost
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
- * @method static dispatchSync(\Illuminate\Http\Request $request)
- * @method static dispatchNow(\Illuminate\Http\Request $request)
- * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
- * @method static mixed run(\Illuminate\Http\Request $request)
- */
-class ConsumerSignUpForm
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
- * @method static dispatchSync(\Illuminate\Http\Request $request)
- * @method static dispatchNow(\Illuminate\Http\Request $request)
- * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
- * @method static mixed run(\Illuminate\Http\Request $request)
- */
-class ConsumerSignUpPost
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
- * @method static dispatchSync()
- * @method static dispatchNow()
- * @method static dispatchAfterResponse()
- * @method static mixed run()
- */
-class ConsumerSignout
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
- * @method static dispatchSync()
- * @method static dispatchNow()
- * @method static dispatchAfterResponse()
- * @method static mixed run()
- */
-class ConsumerStore
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
- * @method static dispatchSync(\Illuminate\Http\Request $request)
- * @method static dispatchNow(\Illuminate\Http\Request $request)
- * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
- * @method static mixed run(\Illuminate\Http\Request $request)
- */
-class ConsumerUpdate
-{
-}
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
- * @method static dispatchSync(\Illuminate\Http\Request $request)
- * @method static dispatchNow(\Illuminate\Http\Request $request)
- * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
- * @method static mixed run(\Illuminate\Http\Request $request)
- */
-class ConsumerUpdatePassword
 {
 }
 namespace App\Actions\Consumer\Password;
@@ -794,6 +720,80 @@ class ConsumerPasswordReset
  * @method static mixed run()
  */
 class ConsumerPasswordResetForm
+{
+}
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static dispatchSync(\Illuminate\Http\Request $request)
+ * @method static dispatchNow(\Illuminate\Http\Request $request)
+ * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
+ * @method static mixed run(\Illuminate\Http\Request $request)
+ */
+class ConsumerPasswordUpdate
+{
+}
+namespace App\Actions\Consumer\SignIn;
+
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
+ * @method static dispatchSync()
+ * @method static dispatchNow()
+ * @method static dispatchAfterResponse()
+ * @method static mixed run()
+ */
+class ConsumerSignInForm
+{
+}
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static dispatchSync(\Illuminate\Http\Request $request)
+ * @method static dispatchNow(\Illuminate\Http\Request $request)
+ * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
+ * @method static mixed run(\Illuminate\Http\Request $request)
+ */
+class ConsumerSignInPost
+{
+}
+namespace App\Actions\Consumer\SignUp;
+
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static dispatchSync(\Illuminate\Http\Request $request)
+ * @method static dispatchNow(\Illuminate\Http\Request $request)
+ * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
+ * @method static mixed run(\Illuminate\Http\Request $request)
+ */
+class ConsumerSignUpForm
+{
+}
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static dispatchSync(\Illuminate\Http\Request $request)
+ * @method static dispatchNow(\Illuminate\Http\Request $request)
+ * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
+ * @method static mixed run(\Illuminate\Http\Request $request)
+ */
+class ConsumerSignUpPost
 {
 }
 namespace App\Actions\Consumer\Watch;

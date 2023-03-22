@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Actions\Admin;
+namespace App\Actions\Admin\Account;
 
 use Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class AdminSignout
+class AdminAccountSignout
 {
     use AsAction;
 

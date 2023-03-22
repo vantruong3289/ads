@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Consumer;
+namespace App\Actions\Consumer\SignIn;
 
 use Auth;
 use Illuminate\Http\Request;

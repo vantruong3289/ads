@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Advertiser;
+namespace App\Actions\Advertiser\SignIn;
 
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;

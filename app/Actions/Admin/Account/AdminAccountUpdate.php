@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Actions\Admin;
+namespace App\Actions\Admin\Account;
 
 use App\Models\Admin;
 use Auth;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class AdminUpdate
+class AdminAccountUpdate
 {
     use AsAction;
 

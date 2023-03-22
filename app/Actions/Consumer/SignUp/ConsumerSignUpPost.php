@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Consumer;
+namespace App\Actions\Consumer\SignUp;
 
 use App\Models\Consumer;
 use Illuminate\Http\Request;

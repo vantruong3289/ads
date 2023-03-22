@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Actions\Consumer;
+namespace App\Actions\Admin\SignIn;
 
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class ConsumerStore
+class AdminSignInForm
 {
     use AsAction;
 
     public function handle()
     {
-        return view('consumers.create');
+        return view('admins.sign-in');
     }
 }

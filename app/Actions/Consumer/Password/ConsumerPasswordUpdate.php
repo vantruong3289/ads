@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Consumer;
+namespace App\Actions\Consumer\Password;
 
 use App\Models\Consumer;
 use Auth;
@@ -8,7 +8,7 @@ use Hash;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class ConsumerUpdatePassword
+class ConsumerPasswordUpdate
 {
     use AsAction;
 

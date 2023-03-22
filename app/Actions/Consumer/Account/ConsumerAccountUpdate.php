@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Actions\Consumer;
+namespace App\Actions\Consumer\Account;
 
 use App\Models\Consumer;
 use Auth;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class ConsumerUpdate
+class ConsumerAccountUpdate
 {
     use AsAction;
 
