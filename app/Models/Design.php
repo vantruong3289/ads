@@ -7,10 +7,13 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
+use Spatie\Tags\HasTags;
 
 class Design extends Model
 {
     use HasFactory;
+    use HasTags;
+
     const ACTIVE = 'ACTIVE';
     const UNACTIVE = 'UNACTIVE';
 

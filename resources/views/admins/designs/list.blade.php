@@ -20,9 +20,9 @@
                             <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
                                 <div class="grid grid-cols-3 gap-6">
                                     <div class="col-span-3 sm:col-span-2">
-                                        <label class="block text-sm font-medium leading-6 text-gray-900">Tag</label>
+                                        <label class="block text-sm font-medium leading-6 text-gray-900">Name</label>
                                         <div class="mt-2">
-                                            <input type="text" value="" name="tag" class="block w-full rounded border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="">
+                                            <input type="text" value="" name="name" class="block w-full rounded border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -55,16 +55,15 @@
                         </div>
                         <div class="border-t border-gray-200">
                             @foreach ($designs as $design)
-                                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-6">
-                                    <div class="mt-1 text-sm font-medium text-purple-500 sm:mt-0">
-                                        <a href="/admins/designs/{{ $design->id }}/edit">{{ $design->code }}</a>
+                                <div class="bg-white px-4 py-5 grid grid-cols-2 md:grid-cols-4 sm:gap-4 sm:px-6 place-items-start">
+                                    <div class="text-sm font-medium text-purple-500">
+                                        <a href="/admins/designs/{{ $design->id }}/edit" class="">{{ $design->code }}</a>
                                     </div>
                                     <div class="text-sm font-medium text-gray-500">{{ $design->created_at->format('Y-m-d H:i:s') }}</div>
-                                    <div class="mt-1 text-sm text-gray-900 sm:mt-0 flex items-center space-x-3">
-                                        <x-icons.star />
-                                        <span>{{ $design->ads_count }}</span>
+                                    <div class=" text-sm text-gray-500 ">
+                                        <p class="text-sm">{{ $design?->tags->pluck('name')->join(', ') }}</p>
                                     </div>
-                                    <div class="mt-1 text-sm sm:mt-0 text-gray-900">
+                                    <div class="text-sm text-gray-900">
                                         <a href="/admins/designs/{{ $design->id }}/edit">{{ $design->active }}</a>
                                     </div>
                                 </div>

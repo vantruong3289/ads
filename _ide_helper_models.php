@@ -63,6 +63,8 @@ namespace App\Models{
  * @property-read \App\Models\Design|null $design
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Spatie\MediaLibrary\MediaCollections\Models\Media> $media
  * @property-read int|null $media_count
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag> $tags
+ * @property-read int|null $tags_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Watch> $watchs
  * @property-read int|null $watchs_count
  * @method static \Database\Factories\AdsFactory factory($count = null, $state = [])
@@ -82,6 +84,11 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereSeconds($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Ads withAllTags(\ArrayAccess|\Spatie\Tags\Tag|array|string $tags, ?string $type = null)
+ * @method static \Illuminate\Database\Eloquent\Builder|Ads withAllTagsOfAnyType($tags)
+ * @method static \Illuminate\Database\Eloquent\Builder|Ads withAnyTags(\ArrayAccess|\Spatie\Tags\Tag|array|string $tags, ?string $type = null)
+ * @method static \Illuminate\Database\Eloquent\Builder|Ads withAnyTagsOfAnyType($tags)
+ * @method static \Illuminate\Database\Eloquent\Builder|Ads withoutTags(\ArrayAccess|\Spatie\Tags\Tag|array|string $tags, ?string $type = null)
  */
 	class Ads extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
 }
@@ -132,23 +139,18 @@ namespace App\Models{
  *
  * @property int $id
  * @property int|null $consumer_id
- * @property int|null $brand_id
  * @property string|null $currency
  * @property float|null $money
  * @property float|null $withdraw
- * @property float|null $balance
  * @property |null $status
  * @property int $view
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Brand|null $brand
  * @property-read \App\Models\Consumer|null $consumer
  * @method static \Database\Factories\AssetFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Asset newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Asset newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Asset query()
- * @method static \Illuminate\Database\Eloquent\Builder|Asset whereBalance($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Asset whereBrandId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereConsumerId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereCurrency($value)
@@ -342,8 +344,6 @@ namespace App\Models{
  * @property int|null $ads_id
  * @property string|null $currency
  * @property float|null $money
- * @property float|null $voucher
- * @property $status
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Ads|null $ads
@@ -360,9 +360,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Watch whereCurrency($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Watch whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Watch whereMoney($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Watch whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Watch whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Watch whereVoucher($value)
  */
 	class Watch extends \Eloquent {}
 }

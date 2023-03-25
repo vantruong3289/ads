@@ -57,7 +57,7 @@ namespace App\Actions\Admin\Asset;
  * @method static dispatchAfterResponse()
  * @method static mixed run()
  */
-class AdminAssetWithdraw
+class AdminAssetList
 {
 }
 namespace App\Actions\Admin\Bill;
