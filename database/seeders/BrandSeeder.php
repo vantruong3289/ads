@@ -10,7 +10,7 @@ class BrandSeeder extends Seeder
     public function run()
     {
         Brand::truncate();
-        $brands = Brand::factory(1)->create();
+        $brands = Brand::factory(3)->create();
         $brands->each(function (Brand $brand) {
             $brand->addMediaFromUrl('https://source.unsplash.com/random/80x80')->toMediaCollection('logo');
             // $brand->addMediaFromUrl('https://source.unsplash.com/random/1200x500')->toMediaCollection('cover');

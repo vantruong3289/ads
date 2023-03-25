@@ -11,6 +11,6 @@ class AdsSeeder extends Seeder
     public function run()
     {
         Ads::query()->delete();
-        $adss = Ads::factory(2)->create();
+        $adss = Ads::factory(3)->create();
     }
 }

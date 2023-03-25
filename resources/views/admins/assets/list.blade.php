@@ -3,7 +3,7 @@
     <title>Home</title>
 @endsection
 @section('content')
-    @include('consumers.header')
+    @include('admins.header')
     <div class="bg-gray-100 py-10">
         <div class="max-w-7xl mx-auto">
             <div class="md:grid md:grid-cols-3 md:gap-6">

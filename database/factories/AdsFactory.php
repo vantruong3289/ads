@@ -10,6 +10,7 @@ class AdsFactory extends Factory
 {
     public function definition()
     {
+        $design = Design::inRandomOrder()->first();
         return [
             'name' => $this->faker->jobTitle,
             'active' => $this->faker->boolean,
@@ -17,7 +18,8 @@ class AdsFactory extends Factory
             'seconds' => $this->faker->numberBetween(10, 20),
             'money' => $this->faker->numberBetween(10, 20),
             'brand_id' => Brand::inRandomOrder()->first()?->id,
-            'design_id' => Design::inRandomOrder()->first()?->id,
+            'design_id' => $design?->id,
+            'data' => $design?->data,
         ];
     }
 }
