@@ -40,15 +40,6 @@
                                 <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
                                     <button type="submit" class="inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Save</button>
                                 </div>
-                                @if ($withdraw)
-                                    <div class="border-t border-gray-200">
-                                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                            <div class="text-sm font-medium text-gray-500">{{ $withdraw->updated_at->format('d-m-Y') }}</div>
-                                            <div class="mt-1 text-sm text-gray-900 sm:mt-0">{{ $withdraw->withdraw }} {{ $withdraw->currency }}</div>
-                                            <div class="mt-1 text-sm text-gray-900 sm:mt-0">{{ $withdraw->status }}</div>
-                                        </div>
-                                    </div>
-                                @endif
                             </div>
                         </form>
                     </fieldset>
@@ -75,13 +66,11 @@
                         </div>
                         <div class="border-t border-gray-200">
                             @foreach ($assets as $asset)
-                                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-6">
                                     <div class="text-sm font-medium text-gray-500">{{ ++$loop->index }}</div>
                                     <div class="mt-1 text-sm text-gray-900 sm:mt-0">{{ $asset->money }} {{ $asset->currency }}</div>
-                                    <div class="mt-1 text-sm text-gray-900 sm:mt-0 flex items-center space-x-2">
-                                        <x-icons.eye />
-                                        <span>{{ $asset->view }}</span>
-                                    </div>
+                                    <div class="mt-1 text-sm text-red-900 sm:mt-0">{{ $withdraw->withdraw }} {{ $withdraw->currency }}</div>
+                                    <div class="mt-1 text-sm text-gray-900 sm:mt-0">{{ $withdraw->status }}</div>
                                 </div>
                             @endforeach
                         </div>
