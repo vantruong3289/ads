@@ -11,9 +11,9 @@ class StatusAssetCast implements CastsAttributes
     {
         switch ($value) {
             case 0:
-                return 'WAITING';
+                return '';
             case 1:
-                return 'SUCCESS';
+                return 'WAITING';
         }
         return $value;
     }
@@ -21,9 +21,9 @@ class StatusAssetCast implements CastsAttributes
     public function set($model, string $key, $value, array $attributes)
     {
         switch ($value) {
-            case 'WAITING':
+            case '':
                 return 0;
-            case 'SUCCESS':
+            case 'WAITING':
                 return 1;
         }
         return $value;

@@ -5,6 +5,7 @@
             <div class="space-x-5 items-center hidden sm:flex">
                 <a href="/admins/bills" class="px-2 py-4 {{ request()->is('admins/bills*') ? 'border-b-2 border-indigo-500' : '' }}">Bill</a>
                 <a href="/admins/designs" class="px-2 py-4 {{ request()->is('admins/designs*') ? 'border-b-2 border-indigo-500' : '' }}">Design</a>
+                <a href="/admins/assets" class="px-2 py-4 {{ request()->is('admins/assets*') ? 'border-b-2 border-indigo-500' : '' }}">Asset</a>
             </div>
             <div class="flex-1 flex justify-end">
                 @auth('admin')

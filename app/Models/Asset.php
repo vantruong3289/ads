@@ -13,7 +13,6 @@ class Asset extends Model
 
     protected $fillable = [
         'consumer_id',
-        'brand_id',
         'currency',
         'money',
         'withdraw',
@@ -27,13 +26,12 @@ class Asset extends Model
         'status' => StatusAssetCast::class,
     ];
 
+    protected $attributes = [
+        'status' => 0,
+    ];
+
     public function consumer()
     {
         return $this->belongsTo(Consumer::class);
-    }
-
-    public function brand()
-    {
-        return $this->belongsTo(Brand::class);
     }
 }

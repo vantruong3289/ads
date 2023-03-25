@@ -3,6 +3,7 @@
 use App\Actions\Admin\Account\AdminAccountHome;
 use App\Actions\Admin\Account\AdminAccountSignout;
 use App\Actions\Admin\Account\AdminAccountUpdate;
+use App\Actions\Admin\Asset\AdminAssetList;
 use App\Actions\Admin\Bill\AdminBillEdit;
 use App\Actions\Admin\Bill\AdminBillIndex;
 use App\Actions\Admin\Bill\AdminBillUpdate;
@@ -30,3 +31,5 @@ Route::get('/admins/designs', AdminDesignIndex::class);
 Route::post('/admins/designs', AdminDesignStore::class);
 Route::get('/admins/designs/{design}/edit', AdminDesignEditForm::class);
 Route::put('/admins/designs/{design}', AdminDesignUpdate::class);
+
+Route::get('/admins/assets', AdminAssetList::class);
