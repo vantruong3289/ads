@@ -135,6 +135,9 @@ namespace App\Models{
  * @property int|null $brand_id
  * @property string|null $currency
  * @property float|null $money
+ * @property float|null $withdraw
+ * @property float|null $balance
+ * @property |null $status
  * @property int $view
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -144,14 +147,17 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Asset newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Asset newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Asset query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Asset whereBalance($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereBrandId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereConsumerId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereCurrency($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereMoney($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Asset whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereView($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Asset whereWithdraw($value)
  */
 	class Asset extends \Eloquent {}
 }

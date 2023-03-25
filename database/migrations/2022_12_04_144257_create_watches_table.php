@@ -23,8 +23,6 @@ return new class extends Migration
             $table->foreignIdFor(Ads::class)->nullable()->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('currency')->nullable();
             $table->float('money', 16)->nullable();
-            $table->float('voucher', 16)->nullable();
-            $table->unsignedTinyInteger('status')->default(0);
 
             $table->timestamps();
         });

@@ -39,7 +39,6 @@ class ConsumerWatchStore
                 'ads_id' => $ads->id,
                 'currency' => $ads->currency,
                 'money' => $sub,
-                'status' => Watch::WAITING,
             ]);
 
             $asset->money += $sub;

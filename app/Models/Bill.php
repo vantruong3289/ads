@@ -11,6 +11,7 @@ class Bill extends Model
     use HasFactory;
     const PENDING = 0;
     const PAID = 1;
+    const END = 2;
 
     protected $fillable = [
         'advertiser_id',

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('currency')->nullable();
             $table->float('money', 16)->nullable();
             $table->float('withdraw', 16)->nullable();
+            $table->integer('status')->nullable();
             $table->unsignedBigInteger('view')->default(0);
             $table->timestamps();
         });

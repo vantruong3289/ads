@@ -4,18 +4,16 @@ namespace App\Casts;
 
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 
-class StatusBillCast implements CastsAttributes
+class StatusAssetCast implements CastsAttributes
 {
 
     public function get($model, string $key, $value, array $attributes)
     {
         switch ($value) {
             case 0:
-                return 'PENDING';
+                return 'WAITING';
             case 1:
-                return 'PAID';
-            case 2:
-                return 'END';
+                return 'SUCCESS';
         }
         return $value;
     }
@@ -23,12 +21,10 @@ class StatusBillCast implements CastsAttributes
     public function set($model, string $key, $value, array $attributes)
     {
         switch ($value) {
-            case 'PENDING':
+            case 'WAITING':
                 return 0;
-            case 'PAID':
+            case 'SUCCESS':
                 return 1;
-            case 'END':
-                return 2;
         }
         return $value;
     }

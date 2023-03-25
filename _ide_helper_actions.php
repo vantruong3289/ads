@@ -632,6 +632,36 @@ namespace App\Actions\Consumer\Ads;
 class ConsumerAdsShow
 {
 }
+namespace App\Actions\Consumer\Asset;
+
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
+ * @method static dispatchSync()
+ * @method static dispatchNow()
+ * @method static dispatchAfterResponse()
+ * @method static mixed run()
+ */
+class ConsumerAssetList
+{
+}
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static dispatchSync(\Illuminate\Http\Request $request)
+ * @method static dispatchNow(\Illuminate\Http\Request $request)
+ * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
+ * @method static mixed run(\Illuminate\Http\Request $request)
+ */
+class ConsumerAssetWithdraw
+{
+}
 namespace App\Actions\Consumer\Brand;
 
 /**
@@ -646,22 +676,6 @@ namespace App\Actions\Consumer\Brand;
  * @method static mixed run(\App\Models\Brand $brand)
  */
 class ConsumerBrandShow
-{
-}
-namespace App\Actions\Consumer;
-
-/**
- * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob()
- * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch()
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean)
- * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean)
- * @method static dispatchSync()
- * @method static dispatchNow()
- * @method static dispatchAfterResponse()
- * @method static mixed run()
- */
-class ConsumerAsset
 {
 }
 namespace App\Actions\Consumer\Password;

@@ -66,8 +66,9 @@
                                         <p>{{ $brand->phone }}</p>
                                         <address>{{ $brand->address }}</address>
                                     </div>
-                                    <div class="mt-1 text-sm text-blue-500 sm:mt-0 text-right">
+                                    <div class="mt-1 text-sm text-blue-500 sm:mt-0 text-right space-x-2">
                                         <a href="/advertisers/brands/{{ $brand->id }}/edit">Edit</a>
+                                        <a href="/brands/{{ $brand->id }}">View</a>
                                     </div>
                                 </div>
                             @endforeach
