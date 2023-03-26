@@ -67,7 +67,7 @@
                         </div>
                         <div class="border-t border-gray-200">
                             @foreach ($adss as $ads)
-                                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <div class="bg-white px-4 py-5 grid grid-cols-2 md:grid-cols-3 sm:gap-4 sm:px-6 odd:bg-gray-100">
                                     <div class="text-sm font-medium text-gray-500">
                                         {{ $ads->name }}
                                         <div class="flex mt-1 space-x-3 items-center">
@@ -91,7 +91,11 @@
                                         </div>
                                     </div>
                                     <div class="mt-1 text-sm text-blue-500 sm:mt-0 md:text-right space-x-3">
-                                        <a href="/advertisers/ads/{{ $ads->id }}/designs/{{ $ads->design_id }}/form">{{ $ads->design->code }}</a>
+                                        @if ($ads->design)
+                                            <a href="/advertisers/ads/{{ $ads->id }}/designs/{{ $ads->design_id }}/form">{{ $ads->design->code }}</a>
+                                        @else
+                                            <a href="/advertisers/ads/{{ $ads->id }}/designs">Change</a>
+                                        @endif
                                         <a href="/advertisers/ads/{{ $ads->id }}/edit">Edit</a>
                                     </div>
                                 </div>

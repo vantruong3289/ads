@@ -25,6 +25,11 @@
                             </div>
                         </div>
                     </form>
+                    <div class="mt-2 md:mt-5">
+                        <a href="/advertisers/ads/{{ $ads->id }}/designs" class="text-indigo-500">
+                            Change
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
