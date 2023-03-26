@@ -15,7 +15,7 @@ class AdvertiserDesignIndex
     {
         $designs = Design::whereActive(true)->withCount('ads')
             ->when($request->tags, function ($q, $val) {
-                $val = explode(",", $val);
+                $val = explode(", ", $val);
                 $q->withAnyTags($val);
             })
             ->get();

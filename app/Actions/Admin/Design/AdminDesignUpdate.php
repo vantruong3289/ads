@@ -15,7 +15,7 @@ class AdminDesignUpdate
         $design->active = $request->active;
         $design->save();
         $tags = $request->tags;
-        $tags = explode(",", $tags);
+        $tags = explode(", ", $tags);
         $design->syncTags($tags);
 
         return back();

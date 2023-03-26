@@ -16,6 +16,7 @@
 </head>
 
 <body class="font-ads @yield('body-class')">
+    <x-alert />
     @yield('content')
     @livewireScripts
     @vite('resources/js/app.js')
