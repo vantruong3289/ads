@@ -56,22 +56,42 @@
                             <p class="mt-1 max-w-2xl text-sm text-gray-500">Personal details and application.</p>
                         </div>
                         <div class="border-t border-gray-200">
-                            @foreach ($brands as $brand)
-                                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                    <div class="font-medium">
-                                        {{ $brand->name }}
-                                    </div>
-                                    <div class="mt-1 text-sm font-medium text-gray-500 sm:mt-0 space-y-2">
-                                        <p>{{ $brand->email }}</p>
-                                        <p>{{ $brand->phone }}</p>
-                                        <address>{{ $brand->address }}</address>
-                                    </div>
-                                    <div class="mt-1 text-sm text-blue-500 sm:mt-0 text-right space-x-2">
-                                        <a href="/advertisers/brands/{{ $brand->id }}/edit">Edit</a>
-                                        <a href="/brands/{{ $brand->id }}">View</a>
-                                    </div>
+                            <div class="bg-white dark:bg-gray-900 p-4">
+                                <div class="overflow-x-auto">
+                                    <table class="w-full whitespace-nowrap">
+                                        @foreach ($brands as $brand)
+                                            <tr class="text-sm leading-none text-gray-600 dark:text-gray-200">
+                                                <td class="py-5">
+                                                    <div class="flex items-center">
+                                                        <div class="w-10 h-10 bg-red-700 rounded-sm flex items-center justify-center">
+                                                            <p class="text-xs font-bold leading-3 text-white">
+                                                                <img src="{{ $brand->getFirstMediaUrl('logo') }}" alt="">
+                                                            </p>
+                                                        </div>
+                                                        <div class="pl-2">
+                                                            <p class="font-medium leading-none text-gray-800 dark:text-white ">
+                                                                <a href="/brands/{{ $brand->id }}" class="text-blue-500">{{ $brand->name }}</a>
+                                                            </p>
+                                                            <p class="text-sm leading-3 text-gray-600 dark:text-gray-200 mt-2">{{ $brand->address }}</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="text-sm text-gray-500">
+                                                        <p>{{ $brand->email }}</p>
+                                                        <p>{{ $brand->phone }}</p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="text-sm text-blue-500 text-right space-x-2">
+                                                        <a href="/advertisers/brands/{{ $brand->id }}/edit">Edit</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </table>
                                 </div>
-                            @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>

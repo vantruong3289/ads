@@ -66,40 +66,44 @@
                             <p class="mt-1 max-w-2xl text-sm text-gray-500">Personal details and application.</p>
                         </div>
                         <div class="border-t border-gray-200">
-                            @foreach ($adss as $ads)
-                                <div class="bg-white px-4 py-5 grid grid-cols-2 md:grid-cols-3 sm:gap-4 sm:px-6 odd:bg-gray-100">
-                                    <div class="text-sm font-medium text-gray-500">
-                                        {{ $ads->name }}
-                                        <div class="flex mt-1 space-x-3 items-center">
-                                            <x-icons.eye />
-                                            <span>{{ $ads->watchs->count() }}</span>
-                                        </div>
-                                        <div class="flex mt-1 space-x-3 items-center">
-                                            <x-icons.globe />
-                                            <span>{{ $ads->watchs->sum('money') }} {{ $ads->currency }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="mt-1 text-sm text-gray-500 sm:mt-0">
-                                        {{ $ads->brand->name }}
-                                        <div class="flex mt-1 space-x-3 items-center">
-                                            <x-icons.clock />
-                                            <span>{{ $ads->seconds }} s</span>
-                                        </div>
-                                        <div class="flex mt-1 space-x-3 items-center">
-                                            <x-icons.gift />
-                                            <span>{{ $ads->money }} {{ $ads->currency }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="mt-1 text-sm text-blue-500 sm:mt-0 md:text-right space-x-3">
-                                        @if ($ads->design)
-                                            <a href="/advertisers/ads/{{ $ads->id }}/designs/{{ $ads->design_id }}/form">{{ $ads->design->code }}</a>
-                                        @else
-                                            <a href="/advertisers/ads/{{ $ads->id }}/designs">Change</a>
-                                        @endif
-                                        <a href="/advertisers/ads/{{ $ads->id }}/edit">Edit</a>
-                                    </div>
+                            <div class="bg-white dark:bg-gray-900 px-4">
+                                <div class="overflow-x-auto">
+                                    <table class="w-full whitespace-nowrap">
+                                        @foreach ($adss as $ads)
+                                            <tr class="text-sm leading-none text-gray-600 dark:text-gray-200">
+                                                <td>
+                                                    <x-icons.check-circle class="{{ $ads->active ? 'text-blue-500' : '' }}" />
+                                                </td>
+                                                <td>
+                                                    <div class="flex items-center py-5">
+                                                        <div class="w-10 h-10 bg-red-700 rounded-sm flex items-center justify-center">
+                                                            <p class="text-xs font-bold leading-3 text-white">
+                                                                <img src="{{ $ads->brand->getFirstMediaUrl('logo') }}" alt="">
+                                                            </p>
+                                                        </div>
+                                                        <div class="pl-2">
+                                                            <p class="text-sm font-medium leading-none text-gray-800 dark:text-white ">{{ $ads->brand->name }}</p>
+                                                            <p class="text-xs leading-3 text-gray-600 dark:text-gray-200   mt-2">{{ $ads->brand->address }}</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    {{ $ads->seconds }} s
+                                                </td>
+                                                <td>
+                                                    {{ $ads->money }} {{ $ads->currency }}
+                                                </td>
+                                                <td>
+                                                    {{ $ads->watchs->sum('money') }} {{ $ads->currency }}
+                                                </td>
+                                                <td class="text-indigo-500">
+                                                    <a href="/advertisers/ads/{{ $ads->id }}/edit">Edit</a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </table>
                                 </div>
-                            @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>

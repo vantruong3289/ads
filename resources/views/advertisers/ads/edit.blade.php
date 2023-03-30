@@ -22,6 +22,7 @@
             </div>
             <div class="mt-10 sm:mt-0">
             </div>
+            @include('advertisers.ads.forms.design')
         </div>
     </div>
 @endsection

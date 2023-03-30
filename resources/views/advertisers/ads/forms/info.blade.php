@@ -25,11 +25,11 @@
                             <div class="mt-2 space-x-4 flex">
                                 <div class="flex items-center">
                                     <input id="on" value="1" name="active" type="radio" {{ $ads->active ? 'checked' : '' }} class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                    <label for="on" class="ml-3 block text-sm font-medium leading-6 text-gray-900">On</label>
+                                    <label for="on" class="ml-3 block text-sm leading-6 text-gray-900">Active</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="off" value="0" name="active" type="radio" {{ !$ads->active ? 'checked' : '' }} class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                    <label for="off" class="ml-3 block text-sm font-medium leading-6 text-gray-900">Off</label>
+                                    <label for="off" class="ml-3 block text-sm leading-6 text-gray-900">Unactive</label>
                                 </div>
                             </div>
                         </div>
