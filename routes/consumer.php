@@ -4,7 +4,6 @@ use App\Actions\Consumer\Account\ConsumerAccountHome;
 use App\Actions\Consumer\Account\ConsumerAccountSignout;
 use App\Actions\Consumer\Account\ConsumerAccountUpdate;
 use App\Actions\Consumer\Asset\ConsumerAssetList;
-use App\Actions\Consumer\Asset\ConsumerAssetWithdraw;
 use App\Actions\Consumer\Password\ConsumerPasswordEmailReset;
 use App\Actions\Consumer\Password\ConsumerPasswordForgot;
 use App\Actions\Consumer\Password\ConsumerPasswordReset;
@@ -23,7 +22,6 @@ Route::post('/consumers/sign-up', ConsumerSignUpPost::class);
 Route::put('/consumers/update', ConsumerAccountUpdate::class);
 Route::get('/consumers/home', ConsumerAccountHome::class)->middleware('auth:consumer');
 Route::get('/consumers/assets', ConsumerAssetList::class)->middleware('auth:consumer');
-Route::post('/consumers/assets/withdraw', ConsumerAssetWithdraw::class)->middleware('auth:consumer');
 Route::put('/consumers/password', ConsumerPasswordUpdate::class);
 Route::post('/consumers/sign-out', ConsumerAccountSignout::class);
 

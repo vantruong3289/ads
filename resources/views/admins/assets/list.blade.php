@@ -23,9 +23,9 @@
                             @foreach ($assets as $asset)
                                 <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-6">
                                     <div class="text-sm font-medium text-gray-500">{{ ++$loop->index }}</div>
-                                    <div class="mt-1 text-sm text-red-900 sm:mt-0">{{ $asset->withdraw }} {{ $asset->currency }}</div>
+                                    <div class="mt-1 text-sm text-red-900 sm:mt-0">{{ $asset->brand->name }}</div>
                                     <div class="mt-1 text-sm text-gray-900 sm:mt-0">{{ $asset->money }} {{ $asset->currency }}</div>
-                                    <div class="mt-1 text-sm text-gray-900 sm:mt-0">{{ $asset->status }}</div>
+                                    <div class="mt-1 text-sm text-gray-900 sm:mt-0">{{ $asset->view }}</div>
                                 </div>
                             @endforeach
                         </div>

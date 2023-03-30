@@ -16,7 +16,7 @@ class ConsumerWatchStore
     public function handle(Ads $ads)
     {
         $consumer = Auth::guard('consumer')->user();
-        $attributes = ['consumer_id' => $consumer->id, 'currency' => $ads->currency];
+        $attributes = ['consumer_id' => $consumer->id, 'currency' => $ads->currency, 'brand_id' => $ads->brand_id];
         $asset = Asset::firstOrCreate($attributes);
 
         $bill = Bill::whereAdvertiserId($ads->brand->advertiser_id)

@@ -63,8 +63,6 @@ namespace App\Models{
  * @property-read \App\Models\Design|null $design
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Spatie\MediaLibrary\MediaCollections\Models\Media> $media
  * @property-read int|null $media_count
- * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag> $tags
- * @property-read int|null $tags_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Watch> $watchs
  * @property-read int|null $watchs_count
  * @method static \Database\Factories\AdsFactory factory($count = null, $state = [])
@@ -84,11 +82,6 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereSeconds($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ads whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Ads withAllTags(\ArrayAccess|\Spatie\Tags\Tag|array|string $tags, ?string $type = null)
- * @method static \Illuminate\Database\Eloquent\Builder|Ads withAllTagsOfAnyType($tags)
- * @method static \Illuminate\Database\Eloquent\Builder|Ads withAnyTags(\ArrayAccess|\Spatie\Tags\Tag|array|string $tags, ?string $type = null)
- * @method static \Illuminate\Database\Eloquent\Builder|Ads withAnyTagsOfAnyType($tags)
- * @method static \Illuminate\Database\Eloquent\Builder|Ads withoutTags(\ArrayAccess|\Spatie\Tags\Tag|array|string $tags, ?string $type = null)
  */
 	class Ads extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
 }
@@ -142,10 +135,11 @@ namespace App\Models{
  * @property string|null $currency
  * @property float|null $money
  * @property float|null $withdraw
- * @property |null $status
+ * @property int|null $status
  * @property int $view
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Brand $brand
  * @property-read \App\Models\Consumer|null $consumer
  * @method static \Database\Factories\AssetFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Asset newModelQuery()
@@ -288,6 +282,8 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Ads> $ads
  * @property-read int|null $ads_count
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag> $tags
+ * @property-read int|null $tags_count
  * @method static \Database\Factories\DesignFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Design newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Design newQuery()
@@ -298,6 +294,11 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Design whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Design whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Design whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Design withAllTags(\ArrayAccess|\Spatie\Tags\Tag|array|string $tags, ?string $type = null)
+ * @method static \Illuminate\Database\Eloquent\Builder|Design withAllTagsOfAnyType($tags)
+ * @method static \Illuminate\Database\Eloquent\Builder|Design withAnyTags(\ArrayAccess|\Spatie\Tags\Tag|array|string $tags, ?string $type = null)
+ * @method static \Illuminate\Database\Eloquent\Builder|Design withAnyTagsOfAnyType($tags)
+ * @method static \Illuminate\Database\Eloquent\Builder|Design withoutTags(\ArrayAccess|\Spatie\Tags\Tag|array|string $tags, ?string $type = null)
  */
 	class Design extends \Eloquent {}
 }

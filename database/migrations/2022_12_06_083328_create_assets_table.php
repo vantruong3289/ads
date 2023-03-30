@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Brand;
 use App\Models\Consumer;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -11,11 +12,10 @@ return new class extends Migration
     {
         Schema::create('assets', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(Brand::class)->nullable()->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignIdFor(Consumer::class)->nullable()->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('currency')->nullable();
             $table->float('money', 16)->nullable();
-            $table->float('withdraw', 16)->nullable();
-            $table->integer('status')->nullable();
             $table->unsignedBigInteger('view')->default(0);
             $table->timestamps();
         });

@@ -13,9 +13,8 @@ class ConsumerAssetList
     public function handle()
     {
         $consumer = Auth::guard('consumer')->user();
-        $assets = $consumer->assets;
-        $withdraw = Asset::whereConsumerId($consumer->id)->whereNotNull('status')->first();
+        $assets = Asset::whereConsumerId($consumer->id)->get();
 
-        return view('consumers.asset', compact('assets', 'withdraw'));
+        return view('consumers.asset', compact('assets'));
     }
 }
