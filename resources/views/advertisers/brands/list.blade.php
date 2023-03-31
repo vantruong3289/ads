@@ -61,7 +61,7 @@
                                     <table class="w-full whitespace-nowrap">
                                         @foreach ($brands as $brand)
                                             <tr class="text-sm leading-none text-gray-600 dark:text-gray-200">
-                                                <td class="py-5">
+                                                <td class="py-5 px-2">
                                                     <div class="flex items-center">
                                                         <div class="w-10 h-10 bg-red-700 rounded-sm flex items-center justify-center">
                                                             <p class="text-xs font-bold leading-3 text-white">
@@ -76,13 +76,13 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>
+                                                <td class="px-2">
                                                     <div class="text-sm text-gray-500">
                                                         <p>{{ $brand->email }}</p>
                                                         <p>{{ $brand->phone }}</p>
                                                     </div>
                                                 </td>
-                                                <td>
+                                                <td class="px-2">
                                                     <div class="text-sm text-blue-500 text-right space-x-2">
                                                         <a href="/advertisers/brands/{{ $brand->id }}/edit">Edit</a>
                                                     </div>

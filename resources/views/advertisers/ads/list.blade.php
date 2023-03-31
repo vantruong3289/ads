@@ -71,10 +71,10 @@
                                     <table class="w-full whitespace-nowrap">
                                         @foreach ($adss as $ads)
                                             <tr class="text-sm leading-none text-gray-600 dark:text-gray-200">
-                                                <td>
+                                                <td class="px-2">
                                                     <x-icons.check-circle class="{{ $ads->active ? 'text-blue-500' : '' }}" />
                                                 </td>
-                                                <td>
+                                                <td class="px-2">
                                                     <div class="flex items-center py-5">
                                                         <div class="w-10 h-10 bg-red-700 rounded-sm flex items-center justify-center">
                                                             <p class="text-xs font-bold leading-3 text-white">
@@ -87,13 +87,13 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>
+                                                <td class="px-2">
                                                     {{ $ads->seconds }} s
                                                 </td>
-                                                <td>
+                                                <td class="px-2">
                                                     {{ $ads->money }} {{ $ads->currency }}
                                                 </td>
-                                                <td>
+                                                <td class="px-2">
                                                     {{ $ads->watchs->sum('money') }} {{ $ads->currency }}
                                                 </td>
                                                 <td class="text-indigo-500">

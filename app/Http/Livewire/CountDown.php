@@ -8,6 +8,7 @@ use Livewire\Component;
 class CountDown extends Component
 {
     public $ads;
+    public $first = true;
 
     public function mount($ads)
     {
@@ -16,7 +17,10 @@ class CountDown extends Component
 
     public function watch()
     {
-        ConsumerWatchStore::dispatch($this->ads);
+        if ($this->first) {
+            ConsumerWatchStore::dispatch($this->ads);
+            $this->first = false;
+        }
     }
 
     public function render()
