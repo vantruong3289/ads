@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Casts\ActiveDesignCast;
+use App\Casts\DesignActiveCast;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -24,7 +24,7 @@ class Design extends Model
     ];
 
     protected $casts = [
-        'active' => ActiveDesignCast::class,
+        'active' => DesignActiveCast::class,
     ];
 
     protected $attributes = [

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Casts\StatusBillCast;
+use App\Casts\BillStatusCast;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,7 +25,7 @@ class Bill extends Model
 
     protected $casts = [
         'time' => 'datetime',
-        'status' => StatusBillCast::class,
+        'status' => BillStatusCast::class,
     ];
 
     public function advertiser()

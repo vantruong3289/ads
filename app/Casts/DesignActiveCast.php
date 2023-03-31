@@ -4,7 +4,7 @@ namespace App\Casts;
 
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 
-class ActiveDesignCast implements CastsAttributes
+class DesignActiveCast implements CastsAttributes
 {
 
     public function get($model, string $key, $value, array $attributes)

@@ -4,7 +4,7 @@ namespace App\Casts;
 
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 
-class StatusBillCast implements CastsAttributes
+class BillStatusCast implements CastsAttributes
 {
 
     public function get($model, string $key, $value, array $attributes)
