@@ -66,9 +66,9 @@
                         </div>
                         <div class="border-t border-gray-200">
                             @foreach ($bills as $bill)
-                                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-6">
-                                    <div class="text-sm font-medium text-gray-500">{{ $bill->time->format('Y-m-d H:i:s') }}</div>
-                                    <div class="mt-1 text-sm font-medium text-gray-500 sm:mt-0">{{ $bill->code }}</div>
+                                <div class="bg-white px-4 py-5 flex justify-between sm:px-6">
+                                    <div class="text-sm">{{ $bill->time->format('Y-m-d H:i:s') }}</div>
+                                    <div class="mt-1 text-sm sm:mt-0">{{ $bill->code }}</div>
                                     <div class="mt-1 text-sm text-gray-900 sm:mt-0">
                                         <div>{{ $bill->money }} / {{ $bill->budget }} {{ $bill->currency }}</div>
                                     </div>

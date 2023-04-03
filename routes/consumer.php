@@ -4,6 +4,8 @@ use App\Actions\Consumer\Account\ConsumerAccountHome;
 use App\Actions\Consumer\Account\ConsumerAccountSignout;
 use App\Actions\Consumer\Account\ConsumerAccountUpdate;
 use App\Actions\Consumer\Asset\ConsumerAssetList;
+use App\Actions\Consumer\Invite\ConsumerInviteList;
+use App\Actions\Consumer\Invite\ConsumerInviteStore;
 use App\Actions\Consumer\Password\ConsumerPasswordEmailReset;
 use App\Actions\Consumer\Password\ConsumerPasswordForgot;
 use App\Actions\Consumer\Password\ConsumerPasswordReset;
@@ -29,3 +31,6 @@ Route::get('/consumers/password/forgot', ConsumerPasswordForgot::class)->middlew
 Route::get('/consumers/password/reset', ConsumerPasswordResetForm::class)->middleware('guest:consumer')->name('consumer.password.reset');
 Route::post('/consumers/password/reset', ConsumerPasswordReset::class);
 Route::post('/consumers/password/email-reset', ConsumerPasswordEmailReset::class);
+
+Route::get('/consumers/invites', ConsumerInviteList::class)->middleware('auth:consumer');
+Route::post('/consumers/invites', ConsumerInviteStore::class);

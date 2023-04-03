@@ -131,29 +131,27 @@ namespace App\Models{
  * App\Models\Asset
  *
  * @property int $id
+ * @property int|null $brand_id
  * @property int|null $consumer_id
  * @property string|null $currency
  * @property float|null $money
- * @property float|null $withdraw
- * @property int|null $status
  * @property int $view
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Brand $brand
+ * @property-read \App\Models\Brand|null $brand
  * @property-read \App\Models\Consumer|null $consumer
  * @method static \Database\Factories\AssetFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Asset newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Asset newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Asset query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Asset whereBrandId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereConsumerId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereCurrency($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereMoney($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Asset whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Asset whereView($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Asset whereWithdraw($value)
  */
 	class Asset extends \Eloquent {}
 }
@@ -301,6 +299,29 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Design withoutTags(\ArrayAccess|\Spatie\Tags\Tag|array|string $tags, ?string $type = null)
  */
 	class Design extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Invite
+ *
+ * @property int $id
+ * @property int|null $consumer_id
+ * @property string|null $email
+ * @property |null $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Invite newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Invite newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Invite query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Invite whereConsumerId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Invite whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Invite whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Invite whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Invite whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Invite whereUpdatedAt($value)
+ */
+	class Invite extends \Eloquent {}
 }
 
 namespace App\Models{
