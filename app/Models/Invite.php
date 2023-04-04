@@ -10,6 +10,9 @@ class Invite extends Model
 {
     use HasFactory;
 
+    const WAITING = 0;
+    const SUCCESS = 1;
+
     protected $fillable = [
         'consumer_id',
         'email',

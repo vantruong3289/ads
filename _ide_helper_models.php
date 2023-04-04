@@ -311,6 +311,7 @@ namespace App\Models{
  * @property |null $status
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Consumer|null $consumer
  * @method static \Illuminate\Database\Eloquent\Builder|Invite newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Invite newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Invite query()

@@ -696,6 +696,34 @@ namespace App\Actions\Consumer\Invite;
 class ConsumerInviteList
 {
 }
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\App\Models\Invite $invite)
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\App\Models\Invite $invite)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\App\Models\Invite $invite)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \App\Models\Invite $invite)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \App\Models\Invite $invite)
+ * @method static dispatchSync(\App\Models\Invite $invite)
+ * @method static dispatchNow(\App\Models\Invite $invite)
+ * @method static dispatchAfterResponse(\App\Models\Invite $invite)
+ * @method static mixed run(\App\Models\Invite $invite)
+ */
+class ConsumerInviteSendEmail
+{
+}
+/**
+ * @method static \Lorisleiva\Actions\Decorators\JobDecorator|\Lorisleiva\Actions\Decorators\UniqueJobDecorator makeJob(\Illuminate\Http\Request $request)
+ * @method static \Lorisleiva\Actions\Decorators\UniqueJobDecorator makeUniqueJob(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch dispatch(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchIf(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static \Illuminate\Foundation\Bus\PendingDispatch|\Illuminate\Support\Fluent dispatchUnless(bool $boolean, \Illuminate\Http\Request $request)
+ * @method static dispatchSync(\Illuminate\Http\Request $request)
+ * @method static dispatchNow(\Illuminate\Http\Request $request)
+ * @method static dispatchAfterResponse(\Illuminate\Http\Request $request)
+ * @method static mixed run(\Illuminate\Http\Request $request)
+ */
+class ConsumerInviteStore
+{
+}
 namespace App\Actions\Consumer\Password;
 
 /**

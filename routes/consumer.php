@@ -17,9 +17,9 @@ use App\Actions\Consumer\SignUp\ConsumerSignUpForm;
 use App\Actions\Consumer\SignUp\ConsumerSignUpPost;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/consumers/sign-in', ConsumerSignInForm::class)->middleware('guest:consumer')->name('consumer.sign-up');
+Route::get('/consumers/sign-in', ConsumerSignInForm::class)->middleware('guest:consumer');
 Route::post('/consumers/sign-in', ConsumerSignInPost::class);
-Route::get('/consumers/sign-up', ConsumerSignUpForm::class)->middleware('guest:consumer');
+Route::get('/consumers/sign-up', ConsumerSignUpForm::class)->middleware('guest:consumer')->name('consumer.sign-up');
 Route::post('/consumers/sign-up', ConsumerSignUpPost::class);
 Route::put('/consumers/update', ConsumerAccountUpdate::class);
 Route::get('/consumers/home', ConsumerAccountHome::class)->middleware('auth:consumer');
