@@ -17,22 +17,14 @@ class ConsumerEmailResetPassword extends Mailable implements ShouldQueue
 
     public Consumer $consumer;
     public $url;
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
+    
     public function __construct(Consumer $consumer)
     {
         $this->consumer = $consumer;
         $this->url = URL::temporarySignedRoute('consumer.password.reset', now()->addMinutes(30), ['id' => $consumer->id]);
     }
 
-    /**
-     * Get the message envelope.
-     *
-     * @return \Illuminate\Mail\Mailables\Envelope
-     */
+    
     public function envelope()
     {
         return new Envelope(
@@ -40,11 +32,7 @@ class ConsumerEmailResetPassword extends Mailable implements ShouldQueue
         );
     }
 
-    /**
-     * Get the message content definition.
-     *
-     * @return \Illuminate\Mail\Mailables\Content
-     */
+    
     public function content()
     {
         return new Content(
@@ -52,11 +40,7 @@ class ConsumerEmailResetPassword extends Mailable implements ShouldQueue
         );
     }
 
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array
-     */
+    
     public function attachments()
     {
         return [];

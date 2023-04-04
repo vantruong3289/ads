@@ -2,7 +2,7 @@
 
 namespace App\Mail;
 
-use App\Models\Advertiser;
+use App\Models\Invite;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -11,36 +11,33 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\URL;
 
-class AdvertiserEmailResetPassword extends Mailable implements ShouldQueue
+class ConsumerEmailInvite extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
-    public Advertiser $advertiser;
+    public $invite;
     public $url;
-    
-    public function __construct(Advertiser $advertiser)
+
+    public function __construct(Invite $invite)
     {
-        $this->advertiser = $advertiser;
-        $this->url = URL::temporarySignedRoute('advertiser.password.reset', now()->addMinutes(30), ['id' => $advertiser->id]);
+        $this->invite = $invite;
+        $this->url = URL::temporarySignedRoute('consumer.sign-up', now()->addMinutes(30), ['id' => $invite->id]);
     }
 
-    
     public function envelope()
     {
         return new Envelope(
-            subject:'Email Reset Password',
+            subject:'Consumer Email Invite',
         );
     }
 
-    
     public function content()
     {
         return new Content(
-            view:'advertisers.mails.reset-password',
+            view:'consumers.mails.invite',
         );
     }
 
-    
     public function attachments()
     {
         return [];

@@ -20,8 +20,8 @@ class Invite extends Model
         'status' => InviteStatusCast::class,
     ];
 
-    public function customer()
+    public function consumer()
     {
-        return $this->belongsTo(Customer::class);
+        return $this->belongsTo(Consumer::class);
     }
 }

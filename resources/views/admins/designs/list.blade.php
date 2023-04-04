@@ -55,7 +55,7 @@
                         </div>
                         <div class="border-t border-gray-200">
                             @foreach ($designs as $design)
-                                <div class="bg-white px-4 py-5 grid grid-cols-2 md:grid-cols-4 sm:gap-4 sm:px-6 place-items-start">
+                                <div class="bg-white px-4 py-5 flex justify-between sm:px-6">
                                     <div class="text-sm font-medium text-purple-500">
                                         <a href="/admins/designs/{{ $design->id }}/edit" class="">{{ $design->code }}</a>
                                     </div>

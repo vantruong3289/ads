@@ -19,8 +19,8 @@ class ConsumerInviteStore
             return;
         }
         $consumer = Auth::guard('consumer')->user();
-        Invite::firstOrCreate(['email' => $email, 'consumer_id' => $consumer->id]);
-        ConsumerInviteSendEmail::dispatch();
+        $invite = Invite::firstOrCreate(['email' => $email, 'consumer_id' => $consumer->id]);
+        ConsumerInviteSendEmail::dispatch($invite);
         return back();
     }
 }
